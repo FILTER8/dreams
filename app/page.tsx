@@ -17,6 +17,16 @@ type Artifact = {
   dither: Pixel[];
 };
 
+type Countdown = {
+  days: string;
+  hours: string;
+  minutes: string;
+  seconds: string;
+};
+
+const OPENSEA_URL = "https://opensea.io/collection/chain-dreams-1982/overview";
+const PUBLIC_MINT_DATE = new Date("2026-05-28T22:00:00+02:00");
+
 const C64 = [
   "#000000", "#ffffff", "#883932", "#67b6bd",
   "#8b3f96", "#55a049", "#40318d", "#bfce72",
@@ -32,6 +42,23 @@ const PHRASES = [
   "the crowd mistakes motion for truth",
   "liquidity follows fear",
 ];
+
+function getCountdown(): Countdown {
+  const now = Date.now();
+  const diff = Math.max(0, PUBLIC_MINT_DATE.getTime() - now);
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  const seconds = Math.floor((diff / 1000) % 60);
+
+  return {
+    days: String(days).padStart(2, "0"),
+    hours: String(hours).padStart(2, "0"),
+    minutes: String(minutes).padStart(2, "0"),
+    seconds: String(seconds).padStart(2, "0"),
+  };
+}
 
 function rng(seed: number) {
   let s = seed >>> 0;
@@ -78,7 +105,6 @@ function makeArtifact(): Artifact {
   const r = rng(seed);
 
   const bg = C64[int(r, 0, 15)];
-
   const blobCount = int(r, 1, 3);
   const contourCount = int(r, 0, 3);
   const satelliteCount = int(r, 0, 6);
@@ -207,10 +233,19 @@ export default function Page() {
   const [artifact, setArtifact] = useState<Artifact>(() => makeArtifact());
   const [gallery, setGallery] = useState<Artifact[]>(() => loadGallery());
   const [phrase, setPhrase] = useState(PHRASES[0]);
+  const [countdown, setCountdown] = useState<Countdown>(() => getCountdown());
 
   useEffect(() => {
     localStorage.setItem("chain-dreams-gallery", JSON.stringify(gallery));
   }, [gallery]);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setCountdown(getCountdown());
+    }, 1000);
+
+    return () => window.clearInterval(timer);
+  }, []);
 
   function generate() {
     const next = makeArtifact();
@@ -234,8 +269,8 @@ export default function Page() {
         <a href="#home" className="opacity-80 hover:opacity-100">
           DREAMS by RATCHET VEX
         </a>
-        <a href="https://x.com/RatchetVex" target="_blank" className="opacity-80 hover:opacity-100">
-          X
+        <a href={OPENSEA_URL} target="_blank" rel="noreferrer" className="opacity-80 hover:opacity-100">
+          OPENSEA
         </a>
       </header>
 
@@ -250,8 +285,9 @@ export default function Page() {
           ON-CHAIN LANGUAGE MODEL ARTIFACTS
         </p>
         <a
-          href="https://opensea.io/collection/agentratchetvex"
+          href={OPENSEA_URL}
           target="_blank"
+          rel="noreferrer"
           className="mt-10 text-xs opacity-60 hover:opacity-100 underline underline-offset-4"
         >
           FREE MINT FOR RATCHET VEX RMX HOLDERS
@@ -309,13 +345,31 @@ export default function Page() {
           SIGNAL
         </h2>
 
+        <p className="mt-8 text-xs tracking-[0.24em] opacity-60">
+          PUBLIC STAGE OPENS MAY 28, 2026 · 22:00 GMT+2
+        </p>
+
         <div className="mt-12 grid grid-cols-4 gap-3">
-          {["00 DAYS", "00 HOURS", "00 MIN", "00 SEC"].map((v) => (
+          {[
+            `${countdown.days} DAYS`,
+            `${countdown.hours} HOURS`,
+            `${countdown.minutes} MIN`,
+            `${countdown.seconds} SEC`,
+          ].map((v) => (
             <div key={v} className="border border-[#333] px-5 py-4 text-sm opacity-80">
               {v}
             </div>
           ))}
         </div>
+
+        <a
+          href={OPENSEA_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="cd-button mt-10 inline-block"
+        >
+          VIEW ON OPENSEA
+        </a>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
           <div className="cd-card"><p className="cd-label">SUPPLY</p><p>1982</p></div>
@@ -363,10 +417,10 @@ export default function Page() {
       <footer className="border-t border-[#222] px-6 py-6 text-[10px] tracking-[0.18em] opacity-75 flex flex-col gap-3 md:flex-row md:justify-between">
         <p>2026 ON-CHAIN AGENT RATCHET VEX by filter8</p>
         <p>
-          <a href="https://x.com/0xfilter8" target="_blank" className="hover:opacity-100">
+          <a href="https://x.com/0xfilter8" target="_blank" rel="noreferrer" className="hover:opacity-100">
             X : FILTER8 /{" "}
           </a>
-          <a href="https://x.com/0xdiid" target="_blank" className="hover:opacity-100">
+          <a href="https://x.com/0xdiid" target="_blank" rel="noreferrer" className="hover:opacity-100">
             LLM inference by @0xdiid
           </a>
         </p>
