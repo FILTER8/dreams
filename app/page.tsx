@@ -25,7 +25,23 @@ type Countdown = {
 };
 
 const OPENSEA_URL = "https://opensea.io/collection/chain-dreams-1982/overview";
-const PUBLIC_MINT_DATE = new Date("2026-05-28T22:00:00+02:00");
+const PUBLIC_MINT_DATE = new Date("2026-05-28T22:00:00+05:00");
+
+const EMPTY_ARTIFACT: Artifact = {
+  id: "initial",
+  bg: "#000000",
+  blobs: [],
+  contours: [],
+  satellites: [],
+  dither: [],
+};
+
+const EMPTY_COUNTDOWN: Countdown = {
+  days: "00",
+  hours: "00",
+  minutes: "00",
+  seconds: "00",
+};
 
 const C64 = [
   "#000000", "#ffffff", "#883932", "#67b6bd",
@@ -41,6 +57,14 @@ const PHRASES = [
   "the machine dreams in fixed point",
   "the crowd mistakes motion for truth",
   "liquidity follows fear",
+];
+
+const FAQS = [
+  ["why 1982 ?", "1982 represents the early era of personal computing, primitive graphics, machine memory, and synthetic imagination. Chain Dreams imagines what on-chain language model artifacts might have looked like if they existed in the early computer age."],
+  ["why the c64 colors ?", "The collection uses low-color combinations inspired by Commodore 64 graphics, CRT displays, terminal systems, and early machine interfaces. Limitation becomes identity."],
+  ["are the dreams static ?", "No. The canonical token remains permanent, but the dream state evolves daily based on ownership, time, and deterministic machine memory."],
+  ["what can agents do ?", "Agents can query artifacts, reconstruct dream states, read machine parameters, and interact with evolving on-chain language outputs. Future systems may allow persistent dream memory and machine-readable registries built directly on Ethereum."],
+  ["is everything fully on-chain ?", "Yes. Artwork, metadata, dream states, and language outputs are generated directly from Ethereum smart contracts. No IPFS. No external image hosting. No centralized metadata server."],
 ];
 
 function getCountdown(): Countdown {
@@ -127,6 +151,7 @@ function makeArtifact(): Artifact {
   }
 
   const contours: PathShape[] = [];
+
   for (let i = 0; i < contourCount; i++) {
     contours.push({
       points: blobPoints(
@@ -142,6 +167,7 @@ function makeArtifact(): Artifact {
   }
 
   const satellites: Satellite[] = [];
+
   for (let i = 0; i < satelliteCount; i++) {
     const radius = int(r, 58, 134);
     const angle = r() * Math.PI * 2;
@@ -156,6 +182,7 @@ function makeArtifact(): Artifact {
   }
 
   const dither: Pixel[] = [];
+
   for (let s = 0; s < ditherSystems; s++) {
     const px = snap(int(r, 150, 304));
     const py = snap(int(r, 150, 304));
@@ -230,14 +257,31 @@ function loadGallery(): Artifact[] {
 export default function Page() {
   const exportRef = useRef<HTMLDivElement>(null);
 
-  const [artifact, setArtifact] = useState<Artifact>(() => makeArtifact());
-  const [gallery, setGallery] = useState<Artifact[]>(() => loadGallery());
+  const mountedRef = useRef(false);
+  const [artifact, setArtifact] = useState<Artifact>(EMPTY_ARTIFACT);
+  const [gallery, setGallery] = useState<Artifact[]>([]);
   const [phrase, setPhrase] = useState(PHRASES[0]);
-  const [countdown, setCountdown] = useState<Countdown>(() => getCountdown());
+  const [countdown, setCountdown] = useState<Countdown>(EMPTY_COUNTDOWN);
 
   useEffect(() => {
+  mountedRef.current = true;
+
+  window.requestAnimationFrame(() => {
+    const savedGallery = loadGallery();
+
+    setGallery(savedGallery);
+    setArtifact(savedGallery.length > 0 ? savedGallery[0] : makeArtifact());
+    setCountdown(getCountdown());
+  });
+}, []);
+
+useEffect(() => {
+  if (!mountedRef.current) return;
+
+  window.requestAnimationFrame(() => {
     localStorage.setItem("chain-dreams-gallery", JSON.stringify(gallery));
-  }, [gallery]);
+  });
+}, [gallery]);
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -412,6 +456,29 @@ export default function Page() {
         <p className="mt-10 max-w-xl text-xs leading-6 opacity-40">
           The token is fixed. The dream keeps evolving.
         </p>
+      </section>
+
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 py-32">
+        <p className="text-xl tracking-[0.5em] opacity-80 mb-12">FAQ</p>
+
+        <div className="w-full max-w-4xl flex flex-col border-t border-[#222]">
+          {FAQS.map(([q, a]) => (
+            <details key={q} className="group border-b border-[#222] py-6">
+              <summary className="cursor-pointer list-none flex items-center justify-between gap-6">
+                <span className="cd-headline text-xl md:text-2xl tracking-[0.12em]">
+                  {q}
+                </span>
+                <span className="text-xl opacity-50 group-open:rotate-45 transition-transform">
+                  +
+                </span>
+              </summary>
+
+              <p className="mt-6 max-w-3xl text-sm leading-8 opacity-60">
+                {a}
+              </p>
+            </details>
+          ))}
+        </div>
       </section>
 
       <footer className="border-t border-[#222] px-6 py-6 text-[10px] tracking-[0.18em] opacity-75 flex flex-col gap-3 md:flex-row md:justify-between">
