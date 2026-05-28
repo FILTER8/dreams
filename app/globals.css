@@ -69,3 +69,82 @@ body {
 .cd-pixel {
   image-rendering: pixelated;
 }
+
+.dm-stage {
+  position: fixed;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+
+.dm-svg {
+  width: min(100vw, 100vh);
+  height: min(100vw, 100vh);
+  image-rendering: pixelated;
+  transform-origin: center center;
+  transition: transform 900ms ease-in-out;
+}
+
+.dm-layer {
+  transition: opacity 5200ms ease-in-out;
+}
+
+.dm-quote {
+  position: fixed;
+  right: 28px;
+  bottom: 24px;
+  max-width: 420px;
+  padding: 16px;
+  color: #111;
+  background: rgba(255, 255, 255, 0.48);
+  font-size: 12px;
+  line-height: 1.6;
+  letter-spacing: 0.08em;
+  transition: opacity 5200ms ease-in-out;
+}
+
+.dm-slider {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 0;
+}
+
+.dm-slider label {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  color: #bfce72;
+}
+
+.dm-slider input {
+  appearance: none;
+  width: 100%;
+  height: 12px;
+  background:
+    repeating-linear-gradient(
+      to right,
+      rgba(191, 206, 114, 0.75) 0,
+      rgba(191, 206, 114, 0.75) 4px,
+      transparent 4px,
+      transparent 8px
+    );
+  border: 1px solid rgba(191, 206, 114, 0.35);
+  cursor: crosshair;
+}
+
+.dm-slider input::-webkit-slider-thumb {
+  appearance: none;
+  width: 10px;
+  height: 20px;
+  background: #bfce72;
+  border: 1px solid #000;
+}
+
+.dm-slider input::-moz-range-thumb {
+  width: 10px;
+  height: 20px;
+  background: #bfce72;
+  border: 1px solid #000;
+  border-radius: 0;
+}
