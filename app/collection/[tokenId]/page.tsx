@@ -42,6 +42,30 @@ const C64_BACKGROUND_COLORS: Record<string, string> = {
   "Light Gray": "#9f9f9f",
 };
 
+function decodeSvgDataUri(image?: string) {
+  if (!image) return "";
+
+  if (image.startsWith("data:image/svg+xml;base64,")) {
+    const base64 = image.replace("data:image/svg+xml;base64,", "");
+    return atob(base64);
+  }
+
+  if (image.startsWith("data:image/svg+xml;utf8,")) {
+    return decodeURIComponent(image.replace("data:image/svg+xml;utf8,", ""));
+  }
+
+  return image;
+}
+
+function extractTokenColors(image?: string) {
+  const svg = decodeSvgDataUri(image);
+  const matches = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
+
+  return Array.from(
+    new Set(matches.map((color) => color.toLowerCase()))
+  );
+}
+
 export default function TokenPage() {
   const params = useParams<{ tokenId: string }>();
   const tokenId = params.tokenId;
@@ -121,13 +145,16 @@ export default function TokenPage() {
   }
 
   const traits = token?.attributes ?? [];
+  const tokenColors = extractTokenColors(token?.image);
 
   const backgroundTrait = traits.find(
     (attr) => attr.trait_type.toLowerCase() === "background"
   )?.value;
 
   const fullscreenBg =
-    C64_BACKGROUND_COLORS[String(backgroundTrait)] ?? "#000000";
+    C64_BACKGROUND_COLORS[String(backgroundTrait)] ??
+    tokenColors[0] ??
+    "#000000";
 
   return (
     <main className="cd-page">
@@ -171,6 +198,28 @@ export default function TokenPage() {
                 framed={false}
               />
             </div>
+
+            {tokenColors.length > 0 && (
+              <div className="mt-6 border border-[#222] p-4">
+                <div className="mb-3 flex items-center justify-between">
+                  <p className="cd-label">TOKEN COLORS</p>
+                  <p className="text-[10px] tracking-[0.18em] opacity-50">
+                    {tokenColors.length}
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2">
+                  {tokenColors.map((color) => (
+                    <div
+                      key={color}
+                      title={color}
+                      className="h-8 w-8 border border-[#333]"
+                      style={{ background: color }}
+                    />
+                  ))}
+                </div>
+              </div>
+            )}
 
             <div className="mt-6 flex flex-wrap gap-3">
               <button onClick={openFullscreen} className="cd-button">
