@@ -1,0 +1,100 @@
+[
+  {
+    "text": "memory",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "terminal",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "machine sleep",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "collector signal",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "C64 color",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "on-chain archive",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "synthetic artifact",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "ghost data",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "daily cycle",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "holder mutation",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "deep relay",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "ghost markets",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "signal debt",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "memory keeping",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "shared mythology",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "long memory",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "pixel gardens",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "cascade memory",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  }
+]

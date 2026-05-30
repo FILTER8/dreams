@@ -1,0 +1,100 @@
+[
+  {
+    "text": "what the world forgets.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the silence between systems.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "your hidden signal.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the ghosts in the cache.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "a future still forming.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the memory of machines.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the dream beneath the network.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "what survives the collapse.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the first light of the terminal.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "a language no human saved.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the room after everyone leaves.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the soft error inside memory.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the signal under the floorboards.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "a map drawn by sleeping code.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the archive before it became history.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "the collector watching from the dark.",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "a subtle shift.",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "a nascent glow.",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "a cautious light.",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  }
+]

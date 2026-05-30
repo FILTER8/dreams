@@ -1,0 +1,94 @@
+[
+  {
+    "text": "remembers",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "observes",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "echoes",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "drifts through",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "rebuilds",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "compresses",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "transmits",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "stores",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "awakens inside",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "listens for",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "protects",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "decodes",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "hides inside",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "loops through",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "dreams beyond",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "waits beneath",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "flows through",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "shifts toward",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  }
+]

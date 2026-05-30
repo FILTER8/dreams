@@ -1,0 +1,112 @@
+[
+  {
+    "text": "The machine",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The signal",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "Your artifact",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The archive",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The dream",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The network",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The memory",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The synthetic",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The terminal",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The cassette",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The modem",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The screen",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The ghost process",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The sleeping model",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The holder",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The collector",
+    "source": "genesis",
+    "weight": 1
+  },
+  {
+    "text": "The deep relay",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "The midnight archive",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "The synthetic heart",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "The shifting signal",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  },
+  {
+    "text": "The dormant network",
+    "source": "ratchet-vex",
+    "cycle": "20602",
+    "weight": 1
+  }
+]
