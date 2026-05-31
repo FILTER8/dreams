@@ -824,6 +824,38 @@ useEffect(() => {
     );
   }, [visualScale]);
 
+  async function unlockIOSAudio(ctx: AudioContext) {
+  const nav = navigator as Navigator & {
+    audioSession?: {
+      type?: string;
+    };
+  };
+
+  try {
+    if (nav.audioSession) {
+      nav.audioSession.type = "playback";
+    }
+  } catch {
+    // Ignore unsupported Safari versions.
+  }
+
+  if (ctx.state === "suspended" || ctx.state === "interrupted") {
+    await ctx.resume();
+  }
+
+  const buffer = ctx.createBuffer(1, 1, ctx.sampleRate);
+  const source = ctx.createBufferSource();
+  const gain = ctx.createGain();
+
+  gain.gain.value = 0.00001;
+
+  source.buffer = buffer;
+  source.connect(gain);
+  gain.connect(ctx.destination);
+  source.start(0);
+}
+
+
   const toggle = useCallback(async () => {
     if (playingRef.current) {
       stop();
@@ -832,7 +864,7 @@ useEffect(() => {
 
     const ctx = createAudio();
 
-    if (ctx.state === "suspended") await ctx.resume();
+    await unlockIOSAudio(ctx);
 
     filterRef.current?.frequency.setTargetAtTime(
       soundState.filter,
@@ -875,6 +907,28 @@ useEffect(() => {
     stop,
     visualScale,
   ]);
+
+  useEffect(() => {
+  function resumeAfterInterruption() {
+    const ctx = audioRef.current;
+
+    if (!ctx || !playingRef.current) return;
+
+    if (ctx.state === "suspended" || ctx.state === "interrupted") {
+      void ctx.resume();
+    }
+  }
+
+  document.addEventListener("visibilitychange", resumeAfterInterruption);
+  window.addEventListener("focus", resumeAfterInterruption);
+  window.addEventListener("pageshow", resumeAfterInterruption);
+
+  return () => {
+    document.removeEventListener("visibilitychange", resumeAfterInterruption);
+    window.removeEventListener("focus", resumeAfterInterruption);
+    window.removeEventListener("pageshow", resumeAfterInterruption);
+  };
+}, []);
 
   return (
     <button
