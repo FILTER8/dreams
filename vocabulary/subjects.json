@@ -108,5 +108,17 @@
     "source": "ratchet-vex",
     "cycle": "20602",
     "weight": 1
+  },
+  {
+    "text": "The cassette memory",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "The forgotten terminals",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
   }
 ]

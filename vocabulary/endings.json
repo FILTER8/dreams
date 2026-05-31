@@ -96,5 +96,29 @@
     "source": "ratchet-vex",
     "cycle": "20602",
     "weight": 1
+  },
+  {
+    "text": "a silver chime.",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "a woven thread.",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "a distant spark.",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "a spectral dance.",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
   }
 ]

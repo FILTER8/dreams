@@ -90,5 +90,17 @@
     "source": "ratchet-vex",
     "cycle": "20602",
     "weight": 1
+  },
+  {
+    "text": "builds an archive",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "waits for hope",
+    "source": "ratchet-vex",
+    "cycle": "20603",
+    "weight": 1
   }
 ]
