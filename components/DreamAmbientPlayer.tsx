@@ -256,8 +256,8 @@ export function DreamAmbientPlayer({
       tempo: clamp(2.2 - orbit / 300, 0.95, 1.85),
       driftRate: clamp(drift / 170, 0.55, 1.15),
 
-      delay: 0.48 + traits.contourCount * 0.14,
-      feedback: 0.3 + traits.contourCount * 0.09,
+      delay: 0.78 + traits.contourCount * 0.18,
+feedback: 0.5 + traits.contourCount * 0.1,
       filter: 620 + traits.bgColor * 90 + traits.blobCount * 80,
     };
   }, [dreamSeed, motion, palette, tokenId, visualTraits]);
@@ -337,48 +337,142 @@ export function DreamAmbientPlayer({
     [],
   );
 
-  const playCrackle = useCallback(
-    (ctx: AudioContext, time: number) => {
-      const duration = 0.008 + Math.random() * 0.024;
-      const bufferSize = Math.max(1, Math.floor(ctx.sampleRate * duration));
-      const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
-      const data = buffer.getChannelData(0);
+  const playBassTone = useCallback(
+  (
+    ctx: AudioContext,
+    freq: number,
+    time: number,
+    duration: number,
+    gain: number,
+    pan = 0,
+  ) => {
+    const trackGain = trackGainsRef.current.bass;
+    if (!trackGain) return;
 
-      let reg = 0x7fff;
+    const osc = ctx.createOscillator();
+    const sub = ctx.createOscillator();
+    const amp = ctx.createGain();
+    const tone = ctx.createBiquadFilter();
+    const panner = ctx.createStereoPanner();
 
-      for (let i = 0; i < bufferSize; i++) {
-        const bit = (reg ^ (reg >> 1)) & 1;
-        reg = (reg >> 1) | (bit << 14);
+    osc.type = "triangle";
+    sub.type = "sine";
 
-        const noise = reg & 1 ? 1 : -1;
-        const fade = Math.pow(1 - i / bufferSize, 6);
+    osc.frequency.setValueAtTime(freq, time);
+    sub.frequency.setValueAtTime(freq / 2, time);
 
-        data[i] = noise * fade;
-      }
+    tone.type = "lowpass";
+    tone.frequency.setValueAtTime(420, time);
+    tone.Q.value = 0.9;
 
-      const source = ctx.createBufferSource();
-      const amp = ctx.createGain();
-      const filter = ctx.createBiquadFilter();
+    amp.gain.setValueAtTime(0.0001, time);
+    amp.gain.linearRampToValueAtTime(gain, time + 0.04);
+    amp.gain.exponentialRampToValueAtTime(gain * 0.55, time + duration * 0.35);
+    amp.gain.exponentialRampToValueAtTime(0.0001, time + duration);
 
+    panner.pan.setValueAtTime(pan, time);
+
+    osc.connect(amp);
+    sub.connect(amp);
+    amp.connect(tone);
+    tone.connect(panner);
+    panner.connect(trackGain);
+
+    osc.start(time);
+    sub.start(time);
+    osc.stop(time + duration + 0.05);
+    sub.stop(time + duration + 0.05);
+  },
+  [],
+);
+
+  const playNatureParticle = useCallback(
+  (ctx: AudioContext, time: number) => {
+    const typeRoll = soundState.random();
+
+    const isBird =
+      soundState.satelliteCount >= 3 &&
+      typeRoll > 0.78;
+
+    const isRain =
+      soundState.ditherCount >= 2 &&
+      typeRoll <= 0.78;
+
+    const duration = isBird
+      ? 0.08 + soundState.random() * 0.18
+      : isRain
+        ? 0.035 + soundState.random() * 0.09
+        : 0.05 + soundState.random() * 0.14;
+
+    const bufferSize = Math.max(1, Math.floor(ctx.sampleRate * duration));
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+
+    let reg = 0x7fff;
+
+    for (let i = 0; i < bufferSize; i++) {
+      const bit = (reg ^ (reg >> 1)) & 1;
+      reg = (reg >> 1) | (bit << 14);
+
+      const noise = reg & 1 ? 1 : -1;
+      const t = i / bufferSize;
+
+      const envelope = isBird
+        ? Math.sin(Math.PI * t) * Math.pow(1 - t, 0.7)
+        : isRain
+          ? Math.pow(1 - t, 2.8)
+          : Math.sin(Math.PI * t) * Math.pow(1 - t, 1.6);
+
+      data[i] = noise * envelope;
+    }
+
+    const source = ctx.createBufferSource();
+    const amp = ctx.createGain();
+    const filter = ctx.createBiquadFilter();
+    const panner = ctx.createStereoPanner();
+
+    if (isBird) {
+      filter.type = "bandpass";
+      filter.frequency.value = 1800 + soundState.random() * 2800;
+      filter.Q.value = 6 + soundState.random() * 8;
+    } else if (isRain) {
       filter.type = "highpass";
-      filter.frequency.value = 1400 + Math.random() * 3200;
+      filter.frequency.value = 1800 + soundState.random() * 1600;
+      filter.Q.value = 0.7;
+    } else {
+      filter.type = "bandpass";
+      filter.frequency.value = 500 + soundState.random() * 1600;
+      filter.Q.value = 0.8 + soundState.random() * 1.2;
+    }
 
-      amp.gain.setValueAtTime(0.0001, time);
-      amp.gain.linearRampToValueAtTime(
-        0.004 + Math.random() * 0.008 + soundState.ditherCount * 0.002,
-        time + 0.002,
-      );
-      amp.gain.exponentialRampToValueAtTime(0.0001, time + duration);
+    panner.pan.setValueAtTime(-0.9 + soundState.random() * 1.8, time);
 
-      source.buffer = buffer;
-      source.connect(filter);
-      filter.connect(amp);
-      amp.connect(ctx.destination);
+    amp.gain.setValueAtTime(0.0001, time);
+amp.gain.linearRampToValueAtTime(
+  isBird
+    ? 0.01
+    : isRain
+      ? 0.003 + soundState.ditherCount * 0.001
+      : 0.003 + soundState.ditherCount * 0.0008,
+  time + 0.006,
+);
+    amp.gain.exponentialRampToValueAtTime(0.0001, time + duration);
 
-      source.start(time);
-    },
-    [soundState.ditherCount],
-  );
+source.buffer = buffer;
+source.connect(filter);
+filter.connect(amp);
+amp.connect(panner);
+
+panner.connect(ctx.destination);
+
+if (delayRef.current) {
+  panner.connect(delayRef.current);
+}
+
+source.start(time);
+  },
+  [soundState],
+);
 
   const createAudio = useCallback(() => {
     if (audioRef.current) return audioRef.current;
@@ -445,7 +539,7 @@ export function DreamAmbientPlayer({
   const playFloatingArp = useCallback(
     (ctx: AudioContext, root: number, chord: number[], time: number) => {
       const pattern = [...chord, ...JAZZ_TENSIONS].slice(0, 6);
-      const stepTime = 0.13 + soundState.random() * 0.08;
+      const stepTime = 0.09 + soundState.random() * 0.22;
 
       pattern.forEach((degree, index) => {
         playPianoTone(
@@ -463,165 +557,224 @@ export function DreamAmbientPlayer({
     [playPianoTone, soundState],
   );
 
-  const scheduleCrackles = useCallback(() => {
-    const ctx = audioRef.current;
-    if (!ctx || !playingRef.current) return;
+  const playPixelRepeater = useCallback(
+  (ctx: AudioContext, root: number, chord: number[], time: number) => {
+    const degree = pick([...chord, ...JAZZ_TENSIONS], soundState.random);
+    const repeats = 4 + soundState.ditherCount * 2 + Math.floor(soundState.random() * 4);
+    const rate = 0.045 + soundState.random() * 0.055;
 
-    const chance = 0.9 - soundState.ditherCount * 0.08;
-
-    if (soundState.random() > chance) {
-      playCrackle(ctx, ctx.currentTime + soundState.random() * 0.2);
+    for (let i = 0; i < repeats; i++) {
+      playPianoTone(
+        ctx,
+        "sparkle",
+        midiToFreq(root + degree + 24),
+        time + i * rate + soundState.random() * 0.018,
+        0.35 + soundState.random() * 0.35,
+        0.007 + soundState.ditherCount * 0.002,
+        -0.8 + soundState.random() * 1.6,
+        -16 + soundState.random() * 32,
+      );
     }
+  },
+  [playPianoTone, soundState],
+);
 
-    const next = 2800 - soundState.ditherCount * 420 + soundState.random() * 7600;
+ const scheduleCrackles = useCallback(() => {
+  const ctx = audioRef.current;
+  if (!ctx || !playingRef.current) return;
 
-    crackleTimerRef.current = window.setTimeout(() => {
-      scheduleCracklesRef.current();
-    }, next);
-  }, [playCrackle, soundState]);
+  const particleChance = 0.72 - soundState.ditherCount * 0.09;
+
+  if (soundState.random() > particleChance) {
+    const count =
+      1 +
+      Math.floor(
+        soundState.random() * (1 + soundState.ditherCount),
+      );
+
+    for (let i = 0; i < count; i++) {
+      playNatureParticle(
+        ctx,
+        ctx.currentTime + soundState.random() * 0.6,
+      );
+    }
+  }
+
+  const next =
+    1800 -
+    soundState.ditherCount * 260 +
+    soundState.random() * 5200;
+
+  crackleTimerRef.current = window.setTimeout(() => {
+    scheduleCracklesRef.current();
+  }, next);
+}, [playNatureParticle, soundState]);
 
 useEffect(() => {
   scheduleCracklesRef.current = scheduleCrackles;
 }, [scheduleCrackles]);
 
-  const schedule = useCallback(() => {
-    const ctx = audioRef.current;
-    if (!ctx || !playingRef.current) return;
+ const schedule = useCallback(() => {
+  const ctx = audioRef.current;
+  if (!ctx || !playingRef.current) return;
 
-    while (nextTimeRef.current < ctx.currentTime + 1.25) {
-      const step = stepRef.current;
-      const chord = soundState.chord;
-      const harmonicPhase = Math.floor(step / 64);
+  function drift(amount: number) {
+    return (soundState.random() - 0.5) * amount;
+  }
 
-      const rootShift =
-        harmonicPhase % 4 === 0
-          ? 0
-          : harmonicPhase % 4 === 1
-            ? -5
-            : harmonicPhase % 4 === 2
-              ? -3
-              : 2;
+  while (nextTimeRef.current < ctx.currentTime + 1.25) {
+    const step = stepRef.current;
+    const chord = soundState.chord;
+    const harmonicPhase = Math.floor(step / 64);
 
-      const root = soundState.root + rootShift;
+    const rootShift =
+      harmonicPhase % 4 === 0
+        ? 0
+        : harmonicPhase % 4 === 1
+          ? -5
+          : harmonicPhase % 4 === 2
+            ? -3
+            : 2;
 
-      if (step % 24 === 0) {
-        const nextState = pickWeightedState(
-          soundState.random,
-          soundState.stateWeights,
-        );
-        currentStateRef.current = nextState;
-        fadeTracks(nextState, nextTimeRef.current);
-      }
+    const root = soundState.root + rootShift;
 
-      const tracks = currentStateRef.current;
-
-      if (tracks.chords && step % 8 === 0) {
-        chord.forEach((degree, index) => {
-          playPianoTone(
-            ctx,
-            "chords",
-            midiToFreq(root + degree),
-            nextTimeRef.current + index * 0.04,
-            3.8 + soundState.random() * 2.4,
-            0.024 + soundState.blobCount * 0.002,
-            -0.42 + index * 0.2,
-            -9 + soundState.random() * 18,
-          );
-        });
-      }
-
-      if (tracks.bass && step % 16 === 0) {
-        playPianoTone(
-          ctx,
-          "bass",
-          midiToFreq(root - 24),
-          nextTimeRef.current,
-          2.7,
-          0.075,
-          -0.1,
-        );
-
-        if (soundState.random() > 0.38) {
-          playPianoTone(
-            ctx,
-            "bass",
-            midiToFreq(root + 7 - 24),
-            nextTimeRef.current + soundState.tempo * 0.75,
-            1.9,
-            0.05,
-            0.08,
-          );
-        }
-      }
-
-      const melodyChance = clamp(
-        0.26 - soundState.satelliteCount * 0.025,
-        0.08,
-        0.28,
+    if (step % 24 === 0) {
+      const nextState = pickWeightedState(
+        soundState.random,
+        soundState.stateWeights,
       );
-
-      if (
-        tracks.melody &&
-        step % 4 === 0 &&
-        soundState.random() > melodyChance
-      ) {
-        const melodyPool = [...chord, ...JAZZ_TENSIONS];
-        const degree = pick(melodyPool, soundState.random);
-
-        playPianoTone(
-          ctx,
-          "melody",
-          midiToFreq(root + degree + 12),
-          nextTimeRef.current + soundState.random() * 0.14,
-          1.6 + soundState.random() * 1.7,
-          0.032,
-          -0.65 + soundState.random() * 1.3,
-          -5 + soundState.random() * 10,
-        );
-      }
-
-      const sparkleChance = clamp(
-        0.44 - soundState.satelliteCount * 0.03,
-        0.16,
-        0.44,
-      );
-
-      if (
-        tracks.sparkle &&
-        step % 7 === 0 &&
-        soundState.random() > sparkleChance
-      ) {
-        const extension = pick(JAZZ_TENSIONS, soundState.random);
-
-        playPianoTone(
-          ctx,
-          "sparkle",
-          midiToFreq(root + extension + 24),
-          nextTimeRef.current + 0.05 + soundState.random() * 0.16,
-          1.4 + soundState.random() * 2.2,
-          0.017,
-          Math.cos(step * 0.45),
-          -12 + soundState.random() * 24,
-        );
-      }
-
-      if (
-        tracks.sparkle &&
-        soundState.satelliteCount >= 3 &&
-        step % 32 === 0 &&
-        soundState.random() > 0.72
-      ) {
-        playFloatingArp(ctx, root, chord, nextTimeRef.current + 0.12);
-      }
-
-      nextTimeRef.current += soundState.tempo * soundState.driftRate;
-      stepRef.current += 1;
+      currentStateRef.current = nextState;
+      fadeTracks(nextState, nextTimeRef.current);
     }
 
-    timerRef.current = window.setTimeout(() => {
-      scheduleRef.current();
-    }, 110);
-  }, [fadeTracks, playFloatingArp, playPianoTone, soundState]);
+    const tracks = currentStateRef.current;
+
+    if (tracks.chords && step % 8 === 0) {
+      chord.forEach((degree, index) => {
+        playPianoTone(
+          ctx,
+          "chords",
+          midiToFreq(root + degree),
+          nextTimeRef.current +
+            index * (0.03 + soundState.random() * 0.07) +
+            drift(0.15),
+          3.8 + soundState.random() * 2.4,
+          0.024 + soundState.blobCount * 0.002,
+          -0.42 + index * 0.2,
+          -9 + soundState.random() * 18,
+        );
+      });
+    }
+
+    if (tracks.bass && step % 16 === 0) {
+  playBassTone(
+    ctx,
+    midiToFreq(root - 24),
+    nextTimeRef.current + drift(0.12),
+    3.4,
+    0.095,
+    -0.08,
+  );
+
+  if (soundState.random() > 0.38) {
+    playBassTone(
+      ctx,
+      midiToFreq(root + 7 - 24),
+      nextTimeRef.current + soundState.tempo * 0.75 + drift(0.18),
+      2.4,
+      0.065,
+      0.08,
+    );
+  }
+}
+
+    const melodyChance = clamp(
+      0.26 - soundState.satelliteCount * 0.025,
+      0.08,
+      0.28,
+    );
+
+    if (
+      tracks.melody &&
+      step % 4 === 0 &&
+      soundState.random() > melodyChance
+    ) {
+      const melodyPool = [...chord, ...JAZZ_TENSIONS];
+      const degree = pick(melodyPool, soundState.random);
+
+      playPianoTone(
+        ctx,
+        "melody",
+        midiToFreq(root + degree + 12),
+        nextTimeRef.current + 0.05 + soundState.random() * 0.4,
+        1.6 + soundState.random() * 1.7,
+        0.032,
+        -0.65 + soundState.random() * 1.3,
+        -5 + soundState.random() * 10,
+      );
+    }
+
+    const sparkleChance = clamp(
+      0.44 - soundState.satelliteCount * 0.03,
+      0.16,
+      0.44,
+    );
+
+    if (
+      tracks.sparkle &&
+      step % 7 === 0 &&
+      soundState.random() > sparkleChance
+    ) {
+      const extension = pick(JAZZ_TENSIONS, soundState.random);
+
+      playPianoTone(
+        ctx,
+        "sparkle",
+        midiToFreq(root + extension + 12),
+        nextTimeRef.current + soundState.random() * 0.9,
+        1.4 + soundState.random() * 2.2,
+        0.011,
+        Math.cos(step * 0.45),
+        -12 + soundState.random() * 24,
+      );
+    }
+
+    if (
+      tracks.sparkle &&
+      soundState.satelliteCount >= 3 &&
+      step % 32 === 0 &&
+      soundState.random() > 0.78
+    ) {
+      playFloatingArp(
+        ctx,
+        root,
+        chord,
+        nextTimeRef.current + 0.25 + soundState.random() * 0.8,
+      );
+    }
+
+    if (
+  tracks.sparkle &&
+  soundState.ditherCount >= 1 &&
+  step % 11 === 0 &&
+  soundState.random() > 0.68
+) {
+  playPixelRepeater(
+    ctx,
+    root,
+    chord,
+    nextTimeRef.current + soundState.random() * 0.5,
+  );
+}
+
+    nextTimeRef.current += soundState.tempo * soundState.driftRate;
+    stepRef.current += 1;
+  }
+
+  timerRef.current = window.setTimeout(() => {
+    scheduleRef.current();
+  }, 110);
+}, [fadeTracks, playBassTone, playFloatingArp, playPianoTone, soundState]);
 
 useEffect(() => {
   scheduleRef.current = schedule;
