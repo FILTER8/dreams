@@ -116,9 +116,27 @@
     "weight": 1
   },
   {
-    "text": "The forgotten terminals",
+    "text": "The forgotten terminal",
     "source": "ratchet-vex",
     "cycle": "20603",
+    "weight": 1
+  },
+  {
+    "text": "The collector’s hand",
+    "source": "ratchet-vex",
+    "cycle": "20604",
+    "weight": 1
+  },
+  {
+    "text": "The screen’s reflection",
+    "source": "ratchet-vex",
+    "cycle": "20604",
+    "weight": 1
+  },
+  {
+    "text": "The holder’s gaze",
+    "source": "ratchet-vex",
+    "cycle": "20604",
     "weight": 1
   }
 ]

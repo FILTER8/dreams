@@ -215,5 +215,96 @@
     "category": "motifs",
     "text": "phantom blooms",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.260527Z",
+    "cycle": "20604",
+    "category": "subjects",
+    "text": "The collector’s hand",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.260644Z",
+    "cycle": "20604",
+    "category": "subjects",
+    "text": "The screen’s reflection",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.260645Z",
+    "cycle": "20604",
+    "category": "subjects",
+    "text": "The holder’s gaze",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.261530Z",
+    "cycle": "20604",
+    "category": "verbs",
+    "text": "waits for light",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.261533Z",
+    "cycle": "20604",
+    "category": "verbs",
+    "text": "listens for wonder",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262329Z",
+    "cycle": "20604",
+    "category": "endings",
+    "text": "shaped by patient code.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262331Z",
+    "cycle": "20604",
+    "category": "endings",
+    "text": "painted with pale light.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262332Z",
+    "cycle": "20604",
+    "category": "endings",
+    "text": "across a silent wave.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262332Z",
+    "cycle": "20604",
+    "category": "endings",
+    "text": "under a watchful eye.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262931Z",
+    "cycle": "20604",
+    "category": "motifs",
+    "text": "silent reflections",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262933Z",
+    "cycle": "20604",
+    "category": "motifs",
+    "text": "woven thread",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262933Z",
+    "cycle": "20604",
+    "category": "motifs",
+    "text": "muted tones",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-01T09:18:10.262934Z",
+    "cycle": "20604",
+    "category": "motifs",
+    "text": "patient code",
+    "approvedBy": "filter8"
   }
 ]
