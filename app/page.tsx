@@ -24,7 +24,7 @@ export default function Page() {
         <h1 className="cd-headline text-7xl md:text-8xl tracking-[0.18em] leading-tight">
           CHAIN<br />DREAMS
         </h1>
-        <p className="mt-8 text-xl tracking-[0.28em]">PERSISTENT SYNTHETIC ARTIFACTS</p>
+        <p className="mt-8 text-xl tracking-[0.28em]">TODAY'S DREAMS BECOMES TOMORROWS LANGUAGE</p>
         <div className="mt-10 flex flex-col gap-4 sm:flex-row">
           <a href={OPENSEA_COLLECTION_URL} target="_blank" rel="noreferrer" className="cd-button inline-block">
             MINT ON OPENSEA · 0.002 ETH
