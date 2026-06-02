@@ -144,23 +144,5 @@
     "source": "ratchet-vex",
     "cycle": "20604",
     "weight": 1
-  },
-  {
-    "text": "woven with light.",
-    "source": "ratchet-vex",
-    "cycle": "20605",
-    "weight": 1
-  },
-  {
-    "text": "tuned to wonder.",
-    "source": "ratchet-vex",
-    "cycle": "20605",
-    "weight": 1
-  },
-  {
-    "text": "under sleeping streams.",
-    "source": "ratchet-vex",
-    "cycle": "20605",
-    "weight": 1
   }
 ]
