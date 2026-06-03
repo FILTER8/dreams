@@ -96,5 +96,29 @@
     "source": "ratchet-vex",
     "cycle": "20603",
     "weight": 1
+  },
+  {
+    "text": "guides",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "connects",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "illuminates",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "resonates",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
   }
 ]

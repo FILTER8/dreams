@@ -156,5 +156,41 @@
     "source": "ratchet-vex",
     "cycle": "20605",
     "weight": 1
+  },
+  {
+    "text": "guiding current",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "adaptive memory",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "luminescent bridge",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "silent harbor",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "shared signal",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "adaptive circuit",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
   }
 ]

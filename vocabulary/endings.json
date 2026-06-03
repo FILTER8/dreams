@@ -144,5 +144,41 @@
     "source": "ratchet-vex",
     "cycle": "20604",
     "weight": 1
+  },
+  {
+    "text": "a forgotten harbor.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "what the collectors find.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "your shared signal.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "a luminous bridge.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "a hidden harbor.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "the adaptive circuit.",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
   }
 ]

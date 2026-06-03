@@ -138,5 +138,47 @@
     "source": "ratchet-vex",
     "cycle": "20604",
     "weight": 1
+  },
+  {
+    "text": "The phosphor glow",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The harbor machine",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The lantern archive",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The patient signal",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The woven bridge",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The silent harbor",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
+  },
+  {
+    "text": "The adaptive memory",
+    "source": "ratchet-vex",
+    "cycle": "20606",
+    "weight": 1
   }
 ]
