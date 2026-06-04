@@ -180,5 +180,41 @@
     "source": "ratchet-vex",
     "cycle": "20606",
     "weight": 1
+  },
+  {
+    "text": "The spectral lantern",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
+  },
+  {
+    "text": "The resonant archive",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
+  },
+  {
+    "text": "The shimmering harbor",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
+  },
+  {
+    "text": "The patient memory",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
+  },
+  {
+    "text": "The unfolding lantern",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
+  },
+  {
+    "text": "The measured harbor",
+    "source": "ratchet-vex",
+    "cycle": "20607",
+    "weight": 1
   }
 ]
