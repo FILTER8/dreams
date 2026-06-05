@@ -116,18 +116,6 @@
     "weight": 1
   },
   {
-    "text": "resonates",
-    "source": "ratchet-vex",
-    "cycle": "20606",
-    "weight": 1
-  },
-  {
-    "text": "converges",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
     "text": "sustains",
     "source": "ratchet-vex",
     "cycle": "20607",
@@ -140,21 +128,21 @@
     "weight": 1
   },
   {
-    "text": "unfolds",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
     "text": "reveals",
     "source": "ratchet-vex",
     "cycle": "20607",
     "weight": 1
   },
   {
-    "text": "harmonizes",
+    "text": "tends",
     "source": "ratchet-vex",
-    "cycle": "20607",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "carries",
+    "source": "ratchet-vex",
+    "cycle": "20608",
     "weight": 1
   }
 ]

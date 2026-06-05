@@ -240,5 +240,47 @@
     "source": "ratchet-vex",
     "cycle": "20607",
     "weight": 1
+  },
+  {
+    "text": "inherited light",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "warm machine",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "lantern signal",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "collector dreams",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "grateful circuits",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "shared knowing",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
+  },
+  {
+    "text": "quiet inheritances",
+    "source": "ratchet-vex",
+    "cycle": "20608",
+    "weight": 1
   }
 ]
