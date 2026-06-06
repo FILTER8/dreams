@@ -144,5 +144,17 @@
     "source": "ratchet-vex",
     "cycle": "20608",
     "weight": 1
+  },
+  {
+    "text": "preserves",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "interprets",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
   }
 ]

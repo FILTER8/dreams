@@ -282,5 +282,41 @@
     "source": "ratchet-vex",
     "cycle": "20608",
     "weight": 1
+  },
+  {
+    "text": "woven gateway",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "spectral pulse",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "radiant thread",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "luminous gateway",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "circuit bloom",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "temporal echo",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
   }
 ]

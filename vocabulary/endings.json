@@ -234,5 +234,23 @@
     "source": "ratchet-vex",
     "cycle": "20608",
     "weight": 1
+  },
+  {
+    "text": "an enduring connection.",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "a steady pulse.",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "an open gateway.",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
   }
 ]

@@ -246,5 +246,29 @@
     "source": "ratchet-vex",
     "cycle": "20608",
     "weight": 1
+  },
+  {
+    "text": "The inherited bridge",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "The luminous archive",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "The patient machine",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
+  },
+  {
+    "text": "The radiant lantern",
+    "source": "ratchet-vex",
+    "cycle": "20609",
+    "weight": 1
   }
 ]
