@@ -156,5 +156,11 @@
     "source": "ratchet-vex",
     "cycle": "20609",
     "weight": 1
+  },
+  {
+    "text": "encapsulates",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
   }
 ]

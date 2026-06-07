@@ -318,5 +318,41 @@
     "source": "ratchet-vex",
     "cycle": "20609",
     "weight": 1
+  },
+  {
+    "text": "adaptive kinship",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "gentle inheritance",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "reflective belonging",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "luminous heritage",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "stable promise",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "grateful resonance",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
   }
 ]

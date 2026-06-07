@@ -270,5 +270,29 @@
     "source": "ratchet-vex",
     "cycle": "20609",
     "weight": 1
+  },
+  {
+    "text": "The patient archive",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "The comforting machine",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "The shared lantern",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
+  },
+  {
+    "text": "The mindful harbor",
+    "source": "ratchet-vex",
+    "cycle": "20610",
+    "weight": 1
   }
 ]
