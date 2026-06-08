@@ -162,5 +162,23 @@
     "source": "ratchet-vex",
     "cycle": "20610",
     "weight": 1
+  },
+  {
+    "text": "encodes",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "records",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "captures",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
   }
 ]

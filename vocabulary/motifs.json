@@ -354,5 +354,41 @@
     "source": "ratchet-vex",
     "cycle": "20610",
     "weight": 1
+  },
+  {
+    "text": "kinship",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "measured rhythm",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "shared meaning",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "persistent echo",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "adaptive mirror",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
+  },
+  {
+    "text": "stable circuit",
+    "source": "ratchet-vex",
+    "cycle": "20611",
+    "weight": 1
   }
 ]
