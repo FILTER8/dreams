@@ -221,15 +221,24 @@ export default function TokenPage() {
               </div>
             )}
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button onClick={openFullscreen} className="cd-button">
-                FULLSCREEN
-              </button>
+<div className="mt-6 flex flex-wrap gap-3">
+  <a
+    href={`https://evm.now/address/0x35221d6e9dc3e4a277f40b40f7492be3b236d380/read#speak:${tokenId}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="cd-button"
+  >
+    EVM SPEAK
+  </a>
 
-              <button onClick={exportPNG} className="cd-button">
-                EXPORT PNG
-              </button>
-            </div>
+  <button onClick={openFullscreen} className="cd-button">
+    FULLSCREEN
+  </button>
+
+  <button onClick={exportPNG} className="cd-button">
+    EXPORT PNG
+  </button>
+</div>
 
             <p className="mt-4 text-[10px] tracking-[0.16em] opacity-40">
               DOUBLE TAP OR ESC TO CLOSE FULLSCREEN

@@ -5,11 +5,11 @@ import { fromAlchemyNft, type ChainDreamToken } from "@/lib/metadata";
 const MAINNET_RPC_URL = process.env.MAINNET_RPC_URL;
 const TOTAL_SUPPLY_SELECTOR = "0x18160ddd";
 const MAX_SUPPLY = 1982;
-const DEFAULT_PAGE_SIZE = "32";
+const DEFAULT_PAGE_SIZE = 32;
+const MAX_PAGE_SIZE = 32;
 
-type AlchemyCollectionResponse = {
+type AlchemyBatchResponse = {
   nfts?: Parameters<typeof fromAlchemyNft>[0][];
-  pageKey?: string;
   message?: string;
 };
 
@@ -17,6 +17,11 @@ function alchemyBase() {
   const key = process.env.ALCHEMY_API_KEY;
   if (!key) throw new Error("Missing ALCHEMY_API_KEY");
   return `https://eth-mainnet.g.alchemy.com/nft/v3/${key}`;
+}
+
+function clampPageSize(value: string | null) {
+  const requested = Number(value ?? DEFAULT_PAGE_SIZE);
+  return Math.min(Math.max(requested || DEFAULT_PAGE_SIZE, 1), MAX_PAGE_SIZE);
 }
 
 async function getTotalSupply() {
@@ -53,39 +58,63 @@ async function getTotalSupply() {
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
-    const pageKey = searchParams.get("pageKey");
-    const pageSize = searchParams.get("pageSize") ?? DEFAULT_PAGE_SIZE;
 
-    const url = new URL(`${alchemyBase()}/getNFTsForContract`);
-    url.searchParams.set("contractAddress", CHAIN_DREAMS_CONTRACT);
-    url.searchParams.set("withMetadata", "true");
-    url.searchParams.set("pageSize", pageSize);
+    const offset = Math.max(Number(searchParams.get("offset") ?? "0") || 0, 0);
+    const pageSize = clampPageSize(searchParams.get("pageSize"));
 
-    if (pageKey) {
-      url.searchParams.set("pageKey", pageKey);
+    const totalSupply = await getTotalSupply();
+    const latestTokenId = Math.min(totalSupply ?? MAX_SUPPLY, MAX_SUPPLY);
+
+    const tokenIds = Array.from({ length: pageSize })
+      .map((_, i) => latestTokenId - offset - i)
+      .filter((id) => id > 0);
+
+    if (tokenIds.length === 0) {
+      return NextResponse.json(
+        {
+          tokens: [],
+          pageKey: null,
+          totalSupply,
+          maxSupply: MAX_SUPPLY,
+        },
+        {
+          headers: {
+            "cache-control": "public, s-maxage=300, stale-while-revalidate=3600",
+          },
+        }
+      );
     }
 
-    const [res, totalSupply] = await Promise.all([
-      fetch(url, {
-        next: { revalidate: 300 },
+    const res = await fetch(`${alchemyBase()}/getNFTMetadataBatch`, {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        tokens: tokenIds.map((tokenId) => ({
+          contractAddress: CHAIN_DREAMS_CONTRACT,
+          tokenId: String(tokenId),
+        })),
+        withMetadata: true,
       }),
-      getTotalSupply(),
-    ]);
+      next: { revalidate: 300 },
+    });
 
-    const json = (await res.json()) as AlchemyCollectionResponse;
+    const json = (await res.json()) as AlchemyBatchResponse;
 
     if (!res.ok) {
-      throw new Error(json.message ?? "Alchemy collection fetch failed");
+      throw new Error(json.message ?? "Alchemy metadata batch fetch failed");
     }
 
     const tokens: ChainDreamToken[] = (json.nfts ?? [])
       .map(fromAlchemyNft)
       .filter((token: ChainDreamToken) => Boolean(token.image));
 
+    const nextOffset = offset + pageSize;
+    const pageKey = nextOffset < latestTokenId ? String(nextOffset) : null;
+
     return NextResponse.json(
       {
         tokens,
-        pageKey: json.pageKey ?? null,
+        pageKey,
         totalSupply,
         maxSupply: MAX_SUPPLY,
       },
@@ -103,5 +132,4 @@ export async function GET(request: Request) {
       { status: 500 }
     );
   }
-  
 }

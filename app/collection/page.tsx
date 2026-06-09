@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import { toPng } from "html-to-image";
+import { saveAs } from "file-saver";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 import { TokenImage } from "@/components/TokenImage";
@@ -15,9 +17,11 @@ type CollectionResponse = {
   error?: string;
 };
 
+type ExportGridSize = 2 | 3 | 4;
+
 async function fetchCollection(next?: string | null): Promise<CollectionResponse> {
   const url = next
-    ? `/api/collection?pageKey=${encodeURIComponent(next)}`
+    ? `/api/collection?offset=${encodeURIComponent(next)}`
     : "/api/collection";
 
   const res = await fetch(url);
@@ -31,6 +35,8 @@ async function fetchCollection(next?: string | null): Promise<CollectionResponse
 }
 
 export default function CollectionPage() {
+  const exportRef = useRef<HTMLDivElement>(null);
+
   const [tokens, setTokens] = useState<ChainDreamToken[]>([]);
   const [pageKey, setPageKey] = useState<string | null>(null);
   const [totalSupply, setTotalSupply] = useState<number | null>(null);
@@ -39,6 +45,10 @@ export default function CollectionPage() {
   const [loadingMore, setLoadingMore] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
+  const [exportOpen, setExportOpen] = useState(false);
+  const [exportGrid, setExportGrid] = useState<ExportGridSize>(3);
+  const [exporting, setExporting] = useState(false);
+
   useEffect(() => {
     let ignore = false;
 
@@ -46,8 +56,8 @@ export default function CollectionPage() {
       .then((data) => {
         if (ignore) return;
 
-        const incoming = (data.tokens ?? []).filter(
-          (token) => Boolean(token.image)
+        const incoming = (data.tokens ?? []).filter((token) =>
+          Boolean(token.image)
         );
 
         setTokens(incoming);
@@ -60,12 +70,10 @@ export default function CollectionPage() {
       })
       .catch((err: unknown) => {
         if (ignore) return;
-
         setError(err instanceof Error ? err.message : "collection unavailable");
       })
       .finally(() => {
         if (ignore) return;
-
         setLoading(false);
       });
 
@@ -104,6 +112,32 @@ export default function CollectionPage() {
     }
   }
 
+  async function exportLatestGrid(size: ExportGridSize) {
+    if (!exportRef.current) return;
+
+    try {
+      setExporting(true);
+      setExportGrid(size);
+
+      await new Promise((resolve) => requestAnimationFrame(resolve));
+      await new Promise((resolve) => setTimeout(resolve, 250));
+
+      const dataUrl = await toPng(exportRef.current, {
+  pixelRatio: 2,
+  backgroundColor: "#000000",
+  cacheBust: true,
+  skipAutoScale: true,
+});
+
+      saveAs(dataUrl, `chain-dreams-latest-${size}x${size}.png`);
+      setExportOpen(false);
+    } finally {
+      setExporting(false);
+    }
+  }
+
+  const exportTokens = tokens.slice(0, exportGrid * exportGrid);
+
   return (
     <main className="cd-page">
       <SiteHeader />
@@ -112,9 +146,20 @@ export default function CollectionPage() {
         <div className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="cd-label">COLLECTION</p>
-            <h1 className="cd-headline text-4xl tracking-[0.12em] md:text-6xl">
-              ALL TOKENS
-            </h1>
+
+            <div className="flex flex-wrap items-center gap-4">
+              <h1 className="cd-headline text-4xl tracking-[0.12em] md:text-6xl">
+                ALL TOKENS
+              </h1>
+
+              <button
+                onClick={() => setExportOpen(true)}
+                disabled={loading || tokens.length === 0}
+                className="cd-button disabled:opacity-40"
+              >
+                EXPORT GRID
+              </button>
+            </div>
           </div>
 
           <div className="border border-[#222] px-5 py-4 text-right text-xs tracking-[0.18em]">
@@ -174,6 +219,75 @@ export default function CollectionPage() {
           </div>
         )}
       </section>
+
+      {exportOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-6">
+          <div className="w-full max-w-sm border border-[#222] bg-black p-6">
+            <div className="mb-6 flex items-center justify-between">
+              <p className="cd-label">EXPORT LATEST GRID</p>
+
+              <button
+                onClick={() => setExportOpen(false)}
+                disabled={exporting}
+                className="text-[10px] tracking-[0.18em] opacity-50 hover:opacity-100 disabled:opacity-20"
+              >
+                CLOSE
+              </button>
+            </div>
+
+            <div className="grid gap-3">
+              {[2, 3, 4].map((size) => (
+                <button
+                  key={size}
+                  onClick={() => exportLatestGrid(size as ExportGridSize)}
+                  disabled={exporting || tokens.length < size * size}
+                  className="cd-button disabled:opacity-40"
+                >
+                  {exporting && exportGrid === size
+                    ? "EXPORTING"
+                    : `${size}x${size}`}
+                </button>
+              ))}
+            </div>
+
+            <p className="mt-5 text-[10px] leading-relaxed tracking-[0.14em] opacity-40">
+              EXPORTS THE LATEST TOKENS CURRENTLY LOADED.
+            </p>
+          </div>
+        </div>
+      )}
+
+      <div className="pointer-events-none fixed -left-[9999px] top-0">
+       <div
+  ref={exportRef}
+  style={{
+    display: "grid",
+    gridTemplateColumns: `repeat(${exportGrid}, 1024px)`,
+    width: `${exportGrid * 1024}px`,
+    background: "#000000",
+    gap: 0,
+    overflow: "hidden",
+    lineHeight: 0,
+  }}
+>
+  {exportTokens.map((token) => (
+    <div
+      key={`export-${token.tokenId}`}
+      style={{
+        width: "1024px",
+        height: "1024px",
+        overflow: "hidden",
+        background: "#000000",
+        margin: 0,
+        padding: 0,
+        display: "block",
+      }}
+    >
+              <TokenImage tokenId={token.tokenId} image={token.image} />
+            </div>
+          ))}
+        </div>
+      </div>
 
       <SiteFooter />
     </main>
