@@ -1,8 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
+import { useSearchParams } from "next/navigation";
 import { useAccount } from "wagmi";
 import { SiteHeader } from "@/components/SiteHeader";
 import { TokenImage } from "@/components/TokenImage";
@@ -15,7 +16,16 @@ type DreamResponse = {
 };
 
 export default function AppPage() {
+  const searchParams = useSearchParams();
+  const pairedWallet = searchParams.get("wallet");
+
   const { address, isConnected } = useAccount();
+
+  const activeWallet = useMemo(() => {
+    return pairedWallet || (isConnected ? address : undefined);
+  }, [pairedWallet, isConnected, address]);
+
+  const isPairedMode = Boolean(pairedWallet);
 
   const [tokens, setTokens] = useState<ChainDreamToken[]>([]);
   const [dreams, setDreams] = useState<Record<string, DreamResponse>>({});
@@ -25,7 +35,7 @@ export default function AppPage() {
 
   useEffect(() => {
     async function loadWalletTokens() {
-      if (!address || !isConnected) {
+      if (!activeWallet) {
         setTokens([]);
         setDreams({});
         setError(null);
@@ -36,7 +46,7 @@ export default function AppPage() {
         setLoading(true);
         setError(null);
 
-        const res = await fetch(`/api/owner/${address}`, {
+        const res = await fetch(`/api/owner/${activeWallet}`, {
           cache: "no-store",
         });
 
@@ -57,11 +67,11 @@ export default function AppPage() {
     }
 
     loadWalletTokens();
-  }, [address, isConnected]);
+  }, [activeWallet]);
 
   useEffect(() => {
     async function loadDreams() {
-      if (!isConnected || tokens.length === 0) return;
+      if (!activeWallet || tokens.length === 0) return;
 
       try {
         setDreamsLoading(true);
@@ -98,7 +108,7 @@ export default function AppPage() {
     }
 
     loadDreams();
-  }, [isConnected, tokens]);
+  }, [activeWallet, tokens]);
 
   return (
     <main className="cd-page min-h-screen">
@@ -113,18 +123,26 @@ export default function AppPage() {
           </h1>
 
           <p className="mt-4 max-w-xl text-sm leading-7 opacity-60">
-            Save this page to your iPhone Home Screen and open your collector
-            dreams like an app.
+            {isPairedMode
+              ? "This app view is paired to your collector wallet."
+              : "Save this page to your iPhone Home Screen and open your collector dreams like an app."}
           </p>
+
+          {activeWallet && (
+            <p className="mt-4 break-all text-[10px] tracking-[0.14em] opacity-40">
+              WALLET {activeWallet}
+            </p>
+          )}
         </div>
 
-        {!isConnected && (
+        {!activeWallet && (
           <div className="flex min-h-[45vh] items-center justify-center border border-[#222] p-8 text-center">
             <div className="flex flex-col items-center">
-              <p className="cd-label mb-4">CONNECT WALLET</p>
+              <p className="cd-label mb-4">CONNECT OR PAIR WALLET</p>
 
               <p className="max-w-xl text-sm leading-8 opacity-60">
-                Connect your wallet to reveal your held Chain Dreams.
+                Connect your wallet here, or scan the APP QR code from the
+                collector page on desktop.
               </p>
 
               <div className="mt-8">
@@ -146,7 +164,7 @@ export default function AppPage() {
           </p>
         )}
 
-        {isConnected && !loading && tokens.length > 0 && (
+        {activeWallet && !loading && tokens.length > 0 && (
           <div className="mb-8 flex flex-wrap items-center justify-between gap-4 border border-[#222] px-5 py-4 text-xs tracking-[0.18em]">
             <p>{tokens.length} DREAMS HELD</p>
             <p className="opacity-50">
@@ -155,7 +173,7 @@ export default function AppPage() {
           </div>
         )}
 
-        {isConnected && !loading && tokens.length === 0 && (
+        {activeWallet && !loading && tokens.length === 0 && (
           <div className="flex min-h-[40vh] items-center justify-center border border-[#222] p-8 text-center">
             <p className="text-xs tracking-[0.16em] opacity-60">
               NO CHAIN DREAMS FOUND IN THIS WALLET
