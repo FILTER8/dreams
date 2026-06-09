@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
+import { QRCodeSVG } from "qrcode.react";
 import { toPng } from "html-to-image";
 import { saveAs } from "file-saver";
 import { useAccount } from "wagmi";
@@ -34,8 +35,14 @@ export default function CollectorsPage() {
   const [dreamsLoading, setDreamsLoading] = useState(false);
 
   const [exportOpen, setExportOpen] = useState(false);
+  const [appOpen, setAppOpen] = useState(false);
   const [exportMode, setExportMode] = useState<ExportMode>(3);
   const [exporting, setExporting] = useState(false);
+
+  const appUrl = useMemo(() => {
+    if (!address || typeof window === "undefined") return "";
+    return `${window.location.origin}/app?wallet=${address}`;
+  }, [address]);
 
   useEffect(() => {
     async function load() {
@@ -64,7 +71,9 @@ export default function CollectorsPage() {
         setTokens(data.tokens ?? []);
       } catch (err) {
         setTokens([]);
-        setError(err instanceof Error ? err.message : "wallet tokens unavailable");
+        setError(
+          err instanceof Error ? err.message : "wallet tokens unavailable",
+        );
       } finally {
         setLoading(false);
       }
@@ -104,9 +113,7 @@ export default function CollectorsPage() {
           const next = { ...prev };
 
           for (const result of results) {
-            if (result) {
-              next[result[0]] = result[1];
-            }
+            if (result) next[result[0]] = result[1];
           }
 
           return next;
@@ -213,6 +220,13 @@ export default function CollectorsPage() {
                   >
                     EXPORT GRID
                   </button>
+
+                  <button
+                    onClick={() => setAppOpen(true)}
+                    className="cd-button"
+                  >
+                    APP
+                  </button>
                 </>
               )}
             </div>
@@ -290,6 +304,55 @@ export default function CollectorsPage() {
           </div>
         )}
       </section>
+
+      {appOpen && (
+        <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-6">
+          <div className="w-full max-w-sm border border-[#222] bg-black p-6 text-center">
+            <div className="mb-6 flex items-center justify-between">
+              <p className="cd-label">OPEN APP</p>
+
+              <button
+                onClick={() => setAppOpen(false)}
+                className="text-[10px] tracking-[0.18em] opacity-50 hover:opacity-100"
+              >
+                CLOSE
+              </button>
+            </div>
+
+            <p className="mb-5 text-xs leading-6 tracking-[0.12em] opacity-60">
+              Scan this QR code with your iPhone. It opens the Chain Dreams app
+              view for this wallet. Then use Share → Add to Home Screen.
+            </p>
+
+            {appUrl && (
+              <div className="mx-auto mb-5 flex w-fit bg-white p-4">
+                <QRCodeSVG
+                  value={appUrl}
+                  size={220}
+                  bgColor="#ffffff"
+                  fgColor="#000000"
+                  level="H"
+                />
+              </div>
+            )}
+
+            <p className="break-all text-[10px] leading-5 tracking-[0.08em] opacity-40">
+              {appUrl}
+            </p>
+
+            {appUrl && (
+              <a
+                href={appUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="cd-button mt-6 inline-flex"
+              >
+                OPEN APP LINK
+              </a>
+            )}
+          </div>
+        </div>
+      )}
 
       {exportOpen && (
         <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 p-6">
