@@ -1,6 +1,13 @@
 "use client";
 
-import { Suspense, useEffect, useRef, useState, useSyncExternalStore } from "react";
+import {
+  Suspense,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
+import jsQR from "jsqr";
 import { useSearchParams } from "next/navigation";
 import { TokenImage } from "@/components/TokenImage";
 import type { ChainDreamToken } from "@/lib/metadata";
@@ -39,7 +46,6 @@ function colorBrightness(color: string) {
   const r = parseInt(hex.slice(0, 2), 16);
   const g = parseInt(hex.slice(2, 4), 16);
   const b = parseInt(hex.slice(4, 6), 16);
-
   return (r * 299 + g * 587 + b * 114) / 1000;
 }
 
@@ -80,6 +86,23 @@ function subscribeToStandalone(callback: () => void) {
   return () => media.removeEventListener("change", callback);
 }
 
+function extractWalletFromQr(value: string) {
+  try {
+    if (/^0x[a-fA-F0-9]{40}$/.test(value)) return value;
+
+    const url = new URL(value);
+    const wallet = url.searchParams.get("wallet");
+
+    if (wallet && /^0x[a-fA-F0-9]{40}$/.test(wallet)) {
+      return wallet;
+    }
+
+    return null;
+  } catch {
+    return null;
+  }
+}
+
 function AppPageContent() {
   const searchParams = useSearchParams();
   const walletFromUrl = searchParams.get("wallet");
@@ -98,10 +121,18 @@ function AppPageContent() {
 
   const wallet = walletFromUrl ?? storedWallet;
 
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const streamRef = useRef<MediaStream | null>(null);
+  const scanFrameRef = useRef<number | null>(null);
+
   const touchStartX = useRef<number | null>(null);
   const lastTap = useRef(0);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressTriggered = useRef(false);
+
+  const [scannerOpen, setScannerOpen] = useState(false);
+  const [scannerError, setScannerError] = useState<string | null>(null);
 
   const [tokens, setTokens] = useState<ChainDreamToken[]>([]);
   const [dreams, setDreams] = useState<Record<string, DreamResponse>>({});
@@ -198,6 +229,92 @@ function AppPageContent() {
     loadDreams();
   }, [tokens, dreams]);
 
+  function saveWallet(nextWallet: string) {
+    window.localStorage.setItem(STORAGE_KEY, nextWallet);
+    window.location.reload();
+  }
+
+  function stopScanner() {
+    if (scanFrameRef.current) {
+      cancelAnimationFrame(scanFrameRef.current);
+      scanFrameRef.current = null;
+    }
+
+    streamRef.current?.getTracks().forEach((track) => track.stop());
+    streamRef.current = null;
+  }
+
+  async function startScanner() {
+    try {
+      setScannerError(null);
+      setScannerOpen(true);
+
+      const stream = await navigator.mediaDevices.getUserMedia({
+        video: {
+          facingMode: "environment",
+        },
+      });
+
+      streamRef.current = stream;
+
+      if (videoRef.current) {
+        videoRef.current.srcObject = stream;
+        await videoRef.current.play();
+      }
+
+      scanQrFrame();
+    } catch {
+      setScannerError("CAMERA UNAVAILABLE");
+    }
+  }
+
+  function closeScanner() {
+    stopScanner();
+    setScannerOpen(false);
+  }
+
+  function scanQrFrame() {
+    const video = videoRef.current;
+    const canvas = canvasRef.current;
+
+    if (!video || !canvas) {
+      scanFrameRef.current = requestAnimationFrame(scanQrFrame);
+      return;
+    }
+
+    if (video.readyState === video.HAVE_ENOUGH_DATA) {
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+
+      const ctx = canvas.getContext("2d");
+
+      if (ctx) {
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+        if (code?.data) {
+          const scannedWallet = extractWalletFromQr(code.data);
+
+          if (scannedWallet) {
+            stopScanner();
+            saveWallet(scannedWallet);
+            return;
+          }
+
+          setScannerError("QR FOUND, BUT NO WALLET LINK");
+        }
+      }
+    }
+
+    scanFrameRef.current = requestAnimationFrame(scanQrFrame);
+  }
+
+  useEffect(() => {
+    return () => stopScanner();
+  }, []);
+
   function openDream(index: number) {
     setSelectedIndex(index);
     setColorIndex(index % DREAM_COLORS.length);
@@ -212,16 +329,6 @@ function AppPageContent() {
   function goToDream(index: number) {
     setSelectedIndex(Math.max(0, Math.min(index, tokens.length - 1)));
     setColorIndex((current) => current + 1);
-  }
-
-  function nextDream() {
-    if (selectedIndex === null) return;
-    goToDream(selectedIndex + 1);
-  }
-
-  function prevDream() {
-    if (selectedIndex === null) return;
-    goToDream(selectedIndex - 1);
   }
 
   function changeColor() {
@@ -297,6 +404,7 @@ function AppPageContent() {
         ) : (
           <div className="h-screen w-screen">
             <TokenImage tokenId={token.tokenId} image={token.image} />
+
             <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
               HOLD DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
             </p>
@@ -347,9 +455,14 @@ function AppPageContent() {
       {!loading && error && (
         <div className="flex min-h-screen items-center justify-center p-8 text-center">
           <div>
-            <p className="cd-label mb-5">{error}</p>
-            <p className="max-w-sm text-xs leading-6 opacity-50">
-              SCAN THE APP QR CODE FROM YOUR COLLECTOR PAGE AGAIN.
+            <p className="cd-label mb-6">{error}</p>
+
+            <button onClick={startScanner} className="cd-button">
+              SCAN QR
+            </button>
+
+            <p className="mt-6 max-w-sm text-xs leading-6 opacity-50">
+              OPEN THE APP QR MODAL ON YOUR COLLECTOR PAGE, THEN SCAN IT HERE.
             </p>
           </div>
         </div>
@@ -373,6 +486,33 @@ function AppPageContent() {
               <TokenImage tokenId={token.tokenId} image={token.image} />
             </button>
           ))}
+        </div>
+      )}
+
+      {scannerOpen && (
+        <div className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-black p-6 text-center">
+          <p className="cd-label mb-6">SCAN APP QR</p>
+
+          <div className="relative aspect-square w-full max-w-sm overflow-hidden border border-[#222] bg-black">
+            <video
+              ref={videoRef}
+              muted
+              playsInline
+              className="h-full w-full object-cover"
+            />
+
+            <canvas ref={canvasRef} className="hidden" />
+          </div>
+
+          {scannerError && (
+            <p className="mt-5 text-xs tracking-[0.14em] text-[#bfce72]">
+              {scannerError}
+            </p>
+          )}
+
+          <button onClick={closeScanner} className="cd-button mt-6">
+            CLOSE
+          </button>
         </div>
       )}
 
@@ -402,12 +542,9 @@ function AppPageContent() {
 
             if (Math.abs(diff) < 50) return;
 
-            if (diff > 0 && selectedIndex < tokens.length - 1) {
-              nextDream();
-            }
-
-            if (diff < 0 && selectedIndex > 0) {
-              prevDream();
+            if (selectedIndex !== null) {
+              if (diff > 0) goToDream(selectedIndex + 1);
+              if (diff < 0) goToDream(selectedIndex - 1);
             }
           }}
           onMouseDown={startLongPress}
