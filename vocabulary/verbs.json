@@ -180,5 +180,17 @@
     "source": "ratchet-vex",
     "cycle": "20611",
     "weight": 1
+  },
+  {
+    "text": "anchors",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "stabilizes",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
   }
 ]

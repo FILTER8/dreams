@@ -390,5 +390,35 @@
     "source": "ratchet-vex",
     "cycle": "20611",
     "weight": 1
+  },
+  {
+    "text": "chromatic bloom",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "woven pathway",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "silver echo",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "layered current",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "polished lattice",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
   }
 ]

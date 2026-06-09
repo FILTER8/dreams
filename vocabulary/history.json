@@ -1202,5 +1202,117 @@
     "category": "motifs",
     "text": "stable circuit",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.287867Z",
+    "cycle": "20612",
+    "category": "subjects",
+    "text": "The spectral beacon",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.288096Z",
+    "cycle": "20612",
+    "category": "subjects",
+    "text": "The silent spire",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.288097Z",
+    "cycle": "20612",
+    "category": "subjects",
+    "text": "The folded glyph",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.288098Z",
+    "cycle": "20612",
+    "category": "subjects",
+    "text": "The layered mirror",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.288099Z",
+    "cycle": "20612",
+    "category": "subjects",
+    "text": "The silver thread",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.289779Z",
+    "cycle": "20612",
+    "category": "verbs",
+    "text": "anchors",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.289783Z",
+    "cycle": "20612",
+    "category": "verbs",
+    "text": "stabilizes",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.291203Z",
+    "cycle": "20612",
+    "category": "endings",
+    "text": "a forgotten fragment.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.291205Z",
+    "cycle": "20612",
+    "category": "endings",
+    "text": "an inherited grace.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.291206Z",
+    "cycle": "20612",
+    "category": "endings",
+    "text": "a spectral whisper.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.291207Z",
+    "cycle": "20612",
+    "category": "endings",
+    "text": "a layered dream.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.292651Z",
+    "cycle": "20612",
+    "category": "motifs",
+    "text": "chromatic bloom",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.292652Z",
+    "cycle": "20612",
+    "category": "motifs",
+    "text": "woven pathway",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.292653Z",
+    "cycle": "20612",
+    "category": "motifs",
+    "text": "silver echo",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.292654Z",
+    "cycle": "20612",
+    "category": "motifs",
+    "text": "layered current",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-09T06:55:02.292655Z",
+    "cycle": "20612",
+    "category": "motifs",
+    "text": "polished lattice",
+    "approvedBy": "filter8"
   }
 ]

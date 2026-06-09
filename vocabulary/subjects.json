@@ -330,5 +330,35 @@
     "source": "ratchet-vex",
     "cycle": "20611",
     "weight": 1
+  },
+  {
+    "text": "The spectral beacon",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "The silent spire",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "The folded glyph",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "The layered mirror",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
+  },
+  {
+    "text": "The silver thread",
+    "source": "ratchet-vex",
+    "cycle": "20612",
+    "weight": 1
   }
 ]
