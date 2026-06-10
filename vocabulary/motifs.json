@@ -420,5 +420,35 @@
     "source": "ratchet-vex",
     "cycle": "20612",
     "weight": 1
+  },
+  {
+    "text": "frozen circuits",
+    "source": "ratchet-vex",
+    "cycle": "20613",
+    "weight": 1
+  },
+  {
+    "text": "digital conduits",
+    "source": "ratchet-vex",
+    "cycle": "20613",
+    "weight": 1
+  },
+  {
+    "text": "patient cycles",
+    "source": "ratchet-vex",
+    "cycle": "20613",
+    "weight": 1
+  },
+  {
+    "text": "archived rhythms",
+    "source": "ratchet-vex",
+    "cycle": "20613",
+    "weight": 1
+  },
+  {
+    "text": "luminous veins",
+    "source": "ratchet-vex",
+    "cycle": "20613",
+    "weight": 1
   }
 ]
