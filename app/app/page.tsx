@@ -3,16 +3,19 @@
 import {
   Suspense,
   useEffect,
+  useMemo,
   useRef,
   useState,
   useSyncExternalStore,
 } from "react";
 import jsQR from "jsqr";
 import { useSearchParams } from "next/navigation";
+import { DreamAmbientPlayer } from "@/components/DreamAmbientPlayer";
 import { TokenImage } from "@/components/TokenImage";
 import type { ChainDreamToken } from "@/lib/metadata";
 
 const STORAGE_KEY = "chain-dreams-wallet";
+const STORAGE_EVENT = "chain-dreams-wallet-change";
 
 const DREAM_COLORS = [
   "#000000",
@@ -37,21 +40,33 @@ type DreamResponse = {
   tokenId: string;
   cycle: string | number;
   phrase: string;
+  dreamSeed?: string;
+};
+
+type VisualTraits = {
+  mood: number;
+  moodName: string;
+  blobCount: number;
+  ditherCount: number;
+  contourCount: number;
+  satelliteCount: number;
+  bgColor: number;
+};
+
+type VisualResponse = {
+  tokenId: string;
+  cycle: string;
+  dreamSeed: string;
+  traits?: VisualTraits;
+  motion: {
+    orbitSpeed: string;
+    driftSpeed: string;
+    ditherTempo: string;
+  };
 };
 
 type OverlayMode = "dream" | "visual";
-
-function colorBrightness(color: string) {
-  const hex = color.replace("#", "");
-  const r = parseInt(hex.slice(0, 2), 16);
-  const g = parseInt(hex.slice(2, 4), 16);
-  const b = parseInt(hex.slice(4, 6), 16);
-  return (r * 299 + g * 587 + b * 114) / 1000;
-}
-
-function readableColor(bg: string) {
-  return colorBrightness(bg) > 130 ? "#000000" : "#f4f4f4";
-}
+type TouchPoint = { clientX: number; clientY: number };
 
 function isStandaloneApp() {
   if (typeof window === "undefined") return false;
@@ -65,18 +80,6 @@ function isStandaloneApp() {
   );
 }
 
-function subscribeToStorage(callback: () => void) {
-  if (typeof window === "undefined") return () => {};
-
-  window.addEventListener("storage", callback);
-  return () => window.removeEventListener("storage", callback);
-}
-
-function getStoredWallet() {
-  if (typeof window === "undefined") return null;
-  return window.localStorage.getItem(STORAGE_KEY);
-}
-
 function subscribeToStandalone(callback: () => void) {
   if (typeof window === "undefined") return () => {};
 
@@ -86,6 +89,66 @@ function subscribeToStandalone(callback: () => void) {
   return () => media.removeEventListener("change", callback);
 }
 
+function getStoredWallet() {
+  if (typeof window === "undefined") return null;
+  return window.localStorage.getItem(STORAGE_KEY);
+}
+
+function subscribeToWallet(callback: () => void) {
+  if (typeof window === "undefined") return () => {};
+
+  window.addEventListener("storage", callback);
+  window.addEventListener(STORAGE_EVENT, callback);
+
+  return () => {
+    window.removeEventListener("storage", callback);
+    window.removeEventListener(STORAGE_EVENT, callback);
+  };
+}
+
+function saveStoredWallet(wallet: string) {
+  window.localStorage.setItem(STORAGE_KEY, wallet);
+  window.dispatchEvent(new Event(STORAGE_EVENT));
+}
+
+function colorBrightness(color: string) {
+  const hex = color.replace("#", "");
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+
+  return (r * 299 + g * 587 + b * 114) / 1000;
+}
+
+function readableColor(bg: string) {
+  return colorBrightness(bg) > 130 ? "#000000" : "#f4f4f4";
+}
+
+function clampScale(value: number) {
+  return Math.max(0.5, Math.min(6, value));
+}
+
+function decodeSvgDataUri(image?: string) {
+  if (!image) return "";
+
+  if (image.startsWith("data:image/svg+xml;base64,")) {
+    return atob(image.replace("data:image/svg+xml;base64,", ""));
+  }
+
+  if (image.startsWith("data:image/svg+xml;utf8,")) {
+    return decodeURIComponent(image.replace("data:image/svg+xml;utf8,", ""));
+  }
+
+  return image;
+}
+
+function extractTokenColors(image?: string) {
+  const svg = decodeSvgDataUri(image);
+  const matches = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
+
+  return Array.from(new Set(matches.map((color) => color.toLowerCase())));
+}
+
 function extractWalletFromQr(value: string) {
   try {
     if (/^0x[a-fA-F0-9]{40}$/.test(value)) return value;
@@ -93,9 +156,7 @@ function extractWalletFromQr(value: string) {
     const url = new URL(value);
     const wallet = url.searchParams.get("wallet");
 
-    if (wallet && /^0x[a-fA-F0-9]{40}$/.test(wallet)) {
-      return wallet;
-    }
+    if (wallet && /^0x[a-fA-F0-9]{40}$/.test(wallet)) return wallet;
 
     return null;
   } catch {
@@ -103,12 +164,16 @@ function extractWalletFromQr(value: string) {
   }
 }
 
+function distance(a: TouchPoint, b: TouchPoint) {
+  return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
+}
+
 function AppPageContent() {
   const searchParams = useSearchParams();
   const walletFromUrl = searchParams.get("wallet");
 
   const storedWallet = useSyncExternalStore(
-    subscribeToStorage,
+    subscribeToWallet,
     getStoredWallet,
     () => null,
   );
@@ -130,28 +195,57 @@ function AppPageContent() {
   const lastTap = useRef(0);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const longPressTriggered = useRef(false);
+  const ignoreTap = useRef(false);
+
+  const pinchStartDistance = useRef(0);
+  const pinchStartScale = useRef(1);
 
   const [scannerOpen, setScannerOpen] = useState(false);
   const [scannerError, setScannerError] = useState<string | null>(null);
 
   const [tokens, setTokens] = useState<ChainDreamToken[]>([]);
   const [dreams, setDreams] = useState<Record<string, DreamResponse>>({});
+  const [visuals, setVisuals] = useState<Record<string, VisualResponse>>({});
+
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [colorIndex, setColorIndex] = useState(0);
   const [overlayMode, setOverlayMode] = useState<OverlayMode>("dream");
+  const [dragX, setDragX] = useState(0);
+  const [visualScale, setVisualScale] = useState(1);
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
 
-  const bg = DREAM_COLORS[colorIndex % DREAM_COLORS.length];
+  const selectedDream = selectedToken ? dreams[selectedToken.tokenId] : null;
+
+  const backgrounds = useMemo(() => {
+    const next: Record<string, string> = {};
+
+    for (const token of tokens) {
+      const colors = extractTokenColors(token.image);
+      next[token.tokenId] = colors[0] ?? "#000000";
+    }
+
+    return next;
+  }, [tokens]);
+
+  const selectedColors = extractTokenColors(selectedToken?.image);
+
+  const visualBg =
+    (selectedToken && backgrounds[selectedToken.tokenId]) ||
+    selectedColors[0] ||
+    "#000000";
+
+  const dreamBg = DREAM_COLORS[colorIndex % DREAM_COLORS.length];
+  const bg = overlayMode === "visual" ? visualBg : dreamBg;
   const fg = readableColor(bg);
 
   useEffect(() => {
     if (!walletFromUrl) return;
-    window.localStorage.setItem(STORAGE_KEY, walletFromUrl);
+    saveStoredWallet(walletFromUrl);
   }, [walletFromUrl]);
 
   useEffect(() => {
@@ -180,9 +274,7 @@ function AppPageContent() {
         setTokens(data.tokens ?? []);
       } catch (err) {
         setTokens([]);
-        setError(
-          err instanceof Error ? err.message : "wallet tokens unavailable",
-        );
+        setError(err instanceof Error ? err.message : "wallet tokens unavailable");
       } finally {
         setLoading(false);
       }
@@ -229,9 +321,35 @@ function AppPageContent() {
     loadDreams();
   }, [tokens, dreams]);
 
+  useEffect(() => {
+    async function loadSelectedVisual() {
+      if (!selectedToken || visuals[selectedToken.tokenId]) return;
+
+      try {
+        const res = await fetch(`/api/visual/${selectedToken.tokenId}`, {
+          cache: "no-store",
+        });
+
+        if (!res.ok) return;
+
+        const visual = (await res.json()) as VisualResponse;
+
+        setVisuals((prev) => ({
+          ...prev,
+          [selectedToken.tokenId]: visual,
+        }));
+      } catch {
+        // visual sound data can fail silently
+      }
+    }
+
+    loadSelectedVisual();
+  }, [selectedToken, visuals]);
+
   function saveWallet(nextWallet: string) {
-    window.localStorage.setItem(STORAGE_KEY, nextWallet);
-    window.location.reload();
+    saveStoredWallet(nextWallet);
+    setScannerOpen(false);
+    setScannerError(null);
   }
 
   function stopScanner() {
@@ -250,9 +368,7 @@ function AppPageContent() {
       setScannerOpen(true);
 
       const stream = await navigator.mediaDevices.getUserMedia({
-        video: {
-          facingMode: "environment",
-        },
+        video: { facingMode: "environment" },
       });
 
       streamRef.current = stream;
@@ -319,16 +435,23 @@ function AppPageContent() {
     setSelectedIndex(index);
     setColorIndex(index % DREAM_COLORS.length);
     setOverlayMode("dream");
+    setDragX(0);
+    setVisualScale(1);
   }
 
   function closeDream() {
     setSelectedIndex(null);
     setOverlayMode("dream");
+    setDragX(0);
+    setVisualScale(1);
   }
 
   function goToDream(index: number) {
-    setSelectedIndex(Math.max(0, Math.min(index, tokens.length - 1)));
+    const nextIndex = Math.max(0, Math.min(index, tokens.length - 1));
+    setSelectedIndex(nextIndex);
     setColorIndex((current) => current + 1);
+    setDragX(0);
+    setVisualScale(1);
   }
 
   function changeColor() {
@@ -337,6 +460,7 @@ function AppPageContent() {
 
   function toggleOverlayMode() {
     setOverlayMode((mode) => (mode === "dream" ? "visual" : "dream"));
+    setVisualScale(1);
   }
 
   function startLongPress() {
@@ -348,6 +472,7 @@ function AppPageContent() {
 
     longPressTimer.current = setTimeout(() => {
       longPressTriggered.current = true;
+      ignoreTap.current = true;
       toggleOverlayMode();
     }, 550);
   }
@@ -359,6 +484,11 @@ function AppPageContent() {
   }
 
   function handleDreamTap() {
+    if (ignoreTap.current) {
+      ignoreTap.current = false;
+      return;
+    }
+
     if (longPressTriggered.current) {
       longPressTriggered.current = false;
       return;
@@ -381,14 +511,21 @@ function AppPageContent() {
 
   function renderDreamSlide(token: ChainDreamToken) {
     const dream = dreams[token.tokenId];
+    const visual = visuals[token.tokenId];
+    const palette = extractTokenColors(token.image);
+    const slideBg = backgrounds[token.tokenId] ?? palette[0] ?? "#000000";
 
     return (
       <div
         key={token.tokenId}
-        className="flex h-full w-screen shrink-0 items-center justify-center p-6 text-center"
+        className="relative flex h-full w-screen shrink-0 items-center justify-center overflow-hidden text-center"
+        style={{
+          background: overlayMode === "visual" ? slideBg : bg,
+          color: fg,
+        }}
       >
         {overlayMode === "dream" ? (
-          <div className="max-w-5xl">
+          <div className="max-w-5xl p-6">
             <p className="mb-8 text-[10px] tracking-[0.22em] opacity-50">
               TOKEN #{token.tokenId}
             </p>
@@ -402,11 +539,34 @@ function AppPageContent() {
             </p>
           </div>
         ) : (
-          <div className="h-screen w-screen">
-            <TokenImage tokenId={token.tokenId} image={token.image} />
+          <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden">
+            {token.image && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={token.image}
+                alt={`Chain Dreams #${token.tokenId}`}
+                className="block h-screen w-screen object-contain"
+                style={{
+                  transform: `scale(${visualScale})`,
+                  transformOrigin: "50% 50%",
+                }}
+              />
+            )}
+
+            <div className="fixed right-4 top-4 z-20">
+              <DreamAmbientPlayer
+                tokenId={token.tokenId}
+                dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
+                palette={palette.length > 0 ? palette : DREAM_COLORS}
+                motion={visual?.motion}
+                foregroundColor={readableColor(slideBg)}
+                visualScale={visualScale}
+                visualTraits={visual?.traits}
+              />
+            </div>
 
             <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
-              HOLD DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
+              PINCH SCALE · HOLD DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
             </p>
           </div>
         )}
@@ -522,11 +682,44 @@ function AppPageContent() {
           style={{ background: bg, color: fg }}
           onClick={handleDreamTap}
           onTouchStart={(event) => {
+            if (event.touches.length === 2) {
+              pinchStartDistance.current = distance(
+                event.touches[0],
+                event.touches[1],
+              );
+              pinchStartScale.current = visualScale;
+              ignoreTap.current = true;
+              endLongPress();
+              return;
+            }
+
             touchStartX.current = event.touches[0]?.clientX ?? null;
             startLongPress();
           }}
-          onTouchMove={() => {
+          onTouchMove={(event) => {
+            if (event.touches.length === 2 && overlayMode === "visual") {
+              const nextDistance = distance(event.touches[0], event.touches[1]);
+              const ratio =
+                nextDistance / Math.max(pinchStartDistance.current, 1);
+
+              setVisualScale(clampScale(pinchStartScale.current * ratio));
+              ignoreTap.current = true;
+              return;
+            }
+
             endLongPress();
+
+            const startX = touchStartX.current;
+            const currentX = event.touches[0]?.clientX ?? null;
+
+            if (startX === null || currentX === null) return;
+
+            const nextDrag = currentX - startX;
+            setDragX(nextDrag);
+
+            if (Math.abs(nextDrag) > 8) {
+              ignoreTap.current = true;
+            }
           }}
           onTouchEnd={(event) => {
             endLongPress();
@@ -536,26 +729,30 @@ function AppPageContent() {
 
             touchStartX.current = null;
 
-            if (startX === null || endX === null) return;
+            if (startX === null || endX === null) {
+              setDragX(0);
+              return;
+            }
 
             const diff = startX - endX;
 
-            if (Math.abs(diff) < 50) return;
-
-            if (selectedIndex !== null) {
+            if (Math.abs(diff) > 70) {
               if (diff > 0) goToDream(selectedIndex + 1);
               if (diff < 0) goToDream(selectedIndex - 1);
+              return;
             }
+
+            setDragX(0);
           }}
           onMouseDown={startLongPress}
           onMouseUp={endLongPress}
           onMouseLeave={endLongPress}
         >
           <div
-            className="flex h-screen transition-transform duration-300 ease-out"
+            className="flex h-screen transition-transform duration-200 ease-out"
             style={{
               width: `${tokens.length * 100}vw`,
-              transform: `translateX(-${selectedIndex * 100}vw)`,
+              transform: `translateX(calc(-${selectedIndex * 100}vw + ${dragX}px))`,
             }}
           >
             {tokens.map((token) => renderDreamSlide(token))}
