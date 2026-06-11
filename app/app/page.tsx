@@ -62,7 +62,6 @@ type VisualResponse = {
   };
 };
 
-type OverlayMode = "dream" | "visual";
 type TouchPoint = { clientX: number; clientY: number };
 
 function isStandaloneApp() {
@@ -79,10 +78,8 @@ function isStandaloneApp() {
 
 function subscribeToStandalone(callback: () => void) {
   if (typeof window === "undefined") return () => {};
-
   const media = window.matchMedia("(display-mode: standalone)");
   media.addEventListener("change", callback);
-
   return () => media.removeEventListener("change", callback);
 }
 
@@ -113,7 +110,6 @@ function colorBrightness(color: string) {
   const r = parseInt(hex.slice(0, 2), 16);
   const g = parseInt(hex.slice(2, 4), 16);
   const b = parseInt(hex.slice(4, 6), 16);
-
   return (r * 299 + g * 587 + b * 114) / 1000;
 }
 
@@ -142,7 +138,6 @@ function decodeSvgDataUri(image?: string) {
 function extractTokenColors(image?: string) {
   const svg = decodeSvgDataUri(image);
   const matches = svg.match(/#[0-9a-fA-F]{6}/g) ?? [];
-
   return Array.from(new Set(matches.map((color) => color.toLowerCase())));
 }
 
@@ -192,10 +187,6 @@ function AppPageContent() {
   const streamRef = useRef<MediaStream | null>(null);
   const scanFrameRef = useRef<number | null>(null);
 
-  const touchStartX = useRef<number | null>(null);
-  const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const ignoreTap = useRef(false);
-
   const pinchStartDistance = useRef(0);
   const pinchStartScale = useRef(1);
 
@@ -211,10 +202,7 @@ function AppPageContent() {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [overlayMode, setOverlayMode] = useState<OverlayMode>("dream");
-  const [dragX, setDragX] = useState(0);
   const [visualScale, setVisualScale] = useState(1);
-  const [dreamBg, setDreamBg] = useState(randomColor());
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
@@ -239,16 +227,6 @@ function AppPageContent() {
 
     return next;
   }, [tokens]);
-
-  const selectedColors = extractTokenColors(selectedToken?.image);
-
-  const visualBg =
-    (selectedToken && backgrounds[selectedToken.tokenId]) ||
-    selectedColors[0] ||
-    "#000000";
-
-  const bg = overlayMode === "visual" ? visualBg : dreamBg;
-  const fg = readableColor(bg);
 
   useEffect(() => {
     if (!walletFromUrl) return;
@@ -352,7 +330,7 @@ function AppPageContent() {
           [selectedToken.tokenId]: visual,
         }));
       } catch {
-        // visual sound data can fail silently
+        // ignore visual failures
       }
     }
 
@@ -444,52 +422,14 @@ function AppPageContent() {
     return () => stopScanner();
   }, []);
 
-  function openDream(index: number) {
+  function openVisual(index: number) {
     setSelectedIndex(index);
-    setOverlayMode("dream");
-    setDragX(0);
     setVisualScale(1);
-    setDreamBg(randomColor());
   }
 
-  function closeDream() {
+  function closeVisual() {
     setSelectedIndex(null);
-    setOverlayMode("dream");
-    setDragX(0);
     setVisualScale(1);
-  }
-
-  function goToDream(index: number) {
-    const nextIndex = Math.max(0, Math.min(index, tokens.length - 1));
-    setSelectedIndex(nextIndex);
-    setOverlayMode("dream");
-    setDragX(0);
-    setVisualScale(1);
-    setDreamBg(randomColor());
-  }
-
-  function toggleOverlayMode() {
-    setOverlayMode((mode) => (mode === "dream" ? "visual" : "dream"));
-    setVisualScale(1);
-  }
-
-  function handleDreamTap() {
-    if (ignoreTap.current) {
-      ignoreTap.current = false;
-      return;
-    }
-
-    if (tapTimer.current) {
-      clearTimeout(tapTimer.current);
-      tapTimer.current = null;
-      closeDream();
-      return;
-    }
-
-    tapTimer.current = setTimeout(() => {
-      toggleOverlayMode();
-      tapTimer.current = null;
-    }, 240);
   }
 
   function renderDreamTile(token: ChainDreamToken) {
@@ -515,81 +455,76 @@ function AppPageContent() {
     );
   }
 
-  function renderDreamSlide(token: ChainDreamToken) {
+  function renderVisualOverlay(token: ChainDreamToken) {
     const dream = dreams[token.tokenId];
     const visual = visuals[token.tokenId];
     const palette = extractTokenColors(token.image);
-    const slideBg = backgrounds[token.tokenId] ?? palette[0] ?? "#000000";
-    const slideFg = overlayMode === "visual" ? readableColor(slideBg) : fg;
+    const bg = backgrounds[token.tokenId] ?? palette[0] ?? "#000000";
+    const fg = readableColor(bg);
 
     return (
       <div
-        key={token.tokenId}
-        className="relative flex h-full w-screen shrink-0 items-center justify-center overflow-hidden text-center"
-        style={{
-          background: overlayMode === "visual" ? slideBg : bg,
-          color: slideFg,
+        className="fixed inset-0 z-[9999] flex touch-none select-none items-center justify-center overflow-hidden"
+        style={{ background: bg, color: fg }}
+        onClick={closeVisual}
+        onTouchStart={(event) => {
+          if (event.touches.length === 2) {
+            pinchStartDistance.current = distance(
+              event.touches[0],
+              event.touches[1],
+            );
+            pinchStartScale.current = visualScale;
+          }
+        }}
+        onTouchMove={(event) => {
+          if (event.touches.length !== 2) return;
+
+          const nextDistance = distance(event.touches[0], event.touches[1]);
+          const ratio = nextDistance / Math.max(pinchStartDistance.current, 1);
+
+          setVisualScale(clampScale(pinchStartScale.current * ratio));
         }}
       >
         <div
           className="fixed right-4 z-30"
           style={{ top: "max(1rem, env(safe-area-inset-top))" }}
+          onClick={(event) => event.stopPropagation()}
         >
           <DreamAmbientPlayer
             tokenId={token.tokenId}
             dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
             palette={palette.length > 0 ? palette : DREAM_COLORS}
             motion={visual?.motion}
-            foregroundColor={slideFg}
+            foregroundColor={fg}
             visualScale={visualScale}
             visualTraits={visual?.traits}
           />
         </div>
 
-        {overlayMode === "dream" ? (
-          <div className="max-w-5xl p-6">
-            <p className="mb-8 text-[10px] tracking-[0.22em] opacity-50">
-              TOKEN #{token.tokenId}
-            </p>
-
-            <h1
-              className="cd-headline max-w-full whitespace-normal break-words text-5xl uppercase leading-[1.05] tracking-[0.06em] md:text-8xl"
-              style={{
-                overflowWrap: "anywhere",
-                wordBreak: "break-word",
-              }}
-            >
-              {dream?.phrase ?? "LOADING DREAM"}
-            </h1>
-
-            <p className="mt-8 text-[10px] tracking-[0.18em] opacity-50">
-              TAP VISUAL · DOUBLE TAP CLOSE · SWIPE DREAMS
-            </p>
-          </div>
-        ) : (
-          <div className="relative flex h-screen w-screen items-center justify-center overflow-hidden">
-            {token.image && (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img
-                src={token.image}
-                alt={`Chain Dreams #${token.tokenId}`}
-                className="block h-screen w-screen object-contain"
-                style={{
-                  transform: `scale(${visualScale})`,
-                  transformOrigin: "50% 50%",
-                  WebkitUserSelect: "none",
-                  userSelect: "none",
-                  WebkitTouchCallout: "none",
-                }}
-                draggable={false}
-              />
-            )}
-
-            <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
-              PINCH SCALE · TAP DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
-            </p>
-          </div>
+        {token.image && (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={token.image}
+            alt={`Chain Dreams #${token.tokenId}`}
+            className="block h-screen w-screen object-contain"
+            style={{
+              transform: `scale(${visualScale})`,
+              transformOrigin: "50% 50%",
+              WebkitUserSelect: "none",
+              userSelect: "none",
+              WebkitTouchCallout: "none",
+            }}
+            draggable={false}
+            onClick={(event) => {
+              event.stopPropagation();
+              closeVisual();
+            }}
+          />
         )}
+
+        <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
+          PINCH SCALE · TAP CLOSE
+        </p>
       </div>
     );
   }
@@ -662,9 +597,9 @@ function AppPageContent() {
           {tokens.map((token, index) => (
             <button
               key={token.tokenId}
-              onClick={() => openDream(index)}
+              onClick={() => openVisual(index)}
               className="aspect-square overflow-hidden bg-black p-0"
-              aria-label={`Open dream ${token.tokenId}`}
+              aria-label={`Open visual ${token.tokenId}`}
             >
               {renderDreamTile(token)}
             </button>
@@ -699,80 +634,7 @@ function AppPageContent() {
         </div>
       )}
 
-      {selectedIndex !== null && (
-        <div
-          className="fixed inset-0 z-[9999] touch-none select-none overflow-hidden"
-          style={{ background: bg, color: fg }}
-          onClick={handleDreamTap}
-          onTouchStart={(event) => {
-            if (event.touches.length === 2) {
-              pinchStartDistance.current = distance(
-                event.touches[0],
-                event.touches[1],
-              );
-              pinchStartScale.current = visualScale;
-              ignoreTap.current = true;
-              return;
-            }
-
-            touchStartX.current = event.touches[0]?.clientX ?? null;
-          }}
-          onTouchMove={(event) => {
-            if (event.touches.length === 2 && overlayMode === "visual") {
-              const nextDistance = distance(event.touches[0], event.touches[1]);
-              const ratio =
-                nextDistance / Math.max(pinchStartDistance.current, 1);
-
-              setVisualScale(clampScale(pinchStartScale.current * ratio));
-              ignoreTap.current = true;
-              return;
-            }
-
-            const startX = touchStartX.current;
-            const currentX = event.touches[0]?.clientX ?? null;
-
-            if (startX === null || currentX === null) return;
-
-            const nextDrag = currentX - startX;
-            setDragX(nextDrag);
-
-            if (Math.abs(nextDrag) > 8) {
-              ignoreTap.current = true;
-            }
-          }}
-          onTouchEnd={(event) => {
-            const startX = touchStartX.current;
-            const endX = event.changedTouches[0]?.clientX ?? null;
-
-            touchStartX.current = null;
-
-            if (startX === null || endX === null) {
-              setDragX(0);
-              return;
-            }
-
-            const diff = startX - endX;
-
-            if (Math.abs(diff) > 70) {
-              if (diff > 0) goToDream(selectedIndex + 1);
-              if (diff < 0) goToDream(selectedIndex - 1);
-              return;
-            }
-
-            setDragX(0);
-          }}
-        >
-          <div
-            className="flex h-screen transition-transform duration-200 ease-out"
-            style={{
-              width: `${tokens.length * 100}vw`,
-              transform: `translateX(calc(-${selectedIndex * 100}vw + ${dragX}px))`,
-            }}
-          >
-            {tokens.map((token) => renderDreamSlide(token))}
-          </div>
-        </div>
-      )}
+      {selectedToken && renderVisualOverlay(selectedToken)}
     </main>
   );
 }
