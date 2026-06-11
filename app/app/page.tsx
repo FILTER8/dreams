@@ -11,7 +11,6 @@ import {
 import jsQR from "jsqr";
 import { useSearchParams } from "next/navigation";
 import { DreamAmbientPlayer } from "@/components/DreamAmbientPlayer";
-import { TokenImage } from "@/components/TokenImage";
 import type { ChainDreamToken } from "@/lib/metadata";
 
 const STORAGE_KEY = "chain-dreams-wallet";
@@ -208,6 +207,7 @@ function AppPageContent() {
   const [visuals, setVisuals] = useState<Record<string, VisualResponse>>({});
 
   const [loading, setLoading] = useState(true);
+  const [dreamsLoading, setDreamsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -218,8 +218,6 @@ function AppPageContent() {
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
-
-  const selectedDream = selectedToken ? dreams[selectedToken.tokenId] : null;
 
   const backgrounds = useMemo(() => {
     const next: Record<string, string> = {};
@@ -290,32 +288,38 @@ function AppPageContent() {
       const missing = tokens.filter((token) => !dreams[token.tokenId]);
       if (missing.length === 0) return;
 
-      const results = await Promise.all(
-        missing.map(async (token) => {
-          try {
-            const res = await fetch(`/api/dream/${token.tokenId}`, {
-              cache: "no-store",
-            });
+      try {
+        setDreamsLoading(true);
 
-            if (!res.ok) return null;
+        const results = await Promise.all(
+          missing.map(async (token) => {
+            try {
+              const res = await fetch(`/api/dream/${token.tokenId}`, {
+                cache: "no-store",
+              });
 
-            const dream = (await res.json()) as DreamResponse;
-            return [token.tokenId, dream] as const;
-          } catch {
-            return null;
+              if (!res.ok) return null;
+
+              const dream = (await res.json()) as DreamResponse;
+              return [token.tokenId, dream] as const;
+            } catch {
+              return null;
+            }
+          }),
+        );
+
+        setDreams((prev) => {
+          const next = { ...prev };
+
+          for (const result of results) {
+            if (result) next[result[0]] = result[1];
           }
-        }),
-      );
 
-      setDreams((prev) => {
-        const next = { ...prev };
-
-        for (const result of results) {
-          if (result) next[result[0]] = result[1];
-        }
-
-        return next;
-      });
+          return next;
+        });
+      } finally {
+        setDreamsLoading(false);
+      }
     }
 
     loadDreams();
@@ -509,11 +513,30 @@ function AppPageContent() {
     }
   }
 
+  function renderDreamTile(token: ChainDreamToken) {
+    const dream = dreams[token.tokenId];
+
+    return (
+      <div className="flex aspect-square w-full items-center justify-center bg-black p-6 text-center">
+        <p
+          className="cd-headline max-w-full whitespace-normal break-words text-4xl uppercase leading-[1.05] tracking-[0.06em]"
+          style={{
+            overflowWrap: "anywhere",
+            wordBreak: "break-word",
+          }}
+        >
+          {dream?.phrase ?? (dreamsLoading ? "LOADING DREAM" : "DREAM SIGNAL")}
+        </p>
+      </div>
+    );
+  }
+
   function renderDreamSlide(token: ChainDreamToken) {
     const dream = dreams[token.tokenId];
     const visual = visuals[token.tokenId];
     const palette = extractTokenColors(token.image);
     const slideBg = backgrounds[token.tokenId] ?? palette[0] ?? "#000000";
+    const slideFg = overlayMode === "visual" ? readableColor(slideBg) : fg;
 
     return (
       <div
@@ -521,16 +544,37 @@ function AppPageContent() {
         className="relative flex h-full w-screen shrink-0 items-center justify-center overflow-hidden text-center"
         style={{
           background: overlayMode === "visual" ? slideBg : bg,
-          color: fg,
+          color: slideFg,
         }}
       >
+        <div
+          className="fixed right-4 z-30"
+          style={{ top: "max(1rem, env(safe-area-inset-top))" }}
+        >
+          <DreamAmbientPlayer
+            tokenId={token.tokenId}
+            dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
+            palette={palette.length > 0 ? palette : DREAM_COLORS}
+            motion={visual?.motion}
+            foregroundColor={slideFg}
+            visualScale={visualScale}
+            visualTraits={visual?.traits}
+          />
+        </div>
+
         {overlayMode === "dream" ? (
           <div className="max-w-5xl p-6">
             <p className="mb-8 text-[10px] tracking-[0.22em] opacity-50">
               TOKEN #{token.tokenId}
             </p>
 
-            <h1 className="cd-headline text-5xl uppercase leading-[1.05] tracking-[0.08em] md:text-8xl">
+            <h1
+              className="cd-headline max-w-full whitespace-normal break-words text-5xl uppercase leading-[1.05] tracking-[0.06em] md:text-8xl"
+              style={{
+                overflowWrap: "anywhere",
+                wordBreak: "break-word",
+              }}
+            >
               {dream?.phrase ?? "LOADING DREAM"}
             </h1>
 
@@ -552,18 +596,6 @@ function AppPageContent() {
                 }}
               />
             )}
-
-            <div className="fixed right-4 top-4 z-20">
-              <DreamAmbientPlayer
-                tokenId={token.tokenId}
-                dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
-                palette={palette.length > 0 ? palette : DREAM_COLORS}
-                motion={visual?.motion}
-                foregroundColor={readableColor(slideBg)}
-                visualScale={visualScale}
-                visualTraits={visual?.traits}
-              />
-            </div>
 
             <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
               PINCH SCALE · HOLD DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
@@ -635,7 +667,7 @@ function AppPageContent() {
       )}
 
       {!loading && !error && tokens.length > 0 && (
-        <div className="grid grid-cols-2 bg-black">
+        <div className="grid grid-cols-1 bg-black">
           {tokens.map((token, index) => (
             <button
               key={token.tokenId}
@@ -643,7 +675,7 @@ function AppPageContent() {
               className="aspect-square overflow-hidden bg-black p-0"
               aria-label={`Open dream ${token.tokenId}`}
             >
-              <TokenImage tokenId={token.tokenId} image={token.image} />
+              {renderDreamTile(token)}
             </button>
           ))}
         </div>
@@ -676,7 +708,7 @@ function AppPageContent() {
         </div>
       )}
 
-      {selectedToken && selectedIndex !== null && (
+      {selectedIndex !== null && (
         <div
           className="fixed inset-0 z-[9999] touch-none select-none overflow-hidden"
           style={{ background: bg, color: fg }}
