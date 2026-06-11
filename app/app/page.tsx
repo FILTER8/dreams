@@ -17,8 +17,6 @@ const STORAGE_KEY = "chain-dreams-wallet";
 const STORAGE_EVENT = "chain-dreams-wallet-change";
 
 const DREAM_COLORS = [
-  "#000000",
-  "#ffffff",
   "#883932",
   "#67b6bd",
   "#8b3f96",
@@ -167,6 +165,10 @@ function distance(a: TouchPoint, b: TouchPoint) {
   return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
 }
 
+function randomColor() {
+  return DREAM_COLORS[Math.floor(Math.random() * DREAM_COLORS.length)];
+}
+
 function AppPageContent() {
   const searchParams = useSearchParams();
   const walletFromUrl = searchParams.get("wallet");
@@ -191,9 +193,7 @@ function AppPageContent() {
   const scanFrameRef = useRef<number | null>(null);
 
   const touchStartX = useRef<number | null>(null);
-  const lastTap = useRef(0);
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const longPressTriggered = useRef(false);
+  const tapTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const ignoreTap = useRef(false);
 
   const pinchStartDistance = useRef(0);
@@ -211,10 +211,10 @@ function AppPageContent() {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [colorIndex, setColorIndex] = useState(0);
   const [overlayMode, setOverlayMode] = useState<OverlayMode>("dream");
   const [dragX, setDragX] = useState(0);
   const [visualScale, setVisualScale] = useState(1);
+  const [dreamBg, setDreamBg] = useState(randomColor());
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
@@ -230,6 +230,16 @@ function AppPageContent() {
     return next;
   }, [tokens]);
 
+  const tileColors = useMemo(() => {
+    const next: Record<string, string> = {};
+
+    for (const token of tokens) {
+      next[token.tokenId] = randomColor();
+    }
+
+    return next;
+  }, [tokens]);
+
   const selectedColors = extractTokenColors(selectedToken?.image);
 
   const visualBg =
@@ -237,7 +247,6 @@ function AppPageContent() {
     selectedColors[0] ||
     "#000000";
 
-  const dreamBg = DREAM_COLORS[colorIndex % DREAM_COLORS.length];
   const bg = overlayMode === "visual" ? visualBg : dreamBg;
   const fg = readableColor(bg);
 
@@ -437,10 +446,10 @@ function AppPageContent() {
 
   function openDream(index: number) {
     setSelectedIndex(index);
-    setColorIndex(index % DREAM_COLORS.length);
     setOverlayMode("dream");
     setDragX(0);
     setVisualScale(1);
+    setDreamBg(randomColor());
   }
 
   function closeDream() {
@@ -453,38 +462,15 @@ function AppPageContent() {
   function goToDream(index: number) {
     const nextIndex = Math.max(0, Math.min(index, tokens.length - 1));
     setSelectedIndex(nextIndex);
-    setColorIndex((current) => current + 1);
+    setOverlayMode("dream");
     setDragX(0);
     setVisualScale(1);
-  }
-
-  function changeColor() {
-    setColorIndex((current) => current + 1);
+    setDreamBg(randomColor());
   }
 
   function toggleOverlayMode() {
     setOverlayMode((mode) => (mode === "dream" ? "visual" : "dream"));
     setVisualScale(1);
-  }
-
-  function startLongPress() {
-    longPressTriggered.current = false;
-
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-    }
-
-    longPressTimer.current = setTimeout(() => {
-      longPressTriggered.current = true;
-      ignoreTap.current = true;
-      toggleOverlayMode();
-    }, 550);
-  }
-
-  function endLongPress() {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-    }
   }
 
   function handleDreamTap() {
@@ -493,31 +479,29 @@ function AppPageContent() {
       return;
     }
 
-    if (longPressTriggered.current) {
-      longPressTriggered.current = false;
-      return;
-    }
-
-    const now = Date.now();
-
-    if (now - lastTap.current < 300) {
+    if (tapTimer.current) {
+      clearTimeout(tapTimer.current);
+      tapTimer.current = null;
       closeDream();
-      lastTap.current = 0;
       return;
     }
 
-    lastTap.current = now;
-
-    if (overlayMode === "dream") {
-      changeColor();
-    }
+    tapTimer.current = setTimeout(() => {
+      toggleOverlayMode();
+      tapTimer.current = null;
+    }, 240);
   }
 
   function renderDreamTile(token: ChainDreamToken) {
     const dream = dreams[token.tokenId];
+    const tileBg = tileColors[token.tokenId] ?? "#000000";
+    const tileFg = readableColor(tileBg);
 
     return (
-      <div className="flex aspect-square w-full items-center justify-center bg-black p-6 text-center">
+      <div
+        className="flex aspect-square w-full items-center justify-center p-6 text-center"
+        style={{ background: tileBg, color: tileFg }}
+      >
         <p
           className="cd-headline max-w-full whitespace-normal break-words text-4xl uppercase leading-[1.05] tracking-[0.06em]"
           style={{
@@ -579,7 +563,7 @@ function AppPageContent() {
             </h1>
 
             <p className="mt-8 text-[10px] tracking-[0.18em] opacity-50">
-              TAP COLOR · HOLD VISUAL · DOUBLE TAP CLOSE · SWIPE DREAMS
+              TAP VISUAL · DOUBLE TAP CLOSE · SWIPE DREAMS
             </p>
           </div>
         ) : (
@@ -593,12 +577,16 @@ function AppPageContent() {
                 style={{
                   transform: `scale(${visualScale})`,
                   transformOrigin: "50% 50%",
+                  WebkitUserSelect: "none",
+                  userSelect: "none",
+                  WebkitTouchCallout: "none",
                 }}
+                draggable={false}
               />
             )}
 
             <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
-              PINCH SCALE · HOLD DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
+              PINCH SCALE · TAP DREAM · DOUBLE TAP CLOSE · SWIPE DREAMS
             </p>
           </div>
         )}
@@ -635,6 +623,9 @@ function AppPageContent() {
         body {
           background: #000000;
           overscroll-behavior: none;
+          -webkit-touch-callout: none;
+          -webkit-user-select: none;
+          user-select: none;
         }
       `}</style>
 
@@ -721,12 +712,10 @@ function AppPageContent() {
               );
               pinchStartScale.current = visualScale;
               ignoreTap.current = true;
-              endLongPress();
               return;
             }
 
             touchStartX.current = event.touches[0]?.clientX ?? null;
-            startLongPress();
           }}
           onTouchMove={(event) => {
             if (event.touches.length === 2 && overlayMode === "visual") {
@@ -738,8 +727,6 @@ function AppPageContent() {
               ignoreTap.current = true;
               return;
             }
-
-            endLongPress();
 
             const startX = touchStartX.current;
             const currentX = event.touches[0]?.clientX ?? null;
@@ -754,8 +741,6 @@ function AppPageContent() {
             }
           }}
           onTouchEnd={(event) => {
-            endLongPress();
-
             const startX = touchStartX.current;
             const endX = event.changedTouches[0]?.clientX ?? null;
 
@@ -776,9 +761,6 @@ function AppPageContent() {
 
             setDragX(0);
           }}
-          onMouseDown={startLongPress}
-          onMouseUp={endLongPress}
-          onMouseLeave={endLongPress}
         >
           <div
             className="flex h-screen transition-transform duration-200 ease-out"
