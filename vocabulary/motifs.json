@@ -450,5 +450,53 @@
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
+  },
+  {
+    "text": "tidal currents",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "star maps",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "ritual pathways",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "weather patterns",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "navigational charts",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "map gardens",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "archive thresholds",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "tide clocks",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
   }
 ]

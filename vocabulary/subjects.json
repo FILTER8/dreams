@@ -390,5 +390,53 @@
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
+  },
+  {
+    "text": "The tidal clock",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The star chart",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The ritual vessel",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The weather gate",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The map garden",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The lantern compass",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The archive threshold",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "The collector’s compass",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
   }
 ]

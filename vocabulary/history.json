@@ -1412,5 +1412,180 @@
     "category": "motifs",
     "text": "luminous veins",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973538Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The tidal clock",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973657Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The star chart",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973658Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The ritual vessel",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973659Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The weather gate",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973659Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The map garden",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973660Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The lantern compass",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973661Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The archive threshold",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.973661Z",
+    "cycle": "20614",
+    "category": "subjects",
+    "text": "The collector’s compass",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.975628Z",
+    "cycle": "20614",
+    "category": "verbs",
+    "text": "tracks",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.975631Z",
+    "cycle": "20614",
+    "category": "verbs",
+    "text": "navigates",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.975632Z",
+    "cycle": "20614",
+    "category": "verbs",
+    "text": "releases",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977306Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "a ritual map.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977307Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "a stellar archive.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977308Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "a vessel garden.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977309Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "a weather gate.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977309Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "a collector’s compass.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.977310Z",
+    "cycle": "20614",
+    "category": "endings",
+    "text": "the archive threshold.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978898Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "tidal currents",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978899Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "star maps",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978900Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "ritual pathways",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978900Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "weather patterns",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978901Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "navigational charts",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978902Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "map gardens",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978902Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "archive thresholds",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-11T13:46:03.978903Z",
+    "cycle": "20614",
+    "category": "motifs",
+    "text": "tide clocks",
+    "approvedBy": "filter8"
   }
 ]

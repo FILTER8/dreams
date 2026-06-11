@@ -198,5 +198,23 @@
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
+  },
+  {
+    "text": "tracks",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "navigates",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "releases",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
   }
 ]

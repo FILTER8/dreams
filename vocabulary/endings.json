@@ -354,5 +354,41 @@
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
+  },
+  {
+    "text": "a ritual map.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "a stellar archive.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "a vessel garden.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "a weather gate.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "a collector’s compass.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
+  },
+  {
+    "text": "the archive threshold.",
+    "source": "ratchet-vex",
+    "cycle": "20614",
+    "weight": 1
   }
 ]
