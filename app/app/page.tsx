@@ -10,6 +10,7 @@ import {
 } from "react";
 import jsQR from "jsqr";
 import { useSearchParams } from "next/navigation";
+import { BookOpen } from "lucide-react";
 import { DreamAmbientPlayer } from "@/components/DreamAmbientPlayer";
 import type { ChainDreamToken } from "@/lib/metadata";
 
@@ -38,6 +39,35 @@ type DreamResponse = {
   cycle: string | number;
   phrase: string;
   dreamSeed?: string;
+};
+
+type HistoryIndexEntry = {
+  cycle: string;
+  dreamer: string;
+  handle?: string;
+  file: string;
+};
+
+type HistoryDream = {
+  tokenId: number;
+  ok: boolean;
+  cycle: string;
+  basePhrase: string;
+  dreamSeed?: string;
+  motion?: {
+    orbitSpeed: string;
+    driftSpeed: string;
+    ditherTempo: string;
+  };
+};
+
+type HistoryFile = {
+  agent?: {
+    name?: string;
+    handle?: string;
+  };
+  cycle: string;
+  dreams: HistoryDream[];
 };
 
 type VisualTraits = {
@@ -207,8 +237,14 @@ function AppPageContent() {
   const [dreams, setDreams] = useState<Record<string, DreamResponse>>({});
   const [visuals, setVisuals] = useState<Record<string, VisualResponse>>({});
 
+  const [historyIndex, setHistoryIndex] = useState<HistoryIndexEntry[]>([]);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  const [selectedHistory, setSelectedHistory] =
+    useState<HistoryIndexEntry | null>(null);
+
   const [loading, setLoading] = useState(true);
   const [dreamsLoading, setDreamsLoading] = useState(false);
+  const [historyLoading, setHistoryLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -243,6 +279,25 @@ function AppPageContent() {
     if (!walletFromUrl) return;
     saveStoredWallet(walletFromUrl);
   }, [walletFromUrl]);
+
+  useEffect(() => {
+    async function loadHistoryIndex() {
+      try {
+        const res = await fetch("/dream-history/index.json", {
+          cache: "no-store",
+        });
+
+        if (!res.ok) return;
+
+        const data = (await res.json()) as HistoryIndexEntry[];
+        setHistoryIndex(data);
+      } catch {
+        setHistoryIndex([]);
+      }
+    }
+
+    loadHistoryIndex();
+  }, []);
 
   useEffect(() => {
     async function loadTokens() {
@@ -281,7 +336,7 @@ function AppPageContent() {
 
   useEffect(() => {
     async function loadDreams() {
-      if (tokens.length === 0) return;
+      if (selectedHistory || tokens.length === 0) return;
 
       const missing = tokens.filter((token) => !dreams[token.tokenId]);
       if (missing.length === 0) return;
@@ -321,7 +376,7 @@ function AppPageContent() {
     }
 
     loadDreams();
-  }, [tokens, dreams]);
+  }, [tokens, dreams, selectedHistory]);
 
   useEffect(() => {
     async function loadSelectedVisual() {
@@ -347,6 +402,53 @@ function AppPageContent() {
 
     loadSelectedVisual();
   }, [selectedToken, visuals]);
+
+  async function selectHistory(entry: HistoryIndexEntry | null) {
+    if (!entry) {
+      setSelectedHistory(null);
+      setDreams({});
+      setHistoryOpen(false);
+      return;
+    }
+
+    try {
+      setHistoryLoading(true);
+
+      const res = await fetch(entry.file, {
+        cache: "no-store",
+      });
+
+      if (!res.ok) {
+        throw new Error("history unavailable");
+      }
+
+      const data = (await res.json()) as HistoryFile;
+      const nextDreams: Record<string, DreamResponse> = {};
+
+      for (const dream of data.dreams) {
+        if (!dream.ok) continue;
+
+        nextDreams[String(dream.tokenId)] = {
+          tokenId: String(dream.tokenId),
+          cycle: dream.cycle,
+          phrase: dream.basePhrase,
+          dreamSeed: dream.dreamSeed,
+        };
+      }
+
+      setDreams(nextDreams);
+      setSelectedHistory({
+        ...entry,
+        dreamer: entry.dreamer || data.agent?.name || "Unknown Dreamer",
+        handle: entry.handle || data.agent?.handle,
+      });
+      setHistoryOpen(false);
+    } catch {
+      setError("history unavailable");
+    } finally {
+      setHistoryLoading(false);
+    }
+  }
 
   function saveWallet(nextWallet: string) {
     saveStoredWallet(nextWallet);
@@ -474,7 +576,8 @@ function AppPageContent() {
             wordBreak: "break-word",
           }}
         >
-          {dream?.phrase ?? (dreamsLoading ? "LOADING DREAM" : "DREAM SIGNAL")}
+          {dream?.phrase ??
+            (dreamsLoading || historyLoading ? "LOADING DREAM" : "DREAM SIGNAL")}
         </p>
 
         <p className="mt-6 text-[10px] tracking-[0.18em] opacity-50">
@@ -628,17 +731,80 @@ function AppPageContent() {
       )}
 
       {!loading && !error && tokens.length > 0 && (
-        <div className="grid grid-cols-1 bg-black">
-          {tokens.map((token, index) => (
+        <>
+          <div
+            className="fixed left-0 right-0 top-0 z-50 flex items-center justify-between px-4 py-3"
+            style={{
+              paddingTop: "max(0.75rem, env(safe-area-inset-top))",
+            }}
+          >
+            <div className="text-[10px] leading-5 tracking-[0.16em] opacity-70">
+              <p>CYCLE {selectedHistory?.cycle ?? "CURRENT"}</p>
+              <p>{selectedHistory?.dreamer ?? "TODAY DREAMS"}</p>
+            </div>
+
             <button
-              key={token.tokenId}
-              onClick={() => openVisual(index)}
-              className="aspect-square overflow-hidden bg-black p-0"
-              aria-label={`Open visual ${token.tokenId}`}
+              onClick={() => setHistoryOpen(true)}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur"
+              aria-label="Open dream history"
             >
-              {renderDreamTile(token)}
+              <BookOpen size={17} />
             </button>
-          ))}
+          </div>
+
+          <div className="grid grid-cols-1 bg-black pt-16">
+            {tokens.map((token, index) => (
+              <button
+                key={token.tokenId}
+                onClick={() => openVisual(index)}
+                className="aspect-square overflow-hidden bg-black p-0"
+                aria-label={`Open visual ${token.tokenId}`}
+              >
+                {renderDreamTile(token)}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+
+      {historyOpen && (
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 p-6 text-center">
+          <div className="w-full max-w-sm">
+            <div className="mb-8 flex items-center justify-between">
+              <p className="cd-label">DREAM LIBRARY</p>
+
+              <button
+                onClick={() => setHistoryOpen(false)}
+                className="text-[10px] tracking-[0.18em] opacity-50"
+              >
+                CLOSE
+              </button>
+            </div>
+
+            <div className="grid gap-2">
+              <button
+                onClick={() => selectHistory(null)}
+                className="border border-white/10 px-4 py-4 text-center text-[10px] tracking-[0.16em]"
+              >
+                <p>CURRENT</p>
+                <p className="mt-2 opacity-50">TODAY DREAMS</p>
+              </button>
+
+              {historyIndex.map((entry) => (
+                <button
+                  key={`${entry.cycle}-${entry.file}`}
+                  onClick={() => selectHistory(entry)}
+                  className="border border-white/10 px-4 py-4 text-center text-[10px] tracking-[0.16em]"
+                >
+                  <p>CYCLE {entry.cycle}</p>
+                  <p className="mt-2 opacity-50">
+                    {entry.dreamer}
+                    {entry.handle ? ` · ${entry.handle}` : ""}
+                  </p>
+                </button>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 

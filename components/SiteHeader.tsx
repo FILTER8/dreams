@@ -8,7 +8,7 @@ import { OPENSEA_COLLECTION_URL } from "@/lib/constants";
 const nav = [
   { label: "HOME", href: "/" },
   { label: "COLLECTION", href: "/collection" },
-  { label: "DREAM", href: "/dream/1" },
+  { label: "DREAM", href: "/dream" },
   { label: "WALLET", href: "/collectors" },
 ];
 
