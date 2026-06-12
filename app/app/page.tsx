@@ -440,7 +440,6 @@ function AppPageContent() {
       setSelectedHistory({
         ...entry,
         dreamer: entry.dreamer || data.agent?.name || "Unknown Dreamer",
-        handle: entry.handle || data.agent?.handle,
       });
       setHistoryOpen(false);
     } catch {
@@ -581,7 +580,7 @@ function AppPageContent() {
         </p>
 
         <p className="mt-6 text-[10px] tracking-[0.18em] opacity-50">
-          CYCLE {dream?.cycle ?? "----"}
+          CIRCLE {dream?.cycle ?? "----"}
         </p>
       </div>
     );
@@ -739,16 +738,19 @@ function AppPageContent() {
             }}
           >
             <div className="text-[10px] leading-5 tracking-[0.16em] opacity-70">
-              <p>CYCLE {selectedHistory?.cycle ?? "CURRENT"}</p>
-              <p>{selectedHistory?.dreamer ?? "TODAY DREAMS"}</p>
+              <p>
+                {selectedHistory
+                  ? `CIRCLE ${selectedHistory.cycle} / ${selectedHistory.dreamer}`
+                  : "CURRENT DREAMS"}
+              </p>
             </div>
 
             <button
               onClick={() => setHistoryOpen(true)}
-              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-black/30 backdrop-blur"
+              className="flex h-10 w-10 items-center justify-center text-white opacity-80"
               aria-label="Open dream history"
             >
-              <BookOpen size={17} />
+              <BookOpen size={19} />
             </button>
           </div>
 
@@ -768,39 +770,47 @@ function AppPageContent() {
       )}
 
       {historyOpen && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center bg-black/90 p-6 text-center">
-          <div className="w-full max-w-sm">
-            <div className="mb-8 flex items-center justify-between">
+        <div
+          className="fixed inset-0 z-[99999] bg-black text-white"
+          onTouchMove={(event) => event.stopPropagation()}
+        >
+          <div className="flex h-full flex-col">
+            <div
+              className="flex shrink-0 items-center justify-between px-5 pb-5"
+              style={{
+                paddingTop: "max(1.25rem, env(safe-area-inset-top))",
+              }}
+            >
               <p className="cd-label">DREAM LIBRARY</p>
 
               <button
                 onClick={() => setHistoryOpen(false)}
-                className="text-[10px] tracking-[0.18em] opacity-50"
+                className="text-[10px] tracking-[0.18em] opacity-60"
               >
                 CLOSE
               </button>
             </div>
 
-            <div className="grid gap-2">
+            <div
+              className="flex-1 overflow-y-auto overscroll-contain px-5 pb-10"
+              style={{
+                WebkitOverflowScrolling: "touch",
+              }}
+            >
               <button
                 onClick={() => selectHistory(null)}
-                className="border border-white/10 px-4 py-4 text-center text-[10px] tracking-[0.16em]"
+                className="block w-full py-4 text-center text-[11px] tracking-[0.16em]"
               >
-                <p>CURRENT</p>
-                <p className="mt-2 opacity-50">TODAY DREAMS</p>
+                CURRENT DREAMS
               </button>
 
               {historyIndex.map((entry) => (
                 <button
                   key={`${entry.cycle}-${entry.file}`}
                   onClick={() => selectHistory(entry)}
-                  className="border border-white/10 px-4 py-4 text-center text-[10px] tracking-[0.16em]"
+                  className="block w-full py-4 text-center text-[11px] tracking-[0.16em]"
                 >
-                  <p>CYCLE {entry.cycle}</p>
-                  <p className="mt-2 opacity-50">
-                    {entry.dreamer}
-                    {entry.handle ? ` · ${entry.handle}` : ""}
-                  </p>
+                  CIRCLE {entry.cycle} / {entry.dreamer}
                 </button>
               ))}
             </div>
