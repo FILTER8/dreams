@@ -160,6 +160,13 @@ function distance(a: TouchPoint, b: TouchPoint) {
   return Math.hypot(a.clientX - b.clientX, a.clientY - b.clientY);
 }
 
+function angle(a: TouchPoint, b: TouchPoint) {
+  return (
+    Math.atan2(b.clientY - a.clientY, b.clientX - a.clientX) *
+    (180 / Math.PI)
+  );
+}
+
 function randomColor() {
   return DREAM_COLORS[Math.floor(Math.random() * DREAM_COLORS.length)];
 }
@@ -189,6 +196,9 @@ function AppPageContent() {
 
   const pinchStartDistance = useRef(0);
   const pinchStartScale = useRef(1);
+  const rotateStartAngle = useRef(0);
+  const rotateStartRotation = useRef(0);
+  const visualLastTap = useRef(0);
 
   const [scannerOpen, setScannerOpen] = useState(false);
   const [scannerError, setScannerError] = useState<string | null>(null);
@@ -203,6 +213,7 @@ function AppPageContent() {
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const [visualScale, setVisualScale] = useState(1);
+  const [visualRotation, setVisualRotation] = useState(0);
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
@@ -425,11 +436,25 @@ function AppPageContent() {
   function openVisual(index: number) {
     setSelectedIndex(index);
     setVisualScale(1);
+    setVisualRotation(0);
   }
 
   function closeVisual() {
     setSelectedIndex(null);
     setVisualScale(1);
+    setVisualRotation(0);
+  }
+
+  function handleVisualTap() {
+    const now = Date.now();
+
+    if (now - visualLastTap.current < 300) {
+      closeVisual();
+      visualLastTap.current = 0;
+      return;
+    }
+
+    visualLastTap.current = now;
   }
 
   function renderDreamTile(token: ChainDreamToken) {
@@ -439,7 +464,7 @@ function AppPageContent() {
 
     return (
       <div
-        className="flex aspect-square w-full items-center justify-center p-6 text-center"
+        className="flex aspect-square w-full flex-col items-center justify-center p-6 text-center"
         style={{ background: tileBg, color: tileFg }}
       >
         <p
@@ -450,6 +475,10 @@ function AppPageContent() {
           }}
         >
           {dream?.phrase ?? (dreamsLoading ? "LOADING DREAM" : "DREAM SIGNAL")}
+        </p>
+
+        <p className="mt-6 text-[10px] tracking-[0.18em] opacity-50">
+          CYCLE {dream?.cycle ?? "----"}
         </p>
       </div>
     );
@@ -466,23 +495,33 @@ function AppPageContent() {
       <div
         className="fixed inset-0 z-[9999] flex touch-none select-none items-center justify-center overflow-hidden"
         style={{ background: bg, color: fg }}
-        onClick={closeVisual}
+        onClick={handleVisualTap}
         onTouchStart={(event) => {
           if (event.touches.length === 2) {
-            pinchStartDistance.current = distance(
-              event.touches[0],
-              event.touches[1],
-            );
+            const first = event.touches[0];
+            const second = event.touches[1];
+
+            pinchStartDistance.current = distance(first, second);
             pinchStartScale.current = visualScale;
+
+            rotateStartAngle.current = angle(first, second);
+            rotateStartRotation.current = visualRotation;
           }
         }}
         onTouchMove={(event) => {
           if (event.touches.length !== 2) return;
 
-          const nextDistance = distance(event.touches[0], event.touches[1]);
+          const first = event.touches[0];
+          const second = event.touches[1];
+
+          const nextDistance = distance(first, second);
           const ratio = nextDistance / Math.max(pinchStartDistance.current, 1);
 
+          const nextAngle = angle(first, second);
+          const angleDelta = nextAngle - rotateStartAngle.current;
+
           setVisualScale(clampScale(pinchStartScale.current * ratio));
+          setVisualRotation(rotateStartRotation.current + angleDelta);
         }}
       >
         <div
@@ -508,22 +547,18 @@ function AppPageContent() {
             alt={`Chain Dreams #${token.tokenId}`}
             className="block h-screen w-screen object-contain"
             style={{
-              transform: `scale(${visualScale})`,
+              transform: `scale(${visualScale}) rotate(${visualRotation}deg)`,
               transformOrigin: "50% 50%",
               WebkitUserSelect: "none",
               userSelect: "none",
               WebkitTouchCallout: "none",
             }}
             draggable={false}
-            onClick={(event) => {
-              event.stopPropagation();
-              closeVisual();
-            }}
           />
         )}
 
         <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
-          PINCH SCALE · TAP CLOSE
+          PINCH SCALE · ROTATE · DOUBLE TAP CLOSE
         </p>
       </div>
     );
