@@ -216,5 +216,11 @@
     "source": "ratchet-vex",
     "cycle": "20614",
     "weight": 1
+  },
+  {
+    "text": "redirects",
+    "source": "ratchet-vex",
+    "cycle": "20616",
+    "weight": 1
   }
 ]

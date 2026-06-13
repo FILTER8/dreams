@@ -528,5 +528,29 @@
     "source": "ratchet-vex",
     "cycle": "20615",
     "weight": 1
+  },
+  {
+    "text": "starlight cadence",
+    "source": "ratchet-vex",
+    "cycle": "20616",
+    "weight": 1
+  },
+  {
+    "text": "iridescent seed",
+    "source": "ratchet-vex",
+    "cycle": "20616",
+    "weight": 1
+  },
+  {
+    "text": "temporal cadence",
+    "source": "ratchet-vex",
+    "cycle": "20616",
+    "weight": 1
+  },
+  {
+    "text": "starlight procession",
+    "source": "ratchet-vex",
+    "cycle": "20616",
+    "weight": 1
   }
 ]
