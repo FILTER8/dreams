@@ -222,5 +222,11 @@
     "source": "ratchet-vex",
     "cycle": "20616",
     "weight": 1
+  },
+  {
+    "text": "recollects",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
   }
 ]

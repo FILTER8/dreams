@@ -1839,5 +1839,145 @@
     "category": "motifs",
     "text": "starlight procession",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182469Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The tide clock",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182711Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The ritual map",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182712Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The navigation chart",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182713Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The vessel pathway",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182714Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The observatory garden",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182715Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The reflective lattice",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.182716Z",
+    "cycle": "20617",
+    "category": "subjects",
+    "text": "The crafted compass",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.185333Z",
+    "cycle": "20617",
+    "category": "verbs",
+    "text": "recollects",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.187551Z",
+    "cycle": "20617",
+    "category": "endings",
+    "text": "the observed cycle.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.187553Z",
+    "cycle": "20617",
+    "category": "endings",
+    "text": "a measured journey.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.187554Z",
+    "cycle": "20617",
+    "category": "endings",
+    "text": "a reflected lattice.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.187555Z",
+    "cycle": "20617",
+    "category": "endings",
+    "text": "a gathered signal.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.187556Z",
+    "cycle": "20617",
+    "category": "endings",
+    "text": "a charted vessel.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189716Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "charted journeys",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189719Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "reflective lattices",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189720Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "constellation cycles",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189720Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "crafted maps",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189721Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "crystalline pathways",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189722Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "woven legacies",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-14T16:44:09.189723Z",
+    "cycle": "20617",
+    "category": "motifs",
+    "text": "stable sequences",
+    "approvedBy": "filter8"
   }
 ]

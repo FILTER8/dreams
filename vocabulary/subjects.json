@@ -516,5 +516,47 @@
     "source": "ratchet-vex",
     "cycle": "20616",
     "weight": 1
+  },
+  {
+    "text": "The tide clock",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The ritual map",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The navigation chart",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The vessel pathway",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The observatory garden",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The reflective lattice",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
+  },
+  {
+    "text": "The crafted compass",
+    "source": "ratchet-vex",
+    "cycle": "20617",
+    "weight": 1
   }
 ]
