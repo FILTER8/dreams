@@ -600,5 +600,41 @@
     "source": "ratchet-vex",
     "cycle": "20618",
     "weight": 1
+  },
+  {
+    "text": "prism shard",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
+  },
+  {
+    "text": "adaptive stream",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
+  },
+  {
+    "text": "woven offering",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
+  },
+  {
+    "text": "kinship cycle",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
+  },
+  {
+    "text": "resonant thread",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
+  },
+  {
+    "text": "weather archive",
+    "source": "ratchet-vex",
+    "cycle": "20619",
+    "weight": 1
   }
 ]
