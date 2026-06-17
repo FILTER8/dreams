@@ -1,9 +1,8 @@
 import { defineManifest } from "@opensea/tool-sdk";
 
 const BASE_URL = "https://dreams.ratchetvex.xyz";
-const CREATOR_ADDRESS = "0x085610B382e4D4eecab01a43Ac99B42436af37bF";
-const CHAIN_DREAMS_CONTRACT =
-  "0x35221D6E9dC3E4a277F40b40f7492BE3b236D380";
+const CREATOR_ADDRESS ="0x085610b382e4d4eecab01a43ac99b42436af37bf";
+const CHAIN_DREAMS_CONTRACT ="0x35221d6e9dc3e4a277f40b40f7492be3b236d380";
 
 const ICON_URL = `${BASE_URL}/ratchet-vex-dreaming.png`;
 
