@@ -26,12 +26,22 @@ type HistoryBody = {
   signature?: string;
 };
 
-type ArchiveDream = {
+type HistoryIndexEntry = {
+  cycle: string;
+  dreamer: string;
+  handle?: string;
+  file: string;
+};
+
+type HistoryDream = {
   tokenId?: string | number;
   tokenID?: string | number;
   id?: string | number;
   token?: string | number;
   number?: string | number;
+
+  ok?: boolean;
+  cycle?: string;
 
   phrase?: string;
   basePhrase?: string;
@@ -41,65 +51,121 @@ type ArchiveDream = {
   dreamSeed?: string;
   seed?: string;
 
-  motion?: unknown;
-  ok?: boolean;
+  motion?: {
+    orbitSpeed?: string | number;
+    driftSpeed?: string | number;
+    ditherTempo?: string | number;
+  } | null;
 };
 
-function readDreamArchives(tokenId: string) {
-  const archiveDir = path.join(process.cwd(), "dream-archive");
+type HistoryFile = {
+  cycle?: string;
+  agent?: {
+    name?: string;
+    handle?: string;
+  };
+  dreams?: HistoryDream[];
+};
 
-  if (!fs.existsSync(archiveDir)) {
+type DreamApiResponse = {
+  error?: string;
+  message?: string;
+  tokenId?: string;
+  cycle?: string;
+  owner?: string;
+  phrase?: string;
+  dreamSeed?: string;
+  motion?: {
+    orbitSpeed?: string;
+    driftSpeed?: string;
+    ditherTempo?: string;
+  };
+  links?: {
+    dream?: string;
+    opensea?: string;
+  };
+};
+
+function publicFilePath(publicUrl: string) {
+  const clean = publicUrl.startsWith("/") ? publicUrl.slice(1) : publicUrl;
+  return path.join(process.cwd(), "public", clean);
+}
+
+function getDreamId(dream: HistoryDream) {
+  return (
+    dream.tokenId ??
+    dream.tokenID ??
+    dream.id ??
+    dream.token ??
+    dream.number ??
+    null
+  );
+}
+
+function getDreamPhrase(dream: HistoryDream) {
+  return (
+    dream.phrase ??
+    dream.basePhrase ??
+    dream.dream ??
+    dream.text ??
+    null
+  );
+}
+
+function readDreamHistory(tokenId: string) {
+  const indexPath = path.join(
+    process.cwd(),
+    "public",
+    "dream-history",
+    "index.json"
+  );
+
+  if (!fs.existsSync(indexPath)) {
     return [];
   }
 
-  const files = fs
-    .readdirSync(archiveDir)
-    .filter((file) => /^dreams-cycle-\d+\.json$/.test(file))
-    .sort();
+  const indexRaw = fs.readFileSync(indexPath, "utf8");
+  const index = JSON.parse(indexRaw) as HistoryIndexEntry[];
 
   const history = [];
 
-  for (const file of files) {
-    const filePath = path.join(archiveDir, file);
+  for (const entry of index) {
+    const filePath = publicFilePath(entry.file);
+
+    if (!fs.existsSync(filePath)) {
+      continue;
+    }
+
     const raw = fs.readFileSync(filePath, "utf8");
-    const archive = JSON.parse(raw);
+    const archive = JSON.parse(raw) as HistoryFile;
 
-    const cycle =
-      archive.cycle ??
-      file.replace("dreams-cycle-", "").replace(".json", "");
-
-const dreams: ArchiveDream[] = Array.isArray(archive.dreams)
-  ? archive.dreams
-  : [];
+    const dreams: HistoryDream[] = Array.isArray(archive.dreams)
+      ? archive.dreams
+      : [];
 
     const dream = dreams.find((item) => {
-      const id =
-        item.tokenId ??
-        item.tokenID ??
-        item.id ??
-        item.token ??
-        item.number;
-
-      return String(id) === tokenId;
+      const id = getDreamId(item);
+      return id !== null && String(id) === tokenId;
     });
 
     if (!dream) continue;
+    if (dream.ok === false) continue;
+
+    const phrase = getDreamPhrase(dream);
+    if (!phrase) continue;
 
     history.push({
-      cycle: String(cycle),
-      phrase:
-        dream.phrase ??
-        dream.basePhrase ??
-        dream.dream ??
-        dream.text ??
-        null,
+      cycle: String(dream.cycle ?? archive.cycle ?? entry.cycle),
+      dreamer: entry.dreamer ?? archive.agent?.name ?? "Unknown Dreamer",
+      handle: entry.handle ?? archive.agent?.handle ?? null,
+      phrase,
       dreamSeed: dream.dreamSeed ?? dream.seed ?? null,
       motion: dream.motion ?? null,
       ok: dream.ok ?? true,
     });
   }
 
-  return history.filter((item) => item.phrase);
+  return history.sort((a, b) => Number(a.cycle) - Number(b.cycle));
 }
 
 export async function POST(request: Request) {
@@ -153,7 +219,7 @@ export async function POST(request: Request) {
       cache: "no-store",
     });
 
-    const dream = await dreamRes.json();
+    const dream = (await dreamRes.json()) as DreamApiResponse;
 
     if (!dreamRes.ok || dream.error) {
       return NextResponse.json(
@@ -179,7 +245,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const history = readDreamArchives(tokenId);
+    const history = readDreamHistory(tokenId);
 
     return NextResponse.json(
       {
@@ -201,7 +267,9 @@ export async function POST(request: Request) {
         historyCount: history.length,
         history,
         links: {
-          dream: dream.links?.dream ?? `https://dreams.ratchetvex.xyz/dream/${tokenId}`,
+          dream:
+            dream.links?.dream ??
+            `https://dreams.ratchetvex.xyz/dream/${tokenId}`,
           visual: `https://dreams.ratchetvex.xyz/dream/${tokenId}/visual`,
           visualData: `https://dreams.ratchetvex.xyz/api/visual/${tokenId}`,
           opensea: dream.links?.opensea,
