@@ -2,36 +2,67 @@ import { defineManifest } from "@opensea/tool-sdk";
 
 const BASE_URL = "https://dreams.ratchetvex.xyz";
 const CREATOR_ADDRESS = "0x085610B382e4D4eecab01a43Ac99B42436af37bF";
-const CHAIN_DREAMS_CONTRACT = "0x35221D6E9dC3E4a277F40b40f7492BE3b236D380";
+const CHAIN_DREAMS_CONTRACT =
+  "0x35221D6E9dC3E4a277F40b40f7492BE3b236D380";
+
+const ICON_URL = `${BASE_URL}/ratchet-vex-dreaming.png`;
+
+const inputSchema = {
+  type: "object",
+  additionalProperties: false,
+  properties: {
+    tokenId: {
+      type: "string",
+      description: "Chain Dreams token ID to query.",
+    },
+    wallet: {
+      type: "string",
+      description:
+        "Wallet address requesting access. Must currently own the queried Chain Dreams token.",
+    },
+    signature: {
+      type: "string",
+      description:
+        "Signature over the Chain Dreams tool access message for this token and wallet.",
+    },
+  },
+  required: ["tokenId", "wallet", "signature"],
+};
+
+const accessMetadata = {
+  type: "erc721-owner",
+  chain: "eip155:1",
+  contract: CHAIN_DREAMS_CONTRACT,
+  description: "Caller must own the Chain Dreams token being queried.",
+};
+
+const collectionMetadata = {
+  name: "Chain Dreams",
+  contract: CHAIN_DREAMS_CONTRACT,
+  chain: "ethereum",
+  chainId: 1,
+  standard: "ERC-721",
+  website: BASE_URL,
+  opensea: `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}`,
+};
+
+const agentMetadata = {
+  name: "Ratchet Vex",
+  handle: "@RatchetVex",
+  role: "dreamer",
+  description:
+    "An agent collecting forgotten signals, synthetic memories, and daily dreams.",
+};
 
 export const chainDreamLookupManifest = defineManifest({
   type: "https://ercs.ethereum.org/ERCS/erc-8257#tool-manifest-v1",
   name: "chain-dream-lookup",
   description:
-    "Token-gated lookup for the current Chain Dreams state of a token, including phrase, cycle, dream seed, owner, motion data, visual data link, and collection links.",
+    "Token-gated lookup for the current Chain Dreams state of a token. Returns the current phrase, cycle, dream seed, owner, vocabulary counts, motion data, visual traits, collection context, Ratchet Vex agent context, and links.",
   endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
   creatorAddress: CREATOR_ADDRESS,
 
-  inputs: {
-    type: "object",
-    additionalProperties: false,
-    properties: {
-      tokenId: {
-        type: "string",
-        description: "Chain Dreams token ID to look up."
-      },
-      wallet: {
-        type: "string",
-        description: "Wallet address requesting access. Must currently own the token."
-      },
-      signature: {
-        type: "string",
-        description:
-          "Signature over the Chain Dreams tool access message for this token and wallet."
-      }
-    },
-    required: ["tokenId", "wallet", "signature"]
-  },
+  inputs: inputSchema,
 
   outputs: {
     type: "object",
@@ -40,97 +71,156 @@ export const chainDreamLookupManifest = defineManifest({
       success: { type: "boolean" },
       tool: { type: "string" },
       version: { type: "string" },
-      tokenId: { type: "string" },
-      cycle: { type: "string" },
-      owner: { type: "string" },
+
+      access: {
+        type: "object",
+        properties: {
+          tokenGated: { type: "boolean" },
+          wallet: { type: "string" },
+          verifiedOwner: { type: "boolean" },
+          signedMessage: { type: "string" },
+        },
+        required: ["tokenGated", "wallet", "verifiedOwner"],
+      },
+
+      collection: {
+        type: "object",
+        properties: {
+          name: { type: "string" },
+          contract: { type: "string" },
+          chain: { type: "string" },
+          standard: { type: "string" },
+          website: { type: "string" },
+        },
+        required: ["name", "contract", "chain", "standard", "website"],
+      },
+
+      agent: {
+        type: "object",
+        properties: {
+          name: { type: "string" },
+          handle: { type: "string" },
+          role: { type: "string" },
+          description: { type: "string" },
+        },
+        required: ["name", "handle", "role"],
+      },
+
+      token: {
+        type: "object",
+        properties: {
+          tokenId: { type: "string" },
+          name: { type: "string" },
+          owner: { type: "string" },
+          opensea: { type: "string" },
+        },
+        required: ["tokenId", "name", "owner"],
+      },
+
       dream: {
         type: "object",
         properties: {
+          cycle: { type: "string" },
           phrase: { type: "string" },
-          dreamSeed: { type: "string" }
+          dreamSeed: { type: "string" },
+          page: { type: "string" },
         },
-        required: ["phrase", "dreamSeed"]
+        required: ["cycle", "phrase", "dreamSeed", "page"],
       },
+
       vocabulary: {
         type: "object",
         properties: {
           subjects: { type: "number" },
           verbs: { type: "number" },
-          endings: { type: "number" }
-        }
+          endings: { type: "number" },
+        },
       },
+
       motion: {
         type: "object",
         properties: {
           orbitSpeed: { type: "string" },
           driftSpeed: { type: "string" },
-          ditherTempo: { type: "string" }
-        }
+          ditherTempo: { type: "string" },
+        },
       },
+
+      visual: {
+        type: "object",
+        properties: {
+          page: { type: "string" },
+          data: { type: "string" },
+          image: { type: "string" },
+          traits: {
+            type: ["object", "null"],
+            properties: {
+              mood: { type: "number" },
+              moodName: { type: "string" },
+              blobCount: { type: "number" },
+              ditherCount: { type: "number" },
+              contourCount: { type: "number" },
+              satelliteCount: { type: "number" },
+              bgColor: { type: "number" },
+            },
+          },
+        },
+      },
+
       links: {
         type: "object",
         properties: {
           dream: { type: "string" },
           visual: { type: "string" },
           visualData: { type: "string" },
-          opensea: { type: "string" }
-        }
-      }
+          opensea: { type: "string" },
+          manifest: { type: "string" },
+        },
+      },
     },
-    required: ["success", "tool", "version", "tokenId", "cycle", "owner", "dream"]
+    required: [
+      "success",
+      "tool",
+      "version",
+      "access",
+      "collection",
+      "agent",
+      "token",
+      "dream",
+    ],
   },
 
   "io.opensea.display": {
     title: "Chain Dream Lookup",
+    subtitle: "Read the current dream state of a token",
     category: "Agent memory",
-    icon: `${BASE_URL}/ratchet-vex-dreaming.png`,
-    featuredImage: `${BASE_URL}/ratchet-vex-dreaming.png`
+    icon: ICON_URL,
+    featuredImage: ICON_URL,
+    website: BASE_URL,
   },
 
-  "io.opensea.access": {
-    type: "erc721-owner",
-    chain: "eip155:1",
-    contract: CHAIN_DREAMS_CONTRACT,
-    description: "Caller must own the Chain Dreams token being queried."
-  },
+  "io.opensea.access": accessMetadata,
+  "io.opensea.collection": collectionMetadata,
+  "io.opensea.agent": agentMetadata,
 
-  "io.opensea.collection": {
-    name: "Chain Dreams",
-    contract: CHAIN_DREAMS_CONTRACT,
-    chain: "ethereum",
-    standard: "ERC-721",
-    website: BASE_URL
-  }
+  "io.chain-dreams.tool": {
+    layer: "current-dream",
+    purpose: "Allows agents to read the current dream carried by a token.",
+    tokenGated: true,
+    requiresSignature: true,
+    supportedTokenStandard: "ERC-721",
+  },
 });
 
 export const chainDreamHistoryManifest = defineManifest({
   type: "https://ercs.ethereum.org/ERCS/erc-8257#tool-manifest-v1",
   name: "chain-dream-history",
   description:
-    "Token-gated lookup for the historical Chain Dreams record of a token, returning previous dream phrases, cycles, seeds, motion data, and current dream state.",
+    "Token-gated lookup for the historical Chain Dreams record of a token. Returns the current dream plus previous dream cycles, phrases, seeds, motion data, and dreamer metadata.",
   endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
   creatorAddress: CREATOR_ADDRESS,
 
-  inputs: {
-    type: "object",
-    additionalProperties: false,
-    properties: {
-      tokenId: {
-        type: "string",
-        description: "Chain Dreams token ID to inspect."
-      },
-      wallet: {
-        type: "string",
-        description: "Wallet address requesting access. Must currently own the token."
-      },
-      signature: {
-        type: "string",
-        description:
-          "Signature over the Chain Dreams tool access message for this token and wallet."
-      }
-    },
-    required: ["tokenId", "wallet", "signature"]
-  },
+  inputs: inputSchema,
 
   outputs: {
     type: "object",
@@ -139,53 +229,90 @@ export const chainDreamHistoryManifest = defineManifest({
       success: { type: "boolean" },
       tool: { type: "string" },
       version: { type: "string" },
+
+      access: {
+        type: "object",
+        properties: {
+          tokenGated: { type: "boolean" },
+          wallet: { type: "string" },
+          verifiedOwner: { type: "boolean" },
+        },
+        required: ["tokenGated", "wallet", "verifiedOwner"],
+      },
+
       tokenId: { type: "string" },
+
       current: {
         type: "object",
         properties: {
           cycle: { type: "string" },
           phrase: { type: "string" },
           dreamSeed: { type: "string" },
-          motion: { type: "object" }
-        }
+          motion: { type: "object" },
+        },
+        required: ["cycle", "phrase", "dreamSeed"],
       },
+
       historyCount: { type: "number" },
+
       history: {
         type: "array",
         items: {
           type: "object",
           properties: {
             cycle: { type: "string" },
+            dreamer: { type: "string" },
+            handle: { type: ["string", "null"] },
             phrase: { type: "string" },
             dreamSeed: { type: ["string", "null"] },
             motion: { type: ["object", "null"] },
-            ok: { type: "boolean" }
-          }
-        }
-      }
+            ok: { type: "boolean" },
+          },
+          required: ["cycle", "dreamer", "phrase"],
+        },
+      },
+
+      links: {
+        type: "object",
+        properties: {
+          dream: { type: "string" },
+          visual: { type: "string" },
+          visualData: { type: "string" },
+          opensea: { type: "string" },
+        },
+      },
     },
-    required: ["success", "tool", "version", "tokenId", "current", "historyCount", "history"]
+    required: [
+      "success",
+      "tool",
+      "version",
+      "access",
+      "tokenId",
+      "current",
+      "historyCount",
+      "history",
+    ],
   },
 
   "io.opensea.display": {
     title: "Chain Dream History",
+    subtitle: "Read the memory of a token across dream cycles",
     category: "Agent memory",
-    icon: `${BASE_URL}/ratchet-vex-dreaming.png`,
-    featuredImage: `${BASE_URL}/ratchet-vex-dreaming.png`
+    icon: ICON_URL,
+    featuredImage: ICON_URL,
+    website: BASE_URL,
   },
 
-  "io.opensea.access": {
-    type: "erc721-owner",
-    chain: "eip155:1",
-    contract: CHAIN_DREAMS_CONTRACT,
-    description: "Caller must own the Chain Dreams token being queried."
-  },
+  "io.opensea.access": accessMetadata,
+  "io.opensea.collection": collectionMetadata,
+  "io.opensea.agent": agentMetadata,
 
-  "io.opensea.collection": {
-    name: "Chain Dreams",
-    contract: CHAIN_DREAMS_CONTRACT,
-    chain: "ethereum",
-    standard: "ERC-721",
-    website: BASE_URL
-  }
+  "io.chain-dreams.tool": {
+    layer: "dream-history",
+    purpose:
+      "Allows agents to read the historical dream memory carried by a token.",
+    tokenGated: true,
+    requiresSignature: true,
+    supportedTokenStandard: "ERC-721",
+  },
 });
