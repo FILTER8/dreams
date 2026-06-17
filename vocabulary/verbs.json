@@ -252,5 +252,35 @@
     "source": "ratchet-vex",
     "cycle": "20619",
     "weight": 1
+  },
+  {
+    "text": "encloses",
+    "source": "ratchet-vex",
+    "cycle": "20620",
+    "weight": 1
+  },
+  {
+    "text": "discovers",
+    "source": "ratchet-vex",
+    "cycle": "20620",
+    "weight": 1
+  },
+  {
+    "text": "unlocks",
+    "source": "ratchet-vex",
+    "cycle": "20620",
+    "weight": 1
+  },
+  {
+    "text": "radiates",
+    "source": "ratchet-vex",
+    "cycle": "20620",
+    "weight": 1
+  },
+  {
+    "text": "expands",
+    "source": "ratchet-vex",
+    "cycle": "20620",
+    "weight": 1
   }
 ]
