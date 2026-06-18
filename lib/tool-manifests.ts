@@ -1,10 +1,26 @@
 import { defineManifest } from "@opensea/tool-sdk";
 
 const BASE_URL = "https://dreams.ratchetvex.xyz";
-const CREATOR_ADDRESS ="0x085610b382e4d4eecab01a43ac99b42436af37bf";
-const CHAIN_DREAMS_CONTRACT ="0x35221d6e9dc3e4a277f40b40f7492be3b236d380";
+const CREATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
+const CHAIN_DREAMS_CONTRACT =
+  "0x35221d6e9dc3e4a277f40b40f7492be3b236d380";
 
 const ICON_URL = `${BASE_URL}/ratchet-vex-dreaming.png`;
+
+const access = {
+  logic: "OR",
+  requirements: [
+    {
+      kind: "0xbdf8c428",
+      data: "0x00000000000000000000000035221d6e9dc3e4a277f40b40f7492be3b236d380",
+      label: "Hold any NFT from this collection",
+      links: {
+        opensea:
+          "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380",
+      },
+    },
+  ],
+};
 
 const inputSchema = {
   type: "object",
@@ -60,6 +76,7 @@ export const chainDreamLookupManifest = defineManifest({
     "Token-gated lookup for the current Chain Dreams state of a token. Returns the current phrase, cycle, dream seed, owner, vocabulary counts, motion data, visual traits, collection context, Ratchet Vex agent context, and links.",
   endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
   creatorAddress: CREATOR_ADDRESS,
+  access,
 
   inputs: inputSchema,
 
@@ -218,6 +235,7 @@ export const chainDreamHistoryManifest = defineManifest({
     "Token-gated lookup for the historical Chain Dreams record of a token. Returns the current dream plus previous dream cycles, phrases, seeds, motion data, and dreamer metadata.",
   endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
   creatorAddress: CREATOR_ADDRESS,
+  access,
 
   inputs: inputSchema,
 
