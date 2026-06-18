@@ -5,7 +5,8 @@ const CREATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
 const CHAIN_DREAMS_CONTRACT =
   "0x35221d6e9dc3e4a277f40b40f7492be3b236d380";
 
-const ICON_URL = `${BASE_URL}/ratchet-vex-dreaming.png`;
+const ICON_URL = `${BASE_URL}/tool-icon.png`;
+const FEATURED_URL = `${BASE_URL}/tool-featured.png`;
 
 const access = {
   logic: "OR",
@@ -206,14 +207,14 @@ export const chainDreamLookupManifest = defineManifest({
     ],
   },
 
-  "io.opensea.display": {
-    title: "Chain Dream Lookup",
-    subtitle: "Read the current dream state of a token",
-    category: "Agent memory",
-    icon: ICON_URL,
-    featuredImage: ICON_URL,
-    website: BASE_URL,
-  },
+ "io.opensea.display": {
+  title: "Chain Dream Lookup",
+  subtitle: "Read the current dream state of a token",
+  category: "Agent memory",
+  icon: ICON_URL,
+  featuredImage: FEATURED_URL,
+  website: BASE_URL,
+},
 
   "io.opensea.access": accessMetadata,
   "io.opensea.collection": collectionMetadata,
@@ -311,14 +312,14 @@ export const chainDreamHistoryManifest = defineManifest({
     ],
   },
 
-  "io.opensea.display": {
-    title: "Chain Dream History",
-    subtitle: "Read the memory of a token across dream cycles",
-    category: "Agent memory",
-    icon: ICON_URL,
-    featuredImage: ICON_URL,
-    website: BASE_URL,
-  },
+"io.opensea.display": {
+  title: "Chain Dream History",
+  subtitle: "Read the memory of a token across dream cycles",
+  category: "Agent memory",
+  icon: ICON_URL,
+  featuredImage: FEATURED_URL,
+  website: BASE_URL,
+},
 
   "io.opensea.access": accessMetadata,
   "io.opensea.collection": collectionMetadata,
