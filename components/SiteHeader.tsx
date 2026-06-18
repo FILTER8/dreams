@@ -9,6 +9,7 @@ const nav = [
   { label: "HOME", href: "/" },
   { label: "COLLECTION", href: "/collection" },
   { label: "DREAM", href: "/dream" },
+  { label: "REGISTRY", href: "/registry" },
   { label: "WALLET", href: "/collectors" },
 ];
 

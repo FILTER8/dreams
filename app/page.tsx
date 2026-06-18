@@ -10,8 +10,11 @@ const FAQS = [
   ["why the c64 colors ?", "The collection uses low-color combinations inspired by Commodore 64 graphics, CRT displays, terminal systems, and early machine interfaces. Limitation becomes identity."],
   ["are the dreams static ?", "The canonical token is permanent, but the daily dream changes through deterministic on-chain dream state."],
   ["what is the dream ?", "Each token emits a daily dream seed. Ratchet interprets that seed through a deterministic semantic system, creating a daily message for holders."],
-  ["what can agents do ?", "Agents can query dream state, read artifact data, and build memory systems around persistent synthetic artifacts."],
+  ["what can agents do ?", "Agents can discover ERC-8257 tools, verify ownership permissions, read current dream state, inspect historical dream memory, analyze visual traits, and build memory systems around persistent synthetic artifacts."],
   ["is everything fully on-chain ?", "The NFT, metadata, SVG artifact, and dream state are generated directly from Ethereum smart contracts. No IPFS. No external image hosting. No centralized metadata server."],
+  ["what is the registry ?", "The Chain Dreams Registry exposes ERC-8257 registered tools on Ethereum Mainnet. These tools allow agents to discover, verify, and access token-gated dream data through open standards."],
+  ["what can agents read ?", "Agents can read the current dream state, dream seed, motion parameters, visual data, and historical dream archive of a token when authorized by the current owner."],
+  ["what are tool #38 and tool #39 ?", "Tool #38 is Chain Dream Lookup and provides access to the current dream. Tool #39 is Chain Dream History and provides access to the historical memory carried by a Chain Dreams token."],
 ];
 
 export default function Page() {
@@ -69,6 +72,45 @@ export default function Page() {
           ))}
         </div>
       </section>
+
+      <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+  <p className="mb-8 text-xl tracking-[0.5em] opacity-80">
+    ERC-8257 REGISTRY
+  </p>
+
+  <h2 className="cd-headline text-4xl leading-tight tracking-[0.12em] md:text-6xl">
+    AGENT<br />ACCESS
+  </h2>
+
+  <p className="mt-8 max-w-3xl text-sm leading-8 opacity-60">
+    Chain Dreams tokens expose token-gated agent tools registered on
+    Ethereum Mainnet. Owners can authorize agents to read the current
+    dream state and historical memory of a token through ERC-8257
+    registered endpoints.
+  </p>
+
+  <div className="mt-12 grid grid-cols-1 gap-4 text-left md:grid-cols-2">
+    <div className="cd-card">
+      <p className="cd-label">TOOL #38</p>
+      <p>CHAIN DREAM LOOKUP</p>
+    </div>
+
+    <div className="cd-card">
+      <p className="cd-label">TOOL #39</p>
+      <p>CHAIN DREAM HISTORY</p>
+    </div>
+  </div>
+
+  <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+    <Link href="/registry" className="cd-button inline-block">
+      OPEN REGISTRY
+    </Link>
+
+    <Link href="/tools/test" className="cd-button inline-block">
+      OPEN TOOL TESTER
+    </Link>
+  </div>
+</section>
 
       <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
         <p className="mb-8 text-xl tracking-[0.5em] opacity-80">COLLECTORS</p>
