@@ -642,5 +642,23 @@
     "source": "ratchet-vex",
     "cycle": "20620",
     "weight": 1
+  },
+  {
+    "text": "charted passage",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "shadowed harbor",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "star gate",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
   }
 ]

@@ -606,5 +606,35 @@
     "source": "ratchet-vex",
     "cycle": "20620",
     "weight": 1
+  },
+  {
+    "text": "an unseen harbor.",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "an unwritten shore.",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "a forgotten garden.",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "a celestial journey.",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
+  },
+  {
+    "text": "a shadowed legacy.",
+    "source": "ishe",
+    "cycle": "20621",
+    "weight": 1
   }
 ]

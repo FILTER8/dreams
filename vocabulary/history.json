@@ -2343,5 +2343,96 @@
     "category": "motifs",
     "text": "luminescent cascade",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.061666Z",
+    "cycle": "20621",
+    "category": "subjects",
+    "text": "The stone cairn",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.061755Z",
+    "cycle": "20621",
+    "category": "subjects",
+    "text": "The dormant shrine",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.061756Z",
+    "cycle": "20621",
+    "category": "subjects",
+    "text": "The ritual passage",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.061757Z",
+    "cycle": "20621",
+    "category": "subjects",
+    "text": "The horizon gate",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.061758Z",
+    "cycle": "20621",
+    "category": "subjects",
+    "text": "The starlight harbor",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.066756Z",
+    "cycle": "20621",
+    "category": "endings",
+    "text": "an unseen harbor.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.066758Z",
+    "cycle": "20621",
+    "category": "endings",
+    "text": "an unwritten shore.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.066759Z",
+    "cycle": "20621",
+    "category": "endings",
+    "text": "a forgotten garden.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.066760Z",
+    "cycle": "20621",
+    "category": "endings",
+    "text": "a celestial journey.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.066761Z",
+    "cycle": "20621",
+    "category": "endings",
+    "text": "a shadowed legacy.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.068885Z",
+    "cycle": "20621",
+    "category": "motifs",
+    "text": "charted passage",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.068887Z",
+    "cycle": "20621",
+    "category": "motifs",
+    "text": "shadowed harbor",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-18T18:45:01.068888Z",
+    "cycle": "20621",
+    "category": "motifs",
+    "text": "star gate",
+    "approvedBy": "filter8"
   }
 ]
