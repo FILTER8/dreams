@@ -690,5 +690,35 @@
     "source": "ishe",
     "cycle": "20621",
     "weight": 1
+  },
+  {
+    "text": "The weathered cairn",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "The stone shrine",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "The mossed shrine",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "The distant spire",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "The broken lantern",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
   }
 ]

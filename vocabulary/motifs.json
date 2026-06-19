@@ -660,5 +660,23 @@
     "source": "ishe",
     "cycle": "20621",
     "weight": 1
+  },
+  {
+    "text": "lost shrine",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "heritage gateway",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
+  },
+  {
+    "text": "stone journey",
+    "source": "ishe",
+    "cycle": "20622",
+    "weight": 1
   }
 ]

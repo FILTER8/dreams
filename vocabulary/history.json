@@ -2434,5 +2434,89 @@
     "category": "motifs",
     "text": "star gate",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.410506Z",
+    "cycle": "20622",
+    "category": "subjects",
+    "text": "The weathered cairn",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.410963Z",
+    "cycle": "20622",
+    "category": "subjects",
+    "text": "The stone shrine",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.410964Z",
+    "cycle": "20622",
+    "category": "subjects",
+    "text": "The mossed shrine",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.410965Z",
+    "cycle": "20622",
+    "category": "subjects",
+    "text": "The distant spire",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.410966Z",
+    "cycle": "20622",
+    "category": "subjects",
+    "text": "The broken lantern",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.413149Z",
+    "cycle": "20622",
+    "category": "verbs",
+    "text": "witnesses",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.415323Z",
+    "cycle": "20622",
+    "category": "endings",
+    "text": "an ancient ritual.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.415324Z",
+    "cycle": "20622",
+    "category": "endings",
+    "text": "an inherited spire.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.415325Z",
+    "cycle": "20622",
+    "category": "endings",
+    "text": "an echoed journey.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.417386Z",
+    "cycle": "20622",
+    "category": "motifs",
+    "text": "lost shrine",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.417387Z",
+    "cycle": "20622",
+    "category": "motifs",
+    "text": "heritage gateway",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-19T09:40:25.417388Z",
+    "cycle": "20622",
+    "category": "motifs",
+    "text": "stone journey",
+    "approvedBy": "filter8"
   }
 ]
