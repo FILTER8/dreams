@@ -2518,5 +2518,54 @@
     "category": "motifs",
     "text": "stone journey",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.941226Z",
+    "cycle": "20623",
+    "category": "subjects",
+    "text": "The bell tower",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.941622Z",
+    "cycle": "20623",
+    "category": "subjects",
+    "text": "The old orchard",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.941623Z",
+    "cycle": "20623",
+    "category": "subjects",
+    "text": "The ferry channel",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.941623Z",
+    "cycle": "20623",
+    "category": "subjects",
+    "text": "The ruined monastery",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.941624Z",
+    "cycle": "20623",
+    "category": "subjects",
+    "text": "The marker stone",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.949756Z",
+    "cycle": "20623",
+    "category": "motifs",
+    "text": "quiet well",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-20T16:00:49.949762Z",
+    "cycle": "20623",
+    "category": "motifs",
+    "text": "marker path",
+    "approvedBy": "filter8"
   }
 ]
