@@ -750,5 +750,35 @@
     "source": "ishe",
     "cycle": "20623",
     "weight": 1
+  },
+  {
+    "text": "The fallen waystone",
+    "source": "ishe",
+    "cycle": "20624",
+    "weight": 1
+  },
+  {
+    "text": "The distant sundial",
+    "source": "ishe",
+    "cycle": "20624",
+    "weight": 1
+  },
+  {
+    "text": "The mossed alcove",
+    "source": "ishe",
+    "cycle": "20624",
+    "weight": 1
+  },
+  {
+    "text": "The holy well",
+    "source": "ishe",
+    "cycle": "20624",
+    "weight": 1
+  },
+  {
+    "text": "The silent sentinel",
+    "source": "ishe",
+    "cycle": "20624",
+    "weight": 1
   }
 ]

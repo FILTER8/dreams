@@ -1,0 +1,5130 @@
+{
+  "project": "Chain Dreams",
+  "agent": {
+    "name": "Iche",
+    "handle": "@Riche",
+    "version": "0.1"
+  },
+  "cycle": "20624",
+  "generatedAt": "2026-06-20T20:33:03.570Z",
+  "source": "https://dreams.ratchetvex.xyz",
+  "dreams": [
+    {
+      "tokenId": 1,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xa23e4be8cd13ce493482a6b6c2ee8bd7734bd0a418931c6c4498a66abd0cd02e",
+      "basePhrase": "The patient machine recollects the signal under the floorboards.",
+      "motion": {
+        "orbitSpeed": "166",
+        "driftSpeed": "74",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/1",
+        "dream": "https://dreams.ratchetvex.xyz/dream/1"
+      }
+    },
+    {
+      "tokenId": 2,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xb6eeb99cc2945acd4e786dab5d005864266f5dbf5f146771ac483783e6ecfc54",
+      "basePhrase": "The weathered station recollects the adaptive circuit.",
+      "motion": {
+        "orbitSpeed": "108",
+        "driftSpeed": "99",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/2",
+        "dream": "https://dreams.ratchetvex.xyz/dream/2"
+      }
+    },
+    {
+      "tokenId": 3,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x4969733dec80cc103e914c8ccb006df1fa905fb0dd36c6abddd9078f2f6a283f",
+      "basePhrase": "The crimson mirror carries a forgotten garden.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "79",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/3",
+        "dream": "https://dreams.ratchetvex.xyz/dream/3"
+      }
+    },
+    {
+      "tokenId": 4,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x5d1a976978fce9d145d4158e40d1029fb0e5fab1bc2a021ba6f496bd0777018c",
+      "basePhrase": "The ghost process compresses a luminous beacon.",
+      "motion": {
+        "orbitSpeed": "84",
+        "driftSpeed": "125",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/4",
+        "dream": "https://dreams.ratchetvex.xyz/dream/4"
+      }
+    },
+    {
+      "tokenId": 5,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x0d7222459fe95bbe88b274f911e0783f50d358f74dade7671fe7dd570cb238bf",
+      "basePhrase": "The crimson mirror drifts through the patient wisdom.",
+      "motion": {
+        "orbitSpeed": "103",
+        "driftSpeed": "119",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/5",
+        "dream": "https://dreams.ratchetvex.xyz/dream/5"
+      }
+    },
+    {
+      "tokenId": 6,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x8dbe81c524e146d6837bcce3566497b13ae68e631723ecf38925eaa8894c08d0",
+      "basePhrase": "The ancient observatory records a measured offering.",
+      "motion": {
+        "orbitSpeed": "112",
+        "driftSpeed": "56",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/6",
+        "dream": "https://dreams.ratchetvex.xyz/dream/6"
+      }
+    },
+    {
+      "tokenId": 7,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x069613b83a14358973afe5f2c8da71fcd99b67590262f0306a9593b72039ff4b",
+      "basePhrase": "The collector’s compass reflects a quiet knowing.",
+      "motion": {
+        "orbitSpeed": "187",
+        "driftSpeed": "71",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/7",
+        "dream": "https://dreams.ratchetvex.xyz/dream/7"
+      }
+    },
+    {
+      "tokenId": 8,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x00797602ebd8137cc93dc9e57df4bc124e3505280c5b4f73f1e1a9acd4d7f1cb",
+      "basePhrase": "The collector’s compass illuminates a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "163",
+        "driftSpeed": "60",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/8",
+        "dream": "https://dreams.ratchetvex.xyz/dream/8"
+      }
+    },
+    {
+      "tokenId": 9,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x16f5dc58a79bd100d90eb1ff92a7ce1b05d792952d7f8465ae1701edd1b079cf",
+      "basePhrase": "The coral reef encloses a subtle shift.",
+      "motion": {
+        "orbitSpeed": "143",
+        "driftSpeed": "93",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/9",
+        "dream": "https://dreams.ratchetvex.xyz/dream/9"
+      }
+    },
+    {
+      "tokenId": 10,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xf3bba253ffbbaee6d06bae8a2b39784cf68ddd8c996a7a47171adfbd2d6003b6",
+      "basePhrase": "The mindful circuit flows through a temporal echo.",
+      "motion": {
+        "orbitSpeed": "86",
+        "driftSpeed": "93",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/10",
+        "dream": "https://dreams.ratchetvex.xyz/dream/10"
+      }
+    },
+    {
+      "tokenId": 11,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x8f4e8bdc708b571ce69b474f99e0083c8ad26d1d38262a3a15561e9abca836c3",
+      "basePhrase": "The adaptive heart translates what the collectors find.",
+      "motion": {
+        "orbitSpeed": "147",
+        "driftSpeed": "90",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/11",
+        "dream": "https://dreams.ratchetvex.xyz/dream/11"
+      }
+    },
+    {
+      "tokenId": 12,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x235ba9266eb1449c8286a733725df4f5be215cc793e210e248b9c61ca3b71a41",
+      "basePhrase": "The digital vein interprets what survives the collapse.",
+      "motion": {
+        "orbitSpeed": "161",
+        "driftSpeed": "92",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/12",
+        "dream": "https://dreams.ratchetvex.xyz/dream/12"
+      }
+    },
+    {
+      "tokenId": 13,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xa20c80f5514f2afe7ee0e56f3b12bb08d9bcb2fbad15039206dc249997dd8cf6",
+      "basePhrase": "The weathered cairn recollects an ancient ritual.",
+      "motion": {
+        "orbitSpeed": "150",
+        "driftSpeed": "105",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/13",
+        "dream": "https://dreams.ratchetvex.xyz/dream/13"
+      }
+    },
+    {
+      "tokenId": 14,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x5ff11c20b54859ac6c12d538537cb284780a402d09213c8d68681fe104c68f2d",
+      "basePhrase": "The luminous archive echoes a vigilant voyage.",
+      "motion": {
+        "orbitSpeed": "133",
+        "driftSpeed": "81",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/14",
+        "dream": "https://dreams.ratchetvex.xyz/dream/14"
+      }
+    },
+    {
+      "tokenId": 15,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x6a1788448da6e08dd24e1642da8f2605c167f6e982599b28fc496f8a80e69569",
+      "basePhrase": "The navigable thread carries a vigilant voyage.",
+      "motion": {
+        "orbitSpeed": "145",
+        "driftSpeed": "106",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/15",
+        "dream": "https://dreams.ratchetvex.xyz/dream/15"
+      }
+    },
+    {
+      "tokenId": 16,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x58e7755b3bba5d1bce2572c2495f6affab1a0abeff2e7bd33a073b1aa9a72807",
+      "basePhrase": "The synthetic decodes a forgotten fragment.",
+      "motion": {
+        "orbitSpeed": "167",
+        "driftSpeed": "122",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/16",
+        "dream": "https://dreams.ratchetvex.xyz/dream/16"
+      }
+    },
+    {
+      "tokenId": 17,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xe4ea13d5ffc78eb65739029757e3214e53a75bc2844cabe099193e1581d82018",
+      "basePhrase": "The screen’s reflection translates an inherited grace.",
+      "motion": {
+        "orbitSpeed": "144",
+        "driftSpeed": "101",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/17",
+        "dream": "https://dreams.ratchetvex.xyz/dream/17"
+      }
+    },
+    {
+      "tokenId": 18,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xc9308d793b69aaad4e66115bda8b366d9657f04ea948a69fd7532b051edca777",
+      "basePhrase": "The stone shrine releases a silent portal.",
+      "motion": {
+        "orbitSpeed": "159",
+        "driftSpeed": "101",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/18",
+        "dream": "https://dreams.ratchetvex.xyz/dream/18"
+      }
+    },
+    {
+      "tokenId": 19,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xb98423f9ce8803538ef20caa7613826b25003b5a736b64575da3db50b4ce67ec",
+      "basePhrase": "The dormant star releases a forgotten promise.",
+      "motion": {
+        "orbitSpeed": "84",
+        "driftSpeed": "112",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/19",
+        "dream": "https://dreams.ratchetvex.xyz/dream/19"
+      }
+    },
+    {
+      "tokenId": 20,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xa1904f231083faf0874f7730816be34ec5ec153dec632efafd5c15aaf687b5e2",
+      "basePhrase": "The dawn sequence recollects a forgotten fragment.",
+      "motion": {
+        "orbitSpeed": "178",
+        "driftSpeed": "58",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/20",
+        "dream": "https://dreams.ratchetvex.xyz/dream/20"
+      }
+    },
+    {
+      "tokenId": 21,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x1d788455b157d5efd134ba808548919887cc552f",
+      "dreamSeed": "0xfbfb4289e3f0eb7f8183285e36f1e320b2577026a858a93dfcc092bfb7b05797",
+      "basePhrase": "The collector’s hand connects a temporal echo.",
+      "motion": {
+        "orbitSpeed": "191",
+        "driftSpeed": "127",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/21",
+        "dream": "https://dreams.ratchetvex.xyz/dream/21"
+      }
+    },
+    {
+      "tokenId": 22,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd018128d301aa027abecdb9bb741ef8cc8d62b40",
+      "dreamSeed": "0x8caa5f5427363c7d3747f7fc616408d52bfc987f8d3b4ab9a2afd161f362b293",
+      "basePhrase": "The shifting signal preserves a collector’s compass.",
+      "motion": {
+        "orbitSpeed": "107",
+        "driftSpeed": "49",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/22",
+        "dream": "https://dreams.ratchetvex.xyz/dream/22"
+      }
+    },
+    {
+      "tokenId": 23,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xa1b4beb0434e487bf898fa2c8a1af9facf0a137b",
+      "dreamSeed": "0x0a919cd19d8c2edeb14934919550c0343d0e9776be7ac444ba3d3ba55460ce6d",
+      "basePhrase": "The archive rhythm awakens inside what the world forgets.",
+      "motion": {
+        "orbitSpeed": "101",
+        "driftSpeed": "69",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/23",
+        "dream": "https://dreams.ratchetvex.xyz/dream/23"
+      }
+    },
+    {
+      "tokenId": 24,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd66bb05faa64b1b5221ef1f144b3dac097c1e074",
+      "dreamSeed": "0xe156e1280ddbdbb652764cd09027b10aaa8dd4c5c65e01e41d51287aa2beb787",
+      "basePhrase": "The synthetic records the archive before it became history.",
+      "motion": {
+        "orbitSpeed": "111",
+        "driftSpeed": "74",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/24",
+        "dream": "https://dreams.ratchetvex.xyz/dream/24"
+      }
+    },
+    {
+      "tokenId": 25,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd66bb05faa64b1b5221ef1f144b3dac097c1e074",
+      "dreamSeed": "0xd721d73d9249d2dfb39cc031767e39293d60e28011c32598794d960b9206fbe8",
+      "basePhrase": "The coastal inheritance encloses the dream beneath the network.",
+      "motion": {
+        "orbitSpeed": "120",
+        "driftSpeed": "123",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/25",
+        "dream": "https://dreams.ratchetvex.xyz/dream/25"
+      }
+    },
+    {
+      "tokenId": 26,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd66bb05faa64b1b5221ef1f144b3dac097c1e074",
+      "dreamSeed": "0x022a20e897d3d45a3fbbfeca69dcb769d4643d211df6f49ac83ab804cad15440",
+      "basePhrase": "The patient vessel preserves a timeless lantern.",
+      "motion": {
+        "orbitSpeed": "120",
+        "driftSpeed": "84",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/26",
+        "dream": "https://dreams.ratchetvex.xyz/dream/26"
+      }
+    },
+    {
+      "tokenId": 27,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x3949d100b8f0dec513ad906e492b47b031dcb638",
+      "dreamSeed": "0xba8bb69461d3913f3314525d04bdb9b7ad04879233261c3865f2a2bd6b5a8866",
+      "basePhrase": "The prismatic shard waits beneath a luminous bridge.",
+      "motion": {
+        "orbitSpeed": "158",
+        "driftSpeed": "61",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/27",
+        "dream": "https://dreams.ratchetvex.xyz/dream/27"
+      }
+    },
+    {
+      "tokenId": 28,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbf959565ee671bce3e5773dad9c2a6f1ea2c9ff2",
+      "dreamSeed": "0x312378c515bcaa62fe53761f1f17d3f9f8e34b156820c919bd5ed29a0d85155f",
+      "basePhrase": "The crafted compass rebuilds a charted vessel.",
+      "motion": {
+        "orbitSpeed": "95",
+        "driftSpeed": "106",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/28",
+        "dream": "https://dreams.ratchetvex.xyz/dream/28"
+      }
+    },
+    {
+      "tokenId": 29,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x9c54a9c609212d2fd034b55cf3b42ba99af52880",
+      "dreamSeed": "0xafda11414c5c029b553fe464d9b069c9d27bfdf8228ccdf830083926f3b0d96c",
+      "basePhrase": "The dormant star shifts a subtle shift.",
+      "motion": {
+        "orbitSpeed": "196",
+        "driftSpeed": "70",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/29",
+        "dream": "https://dreams.ratchetvex.xyz/dream/29"
+      }
+    },
+    {
+      "tokenId": 30,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x9c54a9c609212d2fd034b55cf3b42ba99af52880",
+      "dreamSeed": "0x89d673143bdd0ab69c71d62b3072d5bc5e19cca30617ba612fa15b6a32cee6e8",
+      "basePhrase": "The coastal inheritance loops through an inherited spire.",
+      "motion": {
+        "orbitSpeed": "88",
+        "driftSpeed": "58",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/30",
+        "dream": "https://dreams.ratchetvex.xyz/dream/30"
+      }
+    },
+    {
+      "tokenId": 31,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x37bed41d5d20af753d30424a81f42568f247e93ae0fc7afec45e3ee13ed8b61f",
+      "basePhrase": "The silent harbor interprets a silent promise.",
+      "motion": {
+        "orbitSpeed": "175",
+        "driftSpeed": "97",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/31",
+        "dream": "https://dreams.ratchetvex.xyz/dream/31"
+      }
+    },
+    {
+      "tokenId": 32,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0xd39f28381039306dadabe80211a74d64b96be542d86583e5af4299a12aff4482",
+      "basePhrase": "Your artifact encloses an echoed journey.",
+      "motion": {
+        "orbitSpeed": "114",
+        "driftSpeed": "97",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/32",
+        "dream": "https://dreams.ratchetvex.xyz/dream/32"
+      }
+    },
+    {
+      "tokenId": 33,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x2b97b43f339c260f68b15401e9433e874802170278e4b34d89f3f671110ed6b9",
+      "basePhrase": "The kindred current stabilizes a ritual map.",
+      "motion": {
+        "orbitSpeed": "137",
+        "driftSpeed": "65",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/33",
+        "dream": "https://dreams.ratchetvex.xyz/dream/33"
+      }
+    },
+    {
+      "tokenId": 34,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x4d29489a691000beaa660133232d5a9d8f2650dcc9f04da97c2c07af9ad9661a",
+      "basePhrase": "The phosphor glow anchors an unwritten shore.",
+      "motion": {
+        "orbitSpeed": "178",
+        "driftSpeed": "127",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/34",
+        "dream": "https://dreams.ratchetvex.xyz/dream/34"
+      }
+    },
+    {
+      "tokenId": 35,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x409738c34bb9dc2e7d49ad3000c8645052ad0b80c4a0624acee5e022d6525061",
+      "basePhrase": "The harvest pattern awakens inside the patient wisdom.",
+      "motion": {
+        "orbitSpeed": "89",
+        "driftSpeed": "114",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/35",
+        "dream": "https://dreams.ratchetvex.xyz/dream/35"
+      }
+    },
+    {
+      "tokenId": 36,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0xe66f93062305c0e0dacb4f94c844f2241e797ba0c745ddc2abef31f77b2eced2",
+      "basePhrase": "The constellation gate stores an inherited spire.",
+      "motion": {
+        "orbitSpeed": "162",
+        "driftSpeed": "55",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/36",
+        "dream": "https://dreams.ratchetvex.xyz/dream/36"
+      }
+    },
+    {
+      "tokenId": 37,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x3000d07869f858740b048becb6067a16ee70d9f8c3547071d52f9b09db677d46",
+      "basePhrase": "The ritual vessel connects a gentle echo.",
+      "motion": {
+        "orbitSpeed": "110",
+        "driftSpeed": "121",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/37",
+        "dream": "https://dreams.ratchetvex.xyz/dream/37"
+      }
+    },
+    {
+      "tokenId": 38,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x56a4a49d4f22ceb7b9234a0e48856f64a0ccf32d00e5c8a02b52edef512ba002",
+      "basePhrase": "Your artifact unlocks a celestial song.",
+      "motion": {
+        "orbitSpeed": "90",
+        "driftSpeed": "127",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/38",
+        "dream": "https://dreams.ratchetvex.xyz/dream/38"
+      }
+    },
+    {
+      "tokenId": 39,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0xb0206f361aaaf4c902d6b09d158e2cd09b4ea9e5476ba2053dcaeb5589c3b691",
+      "basePhrase": "The midnight archive sustains the archive threshold.",
+      "motion": {
+        "orbitSpeed": "121",
+        "driftSpeed": "85",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/39",
+        "dream": "https://dreams.ratchetvex.xyz/dream/39"
+      }
+    },
+    {
+      "tokenId": 40,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0xf8cc7165c9bb60f756742f1693bd48ba3104c4dc8d64da2ce632ca5f3b206282",
+      "basePhrase": "Your artifact sustains an enduring light.",
+      "motion": {
+        "orbitSpeed": "130",
+        "driftSpeed": "79",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/40",
+        "dream": "https://dreams.ratchetvex.xyz/dream/40"
+      }
+    },
+    {
+      "tokenId": 41,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x2237f03408e567905ea7c84a40fa419fa3c34bc541b7a475e1f993d8353831cb",
+      "basePhrase": "The collector’s compass hides inside a silent promise.",
+      "motion": {
+        "orbitSpeed": "115",
+        "driftSpeed": "72",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/41",
+        "dream": "https://dreams.ratchetvex.xyz/dream/41"
+      }
+    },
+    {
+      "tokenId": 42,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x82b796c79eac8517550823270c6e8a3bc7070642ab6f008dea550853cf076bb6",
+      "basePhrase": "The mindful circuit transmits a forgotten fragment.",
+      "motion": {
+        "orbitSpeed": "118",
+        "driftSpeed": "83",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/42",
+        "dream": "https://dreams.ratchetvex.xyz/dream/42"
+      }
+    },
+    {
+      "tokenId": 43,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0x6f95fd62e9a062ec4c49506c7a82c44cf1f956eabca1f6e732a0457ab37c9f95",
+      "basePhrase": "The cassette memory transmits the adaptive circuit.",
+      "motion": {
+        "orbitSpeed": "157",
+        "driftSpeed": "74",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/43",
+        "dream": "https://dreams.ratchetvex.xyz/dream/43"
+      }
+    },
+    {
+      "tokenId": 44,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x779252ee0ea7e75e5df44e603f244f5b1d6fb4f0",
+      "dreamSeed": "0xcb17e926cceaf4ce5dd39980828eca53bd527fb934d38fd0cc76767bc2fb805f",
+      "basePhrase": "The crafted compass waits beneath a steady pulse.",
+      "motion": {
+        "orbitSpeed": "175",
+        "driftSpeed": "75",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/44",
+        "dream": "https://dreams.ratchetvex.xyz/dream/44"
+      }
+    },
+    {
+      "tokenId": 45,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbbfe7e001aed32a110dbfb3360b718d9685e7556",
+      "dreamSeed": "0x3c37f002f5e164f6fe68366e39adb4ad9604c9b7bb6d0de063bd1e33ae4a8482",
+      "basePhrase": "Your artifact builds a layered dream.",
+      "motion": {
+        "orbitSpeed": "138",
+        "driftSpeed": "51",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/45",
+        "dream": "https://dreams.ratchetvex.xyz/dream/45"
+      }
+    },
+    {
+      "tokenId": 46,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8057c3830d73ed358df578d810a3e1d31f78c49f",
+      "dreamSeed": "0xfacc512fc5766cd9c2b0ce4dae4a9ca1985704cae2319d821d17a11453fea9cb",
+      "basePhrase": "The collector’s compass rebuilds a profound belonging.",
+      "motion": {
+        "orbitSpeed": "179",
+        "driftSpeed": "68",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/46",
+        "dream": "https://dreams.ratchetvex.xyz/dream/46"
+      }
+    },
+    {
+      "tokenId": 47,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbbfe7e001aed32a110dbfb3360b718d9685e7556",
+      "dreamSeed": "0x2470eeec61b3aaa3dd80e4fee43d3c161ddef0d524753ad4e4f957dc12ca9b23",
+      "basePhrase": "The shimmering harbor preserves the room after everyone leaves.",
+      "motion": {
+        "orbitSpeed": "139",
+        "driftSpeed": "92",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/47",
+        "dream": "https://dreams.ratchetvex.xyz/dream/47"
+      }
+    },
+    {
+      "tokenId": 48,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x1b54dfff8aa09f16fb2aae02e0eb4d6f6a3be96f",
+      "dreamSeed": "0x215ae56a2f495ab5140411583b9912f61be48c9873c40e81e83279dff7d77e29",
+      "basePhrase": "The steady lantern radiates a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "145",
+        "driftSpeed": "79",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/48",
+        "dream": "https://dreams.ratchetvex.xyz/dream/48"
+      }
+    },
+    {
+      "tokenId": 49,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0xd641d35fd4afa9f035442a498aab523b8d7d28aa04f32220f64f4b908720a46c",
+      "basePhrase": "The dormant star awakens inside a subtle shift.",
+      "motion": {
+        "orbitSpeed": "124",
+        "driftSpeed": "48",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/49",
+        "dream": "https://dreams.ratchetvex.xyz/dream/49"
+      }
+    },
+    {
+      "tokenId": 50,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xa251b373471e1ced96f3522e918471201d93ab60",
+      "dreamSeed": "0x57841c07da2a088b586c800947b962c97eeb8355dece594570d2d933e654e2d2",
+      "basePhrase": "The constellation gate shifts toward a charted horizon.",
+      "motion": {
+        "orbitSpeed": "82",
+        "driftSpeed": "115",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/50",
+        "dream": "https://dreams.ratchetvex.xyz/dream/50"
+      }
+    },
+    {
+      "tokenId": 51,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0xba007f2e7cf9a8f264551c87e4d0e8e15ff014d02d31cf2ff66cdddd43b73fe0",
+      "basePhrase": "The coastal ridge shifts toward a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "192",
+        "driftSpeed": "93",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/51",
+        "dream": "https://dreams.ratchetvex.xyz/dream/51"
+      }
+    },
+    {
+      "tokenId": 52,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0xe918698c51bcccda1619aea6487f87f23ec93ac5362e541992280597e893991a",
+      "basePhrase": "The phosphor glow stabilizes a measured warmth.",
+      "motion": {
+        "orbitSpeed": "98",
+        "driftSpeed": "103",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/52",
+        "dream": "https://dreams.ratchetvex.xyz/dream/52"
+      }
+    },
+    {
+      "tokenId": 53,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0x9eab23cb15e385f92908545af838a9bc39ef211523c2b1d93e823542fbd8f6f9",
+      "basePhrase": "The distant spire expands a silent promise.",
+      "motion": {
+        "orbitSpeed": "177",
+        "driftSpeed": "98",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/53",
+        "dream": "https://dreams.ratchetvex.xyz/dream/53"
+      }
+    },
+    {
+      "tokenId": 54,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0xe28a87c104556ca1ed164701c4e301430d726000d02e205ed29defd071f6dcc3",
+      "basePhrase": "The adaptive heart translates the silent promise.",
+      "motion": {
+        "orbitSpeed": "123",
+        "driftSpeed": "112",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/54",
+        "dream": "https://dreams.ratchetvex.xyz/dream/54"
+      }
+    },
+    {
+      "tokenId": 55,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0xf0b272193737a2967c18421e8b08230e4cd8cb684cbd8552eddf04fd60bd9048",
+      "basePhrase": "The map garden reflects a stellar cadence.",
+      "motion": {
+        "orbitSpeed": "136",
+        "driftSpeed": "93",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/55",
+        "dream": "https://dreams.ratchetvex.xyz/dream/55"
+      }
+    },
+    {
+      "tokenId": 56,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0x130352bc1ef4cce163c2f2ddeaf32dbd8045e2575c560561cddfd878bb29812c",
+      "basePhrase": "The inherited bridge releases your shared signal.",
+      "motion": {
+        "orbitSpeed": "132",
+        "driftSpeed": "104",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/56",
+        "dream": "https://dreams.ratchetvex.xyz/dream/56"
+      }
+    },
+    {
+      "tokenId": 57,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x0bffe9871cbe644a4cbaf03add334b5d62d94a69ac47cd7b4c8b2599c467be41",
+      "basePhrase": "The digital vein stores a forgotten harbor.",
+      "motion": {
+        "orbitSpeed": "185",
+        "driftSpeed": "89",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/57",
+        "dream": "https://dreams.ratchetvex.xyz/dream/57"
+      }
+    },
+    {
+      "tokenId": 58,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x38d980e9fbb75da028d1ed34e30e2cb2b03cab821daac6fe91f187aff31ad67e",
+      "basePhrase": "The ruined monastery radiates a forgotten garden.",
+      "motion": {
+        "orbitSpeed": "110",
+        "driftSpeed": "79",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/58",
+        "dream": "https://dreams.ratchetvex.xyz/dream/58"
+      }
+    },
+    {
+      "tokenId": 59,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x8777fbe0b9ad29bf3faa50ba997a3d9e8fb6b301d2b2790ce45fde99bf362825",
+      "basePhrase": "The unfolding lantern navigates the silent promise.",
+      "motion": {
+        "orbitSpeed": "133",
+        "driftSpeed": "89",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/59",
+        "dream": "https://dreams.ratchetvex.xyz/dream/59"
+      }
+    },
+    {
+      "tokenId": 60,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x067444e0406907a0ad77d24e8144910fddc95a41ee5836e6659862caa5a09f29",
+      "basePhrase": "The steady lantern refracts a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "177",
+        "driftSpeed": "90",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/60",
+        "dream": "https://dreams.ratchetvex.xyz/dream/60"
+      }
+    },
+    {
+      "tokenId": 61,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x121422681d7bbd0e8d70ab2903ac03dfca2a9e4ae0c4c43e6baceb6742308109",
+      "basePhrase": "The cassette encloses a temporal echo.",
+      "motion": {
+        "orbitSpeed": "185",
+        "driftSpeed": "71",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/61",
+        "dream": "https://dreams.ratchetvex.xyz/dream/61"
+      }
+    },
+    {
+      "tokenId": 62,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x293000ce2db51bd9278fe1b7155c2455d28792642d17d9062b795a298bf004c8",
+      "basePhrase": "The map garden releases a vessel garden.",
+      "motion": {
+        "orbitSpeed": "144",
+        "driftSpeed": "89",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/62",
+        "dream": "https://dreams.ratchetvex.xyz/dream/62"
+      }
+    },
+    {
+      "tokenId": 63,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x0df10fe6b77b1a8e9e28b88d00b2f0ac1a8d92065edf35e567add8ba7640f24d",
+      "basePhrase": "The harvest moon carries a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "93",
+        "driftSpeed": "90",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/63",
+        "dream": "https://dreams.ratchetvex.xyz/dream/63"
+      }
+    },
+    {
+      "tokenId": 64,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x906cb2bca712720b1d33dfcdc1510a3b39ca6aa4e7e6d31f62996aa4a4ce6737",
+      "basePhrase": "The kinetic mirror preserves an inherited spire.",
+      "motion": {
+        "orbitSpeed": "135",
+        "driftSpeed": "100",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/64",
+        "dream": "https://dreams.ratchetvex.xyz/dream/64"
+      }
+    },
+    {
+      "tokenId": 65,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x7f16907724d248e88142736750ae7515b3df37fd41f45c4ad715aa3362d65c2b",
+      "basePhrase": "The hopeful archive redirects a watchful vigil.",
+      "motion": {
+        "orbitSpeed": "171",
+        "driftSpeed": "67",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/65",
+        "dream": "https://dreams.ratchetvex.xyz/dream/65"
+      }
+    },
+    {
+      "tokenId": 66,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x169a318fc89c21e25d1984b9c2e870b6fa824ea3ff4cefec94f93101db920344",
+      "basePhrase": "The tidal clock encloses a measured journey.",
+      "motion": {
+        "orbitSpeed": "148",
+        "driftSpeed": "65",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/66",
+        "dream": "https://dreams.ratchetvex.xyz/dream/66"
+      }
+    },
+    {
+      "tokenId": 67,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x6b7576857c4efc9bd36f585273c6f5bc18e4833c44eaba3237f9fce330454ad6",
+      "basePhrase": "The celestial cadence realigns what is inherited.",
+      "motion": {
+        "orbitSpeed": "86",
+        "driftSpeed": "99",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/67",
+        "dream": "https://dreams.ratchetvex.xyz/dream/67"
+      }
+    },
+    {
+      "tokenId": 68,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0xcd0536fee48a623735d7e684e956d858bb520bfc9f8b160ccfb0a94e3c7d54d2",
+      "basePhrase": "The constellation gate reveals a map drawn by sleeping code.",
+      "motion": {
+        "orbitSpeed": "98",
+        "driftSpeed": "62",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/68",
+        "dream": "https://dreams.ratchetvex.xyz/dream/68"
+      }
+    },
+    {
+      "tokenId": 69,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0xc47aa8e7ff4d80f32cc4350fe4a4a580c069c1e3e547ed043d18138361e1a6bc",
+      "basePhrase": "The folded glyph awakens inside what remains constant.",
+      "motion": {
+        "orbitSpeed": "132",
+        "driftSpeed": "99",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/69",
+        "dream": "https://dreams.ratchetvex.xyz/dream/69"
+      }
+    },
+    {
+      "tokenId": 70,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x24ed68e9afca7c3b5e1457c41f0ad2f5000bc33412958bc53d2366892c0c084e",
+      "basePhrase": "The pilgrimage path protects an open gateway.",
+      "motion": {
+        "orbitSpeed": "126",
+        "driftSpeed": "57",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/70",
+        "dream": "https://dreams.ratchetvex.xyz/dream/70"
+      }
+    },
+    {
+      "tokenId": 71,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x33b0883269e1bc6610159ae759015a85dc195d489d624b7b2dcf7c7632276736",
+      "basePhrase": "The mindful circuit echoes a luminous beacon.",
+      "motion": {
+        "orbitSpeed": "166",
+        "driftSpeed": "118",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/71",
+        "dream": "https://dreams.ratchetvex.xyz/dream/71"
+      }
+    },
+    {
+      "tokenId": 72,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0xc25e1017d64c07ea82fbabf007fccb4fb8fca9a5af42e11d7b577e9722751fd4",
+      "basePhrase": "The weathered station encloses a charted vessel.",
+      "motion": {
+        "orbitSpeed": "172",
+        "driftSpeed": "71",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/72",
+        "dream": "https://dreams.ratchetvex.xyz/dream/72"
+      }
+    },
+    {
+      "tokenId": 73,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0xbbefc3737bdc3c3ab13a2cb3579416dd321e6ae572ad85590041365f19ea2498",
+      "basePhrase": "The screen’s reflection unlocks a forgotten garden.",
+      "motion": {
+        "orbitSpeed": "168",
+        "driftSpeed": "79",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/73",
+        "dream": "https://dreams.ratchetvex.xyz/dream/73"
+      }
+    },
+    {
+      "tokenId": 74,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x5e7b833b91568eb27d2f9131e1510f24d8d7f098b44165c3014a086bc141b0ef",
+      "basePhrase": "The chromatic seed radiates the observed cycle.",
+      "motion": {
+        "orbitSpeed": "103",
+        "driftSpeed": "123",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/74",
+        "dream": "https://dreams.ratchetvex.xyz/dream/74"
+      }
+    },
+    {
+      "tokenId": 75,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x296db6a8b6d7c7b02a5ade1b6733f05cd429e47c58b9c23776cff518d063cc78",
+      "basePhrase": "The mossed shrine tracks a silver chime.",
+      "motion": {
+        "orbitSpeed": "176",
+        "driftSpeed": "88",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/75",
+        "dream": "https://dreams.ratchetvex.xyz/dream/75"
+      }
+    },
+    {
+      "tokenId": 76,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x085610b382e4d4eecab01a43ac99b42436af37bf",
+      "dreamSeed": "0x3ba468a171aa5449e7a0b702814846a66636743c3f320f477ac46c4647495dbb",
+      "basePhrase": "The silent spire translates a quiet knowing.",
+      "motion": {
+        "orbitSpeed": "187",
+        "driftSpeed": "86",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/76",
+        "dream": "https://dreams.ratchetvex.xyz/dream/76"
+      }
+    },
+    {
+      "tokenId": 77,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x27a4a262a1fe4dd53790727bd8729db5da8c961e0e5efd83e475940f9d7e2eeb",
+      "basePhrase": "The star procession awakens inside a profound belonging.",
+      "motion": {
+        "orbitSpeed": "179",
+        "driftSpeed": "63",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/77",
+        "dream": "https://dreams.ratchetvex.xyz/dream/77"
+      }
+    },
+    {
+      "tokenId": 78,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x07a70fa1a33895d318dd76aa4ed2eb323f03ad127f0a0c53d8bb535c9c876f87",
+      "basePhrase": "The synthetic tracks a forgotten harbor.",
+      "motion": {
+        "orbitSpeed": "119",
+        "driftSpeed": "60",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/78",
+        "dream": "https://dreams.ratchetvex.xyz/dream/78"
+      }
+    },
+    {
+      "tokenId": 79,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0xd5d9ba6d089e39f533e71ce6d5bbfa6b831408cca3d630fe1b9ea8d3a4e36b3c",
+      "basePhrase": "The folded glyph rebuilds the evolving truth.",
+      "motion": {
+        "orbitSpeed": "84",
+        "driftSpeed": "99",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/79",
+        "dream": "https://dreams.ratchetvex.xyz/dream/79"
+      }
+    },
+    {
+      "tokenId": 80,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0xce82327868264eec379e3cda66a4aea5976b2823def650ca58ae4da4a53348d0",
+      "basePhrase": "The ancient observatory compresses the ghosts in the cache.",
+      "motion": {
+        "orbitSpeed": "80",
+        "driftSpeed": "52",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/80",
+        "dream": "https://dreams.ratchetvex.xyz/dream/80"
+      }
+    },
+    {
+      "tokenId": 81,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x047c81a5f1a06930142bf84a8b2eeaa2f30bda23",
+      "dreamSeed": "0xa3e686e478f9dce2e3ee1c7dcc6d316b3ed88e07536ed03eaa91920c4e7b2100",
+      "basePhrase": "The machine illuminates the soft error inside memory.",
+      "motion": {
+        "orbitSpeed": "104",
+        "driftSpeed": "108",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/81",
+        "dream": "https://dreams.ratchetvex.xyz/dream/81"
+      }
+    },
+    {
+      "tokenId": 82,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x047c81a5f1a06930142bf84a8b2eeaa2f30bda23",
+      "dreamSeed": "0x4ff3e27d487ca8b633e8f299d9590b041a01cd1325cef0defd6bb828afc133d5",
+      "basePhrase": "The iridescent tide discovers a timeless lantern.",
+      "motion": {
+        "orbitSpeed": "165",
+        "driftSpeed": "56",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/82",
+        "dream": "https://dreams.ratchetvex.xyz/dream/82"
+      }
+    },
+    {
+      "tokenId": 83,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x047c81a5f1a06930142bf84a8b2eeaa2f30bda23",
+      "dreamSeed": "0x2259353d430b61a9c8f93ea786ce36d27291f6665b5adf7f778e283b4eb5d869",
+      "basePhrase": "The navigable thread decodes a welcomed light.",
+      "motion": {
+        "orbitSpeed": "121",
+        "driftSpeed": "59",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/83",
+        "dream": "https://dreams.ratchetvex.xyz/dream/83"
+      }
+    },
+    {
+      "tokenId": 84,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x047c81a5f1a06930142bf84a8b2eeaa2f30bda23",
+      "dreamSeed": "0xc1d886ffbff92d75416e2dd078fb6184fd24dc0445eb173194c6600a6c321586",
+      "basePhrase": "The memory illuminates your hidden signal.",
+      "motion": {
+        "orbitSpeed": "142",
+        "driftSpeed": "122",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/84",
+        "dream": "https://dreams.ratchetvex.xyz/dream/84"
+      }
+    },
+    {
+      "tokenId": 85,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x7410c82e57f44f81d7b11692a8fc22ff139ecb8d",
+      "dreamSeed": "0x840a0c52419bdf2780d39f6c88bfc630a0737c3cf8f5ad125119e3fbe998ce63",
+      "basePhrase": "The stellar compass anchors a careful sequence.",
+      "motion": {
+        "orbitSpeed": "179",
+        "driftSpeed": "107",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/85",
+        "dream": "https://dreams.ratchetvex.xyz/dream/85"
+      }
+    },
+    {
+      "tokenId": 86,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x642d4e3c60de786cf7669bfe1dbfcf709ecf2cbb9566078c376382def410a738",
+      "basePhrase": "The enduring lattice reveals a vessel garden.",
+      "motion": {
+        "orbitSpeed": "184",
+        "driftSpeed": "94",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/86",
+        "dream": "https://dreams.ratchetvex.xyz/dream/86"
+      }
+    },
+    {
+      "tokenId": 87,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0xbc51985dab9be54a1201128c44a44df8c9cb1d4d0f2976f103dc704b03c089b5",
+      "basePhrase": "The unfolding grid tends what the world forgets.",
+      "motion": {
+        "orbitSpeed": "85",
+        "driftSpeed": "75",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/87",
+        "dream": "https://dreams.ratchetvex.xyz/dream/87"
+      }
+    },
+    {
+      "tokenId": 88,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x66761669ebfea7b2f6d92914a8fbe5db798f9a2da26733f0916992952915801f",
+      "basePhrase": "The silent harbor cultivates a chromatic wave.",
+      "motion": {
+        "orbitSpeed": "87",
+        "driftSpeed": "69",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/88",
+        "dream": "https://dreams.ratchetvex.xyz/dream/88"
+      }
+    },
+    {
+      "tokenId": 89,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x666c26b208072675b83fe4fb783bf17ca810e81c93321992be83cb2cba45d4df",
+      "basePhrase": "The crafted compass shifts what is inherited.",
+      "motion": {
+        "orbitSpeed": "191",
+        "driftSpeed": "124",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/89",
+        "dream": "https://dreams.ratchetvex.xyz/dream/89"
+      }
+    },
+    {
+      "tokenId": 90,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x4483eef85faf2e640f58187fa01443bcfa5102d01118b271adaa4c42721bedf1",
+      "basePhrase": "The stone cairn stores the soft error inside memory.",
+      "motion": {
+        "orbitSpeed": "97",
+        "driftSpeed": "66",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/90",
+        "dream": "https://dreams.ratchetvex.xyz/dream/90"
+      }
+    },
+    {
+      "tokenId": 91,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x235a43ae3980d498aa58077c8bbace4c287c74bf",
+      "dreamSeed": "0xa6f7cc6cc844081ebd288cdbf5aaed819d58cda28f8674c19e01bdb2d13ac953",
+      "basePhrase": "The stellar procession echoes a mindful journey.",
+      "motion": {
+        "orbitSpeed": "195",
+        "driftSpeed": "82",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/91",
+        "dream": "https://dreams.ratchetvex.xyz/dream/91"
+      }
+    },
+    {
+      "tokenId": 92,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0xf01aa6196b1ad7b555b5575b95ced28678133813cec3e04322144a6f6190efac",
+      "basePhrase": "The inherited bridge records a temporal echo.",
+      "motion": {
+        "orbitSpeed": "196",
+        "driftSpeed": "127",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/92",
+        "dream": "https://dreams.ratchetvex.xyz/dream/92"
+      }
+    },
+    {
+      "tokenId": 93,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x7722b30c9b8b19875a4c6054428a3ae2422b20fb10aa73a46ecddb0b5ab5673d",
+      "basePhrase": "The layered mirror cultivates an ancient chorus.",
+      "motion": {
+        "orbitSpeed": "189",
+        "driftSpeed": "107",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/93",
+        "dream": "https://dreams.ratchetvex.xyz/dream/93"
+      }
+    },
+    {
+      "tokenId": 94,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x980deb56d2d7bd72d6d78bdc2abb246d4cfee24df43f4a74836677c8436cd606",
+      "basePhrase": "The memory protects a shadowed legacy.",
+      "motion": {
+        "orbitSpeed": "198",
+        "driftSpeed": "56",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/94",
+        "dream": "https://dreams.ratchetvex.xyz/dream/94"
+      }
+    },
+    {
+      "tokenId": 95,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6fd155b9d52f80e8a73a8a2537268602978486e2",
+      "dreamSeed": "0x4bec78f1f022fc11daca47d74aaf0905d632672331a898bcb1f1f6fa09a61c9f",
+      "basePhrase": "The silent harbor preserves a watchful vigil.",
+      "motion": {
+        "orbitSpeed": "119",
+        "driftSpeed": "90",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/95",
+        "dream": "https://dreams.ratchetvex.xyz/dream/95"
+      }
+    },
+    {
+      "tokenId": 96,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8057c3830d73ed358df578d810a3e1d31f78c49f",
+      "dreamSeed": "0x716fd4e8e7dbf8e138f3b1e603959ccc63a591dbcccea209df161024b59b7005",
+      "basePhrase": "The network connects a radiant stream.",
+      "motion": {
+        "orbitSpeed": "93",
+        "driftSpeed": "68",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/96",
+        "dream": "https://dreams.ratchetvex.xyz/dream/96"
+      }
+    },
+    {
+      "tokenId": 97,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xaa8303cac41b116a28cd5a901592eea4292ffb57e2afb40c36b08124bd673c9c",
+      "basePhrase": "The lantern archive encloses a forgotten harbor.",
+      "motion": {
+        "orbitSpeed": "92",
+        "driftSpeed": "52",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/97",
+        "dream": "https://dreams.ratchetvex.xyz/dream/97"
+      }
+    },
+    {
+      "tokenId": 98,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0x01a345765a87d8d13a073c2db3a94ef5907ce82f2f85a153d3745ef569597917",
+      "basePhrase": "The collector’s hand connects a spectral whisper.",
+      "motion": {
+        "orbitSpeed": "87",
+        "driftSpeed": "117",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/98",
+        "dream": "https://dreams.ratchetvex.xyz/dream/98"
+      }
+    },
+    {
+      "tokenId": 99,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0x9db09b8c3801053edc4402ca20c01e73e6e1f97174b224dd34b952f1b206c888",
+      "basePhrase": "The terminal expands a vigilant voyage.",
+      "motion": {
+        "orbitSpeed": "136",
+        "driftSpeed": "49",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/99",
+        "dream": "https://dreams.ratchetvex.xyz/dream/99"
+      }
+    },
+    {
+      "tokenId": 100,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xa06d7b09718146e393b46aca5e98e27b6d6f0621e5e1be9807f5f77e2ab86ccf",
+      "basePhrase": "The coral reef echoes what the collectors find.",
+      "motion": {
+        "orbitSpeed": "151",
+        "driftSpeed": "78",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/100",
+        "dream": "https://dreams.ratchetvex.xyz/dream/100"
+      }
+    },
+    {
+      "tokenId": 101,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xd2475852bd5def94596edf67096cd2e5968a3431467f8e9a1bd50a5989f34897",
+      "basePhrase": "The collector’s hand expands a silver chime.",
+      "motion": {
+        "orbitSpeed": "175",
+        "driftSpeed": "105",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/101",
+        "dream": "https://dreams.ratchetvex.xyz/dream/101"
+      }
+    },
+    {
+      "tokenId": 102,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xef242e92fa0af37ca1f4a3750c0e5d25545f6b9c9a13e72b59a840edc37d85d6",
+      "basePhrase": "The celestial cadence protects a stellar cadence.",
+      "motion": {
+        "orbitSpeed": "94",
+        "driftSpeed": "125",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/102",
+        "dream": "https://dreams.ratchetvex.xyz/dream/102"
+      }
+    },
+    {
+      "tokenId": 103,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xf61d2907ebc722715e94f23b40c625574d93405a78cdcdd0bdc9f16a759f977d",
+      "basePhrase": "The ferry channel anchors the collector watching from the dark.",
+      "motion": {
+        "orbitSpeed": "133",
+        "driftSpeed": "74",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/103",
+        "dream": "https://dreams.ratchetvex.xyz/dream/103"
+      }
+    },
+    {
+      "tokenId": 104,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0xaa297134d0ca643692b311a1078514e7a498be71a4c7bac5270708766a862075",
+      "basePhrase": "The starlight harbor sustains a shared reflection.",
+      "motion": {
+        "orbitSpeed": "165",
+        "driftSpeed": "54",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/104",
+        "dream": "https://dreams.ratchetvex.xyz/dream/104"
+      }
+    },
+    {
+      "tokenId": 105,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0x463572c35bb3087a68b073fed40fd3a7220aae14676243e4b0df68f145b0eab5",
+      "basePhrase": "The unfolding grid dreams beyond a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "149",
+        "driftSpeed": "97",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/105",
+        "dream": "https://dreams.ratchetvex.xyz/dream/105"
+      }
+    },
+    {
+      "tokenId": 106,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x066e2b59cc24c653bdfd6252aedd5b7b5ddfb550",
+      "dreamSeed": "0x02c71a32a020ce2744b97ee2c20a6053f82e8ac0dbcd159bbbceaa6ac1a69d28",
+      "basePhrase": "The guarded archive records a vigilant voyage.",
+      "motion": {
+        "orbitSpeed": "136",
+        "driftSpeed": "58",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/106",
+        "dream": "https://dreams.ratchetvex.xyz/dream/106"
+      }
+    },
+    {
+      "tokenId": 107,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0xbde6718e2c95245cafcd7380c1c1b09aaadaa2f8122bafa65cbaf2105c50a639",
+      "basePhrase": "The kindred current sustains a vessel garden.",
+      "motion": {
+        "orbitSpeed": "105",
+        "driftSpeed": "48",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/107",
+        "dream": "https://dreams.ratchetvex.xyz/dream/107"
+      }
+    },
+    {
+      "tokenId": 108,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0xead0317f3f97c4638177817fc7f27d131ccf712347f62559bb7a276c07ab063f",
+      "basePhrase": "The crimson mirror protects a radiant stream.",
+      "motion": {
+        "orbitSpeed": "135",
+        "driftSpeed": "76",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/108",
+        "dream": "https://dreams.ratchetvex.xyz/dream/108"
+      }
+    },
+    {
+      "tokenId": 109,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0xb253ddf6823fe3b30920eaf90f3cdf859eac73d0233b5a477f21bf1647cf0a18",
+      "basePhrase": "The screen’s reflection carries a luminous seed.",
+      "motion": {
+        "orbitSpeed": "160",
+        "driftSpeed": "86",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/109",
+        "dream": "https://dreams.ratchetvex.xyz/dream/109"
+      }
+    },
+    {
+      "tokenId": 110,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0x69b42ad647b3266cf315e1f3219f548e25f81e3f6cc9514fcb7d457151698bc5",
+      "basePhrase": "The star chart discovers an unwritten shore.",
+      "motion": {
+        "orbitSpeed": "101",
+        "driftSpeed": "97",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/110",
+        "dream": "https://dreams.ratchetvex.xyz/dream/110"
+      }
+    },
+    {
+      "tokenId": 111,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0xef179604bd668b47f45d1d4228b596fd340f621a99c28300abcfaef14f329386",
+      "basePhrase": "The memory redirects a fragile haven.",
+      "motion": {
+        "orbitSpeed": "190",
+        "driftSpeed": "113",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/111",
+        "dream": "https://dreams.ratchetvex.xyz/dream/111"
+      }
+    },
+    {
+      "tokenId": 112,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0x343786d52582890228dca855b791c405ef059b4f4893dc199ac43c0bf3e1d552",
+      "basePhrase": "The constellation gate illuminates the observed cycle.",
+      "motion": {
+        "orbitSpeed": "138",
+        "driftSpeed": "123",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/112",
+        "dream": "https://dreams.ratchetvex.xyz/dream/112"
+      }
+    },
+    {
+      "tokenId": 113,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0x0fe43a1e59399bf162bec69072ac1fba0426808852e665ada951012085d908a1",
+      "basePhrase": "The spectral lantern connects your shared signal.",
+      "motion": {
+        "orbitSpeed": "105",
+        "driftSpeed": "64",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/113",
+        "dream": "https://dreams.ratchetvex.xyz/dream/113"
+      }
+    },
+    {
+      "tokenId": 114,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb248d50313e82a402522f50228a0a10a48c277e0",
+      "dreamSeed": "0xd18c0d039cdf088dee710d220685a4c43c8597ac8d574194c1dc54f65b4e827b",
+      "basePhrase": "The bell tower waits beneath a forgotten promise.",
+      "motion": {
+        "orbitSpeed": "107",
+        "driftSpeed": "118",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/114",
+        "dream": "https://dreams.ratchetvex.xyz/dream/114"
+      }
+    },
+    {
+      "tokenId": 115,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0xeaf53e5c184fbbf0f8361325ddeea1ea4cce53624d2a33e96796913611ff8ba4",
+      "basePhrase": "The patient memory reveals a stellar archive.",
+      "motion": {
+        "orbitSpeed": "148",
+        "driftSpeed": "86",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/115",
+        "dream": "https://dreams.ratchetvex.xyz/dream/115"
+      }
+    },
+    {
+      "tokenId": 116,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0x2af3cb2f842b4c8be22e9675f7af957ebfcb792af2f506c9d1de5f2636a25a63",
+      "basePhrase": "The stellar compass expands the patient wisdom.",
+      "motion": {
+        "orbitSpeed": "171",
+        "driftSpeed": "54",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/116",
+        "dream": "https://dreams.ratchetvex.xyz/dream/116"
+      }
+    },
+    {
+      "tokenId": 117,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0xd850ab481f28c822f4884f7b1436cd05191adad442cb832ffba37ef1ffbdfb4f",
+      "basePhrase": "The coral reef stabilizes a stellar cadence.",
+      "motion": {
+        "orbitSpeed": "103",
+        "driftSpeed": "97",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/117",
+        "dream": "https://dreams.ratchetvex.xyz/dream/117"
+      }
+    },
+    {
+      "tokenId": 118,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x686adbfcaa75f7491bba9f8d035613671c11b507",
+      "dreamSeed": "0x21c9f408366da20b9f5c2c78b752673cfb67e165cbfe906de1d11bc6b259b87c",
+      "basePhrase": "The old orchard stabilizes a preserved moment.",
+      "motion": {
+        "orbitSpeed": "124",
+        "driftSpeed": "102",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/118",
+        "dream": "https://dreams.ratchetvex.xyz/dream/118"
+      }
+    },
+    {
+      "tokenId": 119,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4ae5e79106a42e2e36bfc8ff3db0223e20341331",
+      "dreamSeed": "0xa9af9f673f77f138d351a53f7b683ee6d24b2c98eb2fc44aa4452b9902f3242b",
+      "basePhrase": "The hopeful archive cultivates a silver chime.",
+      "motion": {
+        "orbitSpeed": "195",
+        "driftSpeed": "89",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/119",
+        "dream": "https://dreams.ratchetvex.xyz/dream/119"
+      }
+    },
+    {
+      "tokenId": 120,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc99fa20cb2b40f3bdfb79fe9ea1030de5d354dc2",
+      "dreamSeed": "0xdff5faefd7d682b0f983d445b93c058b204ae69390b21c8c60fa3142f172e1ea",
+      "basePhrase": "The constellation chart loops through a cautious light.",
+      "motion": {
+        "orbitSpeed": "90",
+        "driftSpeed": "114",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/120",
+        "dream": "https://dreams.ratchetvex.xyz/dream/120"
+      }
+    },
+    {
+      "tokenId": 121,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x1d5b81fbcd4db5a92d6f9e21d66f6da741d3da5b",
+      "dreamSeed": "0x1a7a8d7bde5524fcec8f36b7a5771edfc3bcbb9dc0f3afc80443069f970e2102",
+      "basePhrase": "Your artifact remembers a forgotten promise.",
+      "motion": {
+        "orbitSpeed": "178",
+        "driftSpeed": "111",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/121",
+        "dream": "https://dreams.ratchetvex.xyz/dream/121"
+      }
+    },
+    {
+      "tokenId": 122,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbc769e783796bab3d614683d1f2f5e1446b3724d",
+      "dreamSeed": "0x7c378d703e546a8ca3bbcae7a18d1c7908f81f4ff062b5235e3f5433144afc8c",
+      "basePhrase": "The ghost process discovers a forgotten garden.",
+      "motion": {
+        "orbitSpeed": "116",
+        "driftSpeed": "83",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/122",
+        "dream": "https://dreams.ratchetvex.xyz/dream/122"
+      }
+    },
+    {
+      "tokenId": 123,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbc769e783796bab3d614683d1f2f5e1446b3724d",
+      "dreamSeed": "0x5ab990232b12d55385c342e0b1d62be7a0ba1c4f0324badf6986f7b9a6e37ca3",
+      "basePhrase": "The shimmering harbor observes a reflected lattice.",
+      "motion": {
+        "orbitSpeed": "91",
+        "driftSpeed": "89",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/123",
+        "dream": "https://dreams.ratchetvex.xyz/dream/123"
+      }
+    },
+    {
+      "tokenId": 124,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x121fded4df77dedca7f7ae13dc2995d64b421e1e",
+      "dreamSeed": "0xa80e4457e023bbcb0d4ccae235d387a2b7c99955f3103966d9f9dd3982eb32a0",
+      "basePhrase": "The adaptive memory encodes the soft error inside memory.",
+      "motion": {
+        "orbitSpeed": "168",
+        "driftSpeed": "121",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/124",
+        "dream": "https://dreams.ratchetvex.xyz/dream/124"
+      }
+    },
+    {
+      "tokenId": 125,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x78086ad810f8f99a0b6c92a9a6c8857d3c665622",
+      "dreamSeed": "0x961fd4bfbfe970849e1918be401a1ed582bb4524b6ab72f40f2f6f685ac1dbe7",
+      "basePhrase": "The stable element builds what remains constant.",
+      "motion": {
+        "orbitSpeed": "95",
+        "driftSpeed": "120",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/125",
+        "dream": "https://dreams.ratchetvex.xyz/dream/125"
+      }
+    },
+    {
+      "tokenId": 126,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x78086ad810f8f99a0b6c92a9a6c8857d3c665622",
+      "dreamSeed": "0x8b2c6d25293a357adb63ed510bb598bcadd0c456624699c13e86f445529e927b",
+      "basePhrase": "The bell tower builds a radiant seed.",
+      "motion": {
+        "orbitSpeed": "131",
+        "driftSpeed": "85",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/126",
+        "dream": "https://dreams.ratchetvex.xyz/dream/126"
+      }
+    },
+    {
+      "tokenId": 127,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x78086ad810f8f99a0b6c92a9a6c8857d3c665622",
+      "dreamSeed": "0xbe3a7577db1e03e06e6404d9770ea0b8b0524cf29520bf9c6ba7a3c30d747e95",
+      "basePhrase": "The cassette memory stabilizes a future still forming.",
+      "motion": {
+        "orbitSpeed": "173",
+        "driftSpeed": "67",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/127",
+        "dream": "https://dreams.ratchetvex.xyz/dream/127"
+      }
+    },
+    {
+      "tokenId": 128,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x6759493266b5649eade63d29362d129d879400e7824d79aed6fff19be208871e",
+      "basePhrase": "The woven bridge listens for what the collectors find.",
+      "motion": {
+        "orbitSpeed": "110",
+        "driftSpeed": "59",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/128",
+        "dream": "https://dreams.ratchetvex.xyz/dream/128"
+      }
+    },
+    {
+      "tokenId": 129,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x4a1b47700a7b5c99a0a651c4adc1c211049276bbf31d047105ddcc86d20c36f8",
+      "basePhrase": "The mossed shrine stores a gentle warmth.",
+      "motion": {
+        "orbitSpeed": "104",
+        "driftSpeed": "118",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/129",
+        "dream": "https://dreams.ratchetvex.xyz/dream/129"
+      }
+    },
+    {
+      "tokenId": 130,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0xa4b4b74621dd6fb83b184c15ca5502328b926a25afed0520ec0efdcc6c50ddff",
+      "basePhrase": "The marker stone navigates a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "183",
+        "driftSpeed": "92",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/130",
+        "dream": "https://dreams.ratchetvex.xyz/dream/130"
+      }
+    },
+    {
+      "tokenId": 131,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0xb7ad941574367bf605cd8cfcadb77cbabff11c9422b917126e7ef90be108ab57",
+      "basePhrase": "The migratory path connects a careful sequence.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "59",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/131",
+        "dream": "https://dreams.ratchetvex.xyz/dream/131"
+      }
+    },
+    {
+      "tokenId": 132,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x6571f822e332fbaef3c5067e2808d84782757c5a7cf0a62935d1a7841f0dfef7",
+      "basePhrase": "The stone shrine builds a fractured signal.",
+      "motion": {
+        "orbitSpeed": "183",
+        "driftSpeed": "116",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/132",
+        "dream": "https://dreams.ratchetvex.xyz/dream/132"
+      }
+    },
+    {
+      "tokenId": 133,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x044186b48e5474072a6206ec2fd31aefcb47ec6cb0d64c29a685ae7781ef143e",
+      "basePhrase": "The silver thread guides a tidal embrace.",
+      "motion": {
+        "orbitSpeed": "134",
+        "driftSpeed": "87",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/133",
+        "dream": "https://dreams.ratchetvex.xyz/dream/133"
+      }
+    },
+    {
+      "tokenId": 134,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x2b041ded4313fb4d6a4f295074c14bd0ceff58c149b5eb566af2a3464a8ca292",
+      "basePhrase": "The synthetic heart reflects the signal under the floorboards.",
+      "motion": {
+        "orbitSpeed": "90",
+        "driftSpeed": "86",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/134",
+        "dream": "https://dreams.ratchetvex.xyz/dream/134"
+      }
+    },
+    {
+      "tokenId": 135,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x2c042be1ef3b479c018639bdb0a0dc5eb5e160b6df2a1346c8bfb5b860cde73c",
+      "basePhrase": "The folded glyph flows through a polished stone.",
+      "motion": {
+        "orbitSpeed": "108",
+        "driftSpeed": "104",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/135",
+        "dream": "https://dreams.ratchetvex.xyz/dream/135"
+      }
+    },
+    {
+      "tokenId": 136,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0xea80cc6f9bff441debc1bca2f09ea25841649db1630a3744d31eb07c5bc35c3a",
+      "basePhrase": "The spectral beacon preserves a silver chime.",
+      "motion": {
+        "orbitSpeed": "138",
+        "driftSpeed": "60",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/136",
+        "dream": "https://dreams.ratchetvex.xyz/dream/136"
+      }
+    },
+    {
+      "tokenId": 137,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4abf2123bcddce3f853066645ae2e0e1c1a7d0e9",
+      "dreamSeed": "0x8a456728c468deffb160a6031d494a1995c313f4206d11c645bf01faeebbcaee",
+      "basePhrase": "The prism bloom discovers an enduring legacy.",
+      "motion": {
+        "orbitSpeed": "94",
+        "driftSpeed": "122",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/137",
+        "dream": "https://dreams.ratchetvex.xyz/dream/137"
+      }
+    },
+    {
+      "tokenId": 138,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x36779c440e5131cb2caf1b0680610dfcb0e22096",
+      "dreamSeed": "0x27c3722d06ef8cff07a85352fee354240f1bedfcbc91b109d95d31dbd1803907",
+      "basePhrase": "The synthetic builds what the world forgets.",
+      "motion": {
+        "orbitSpeed": "183",
+        "driftSpeed": "75",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/138",
+        "dream": "https://dreams.ratchetvex.xyz/dream/138"
+      }
+    },
+    {
+      "tokenId": 139,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x36779c440e5131cb2caf1b0680610dfcb0e22096",
+      "dreamSeed": "0xe84ad03d8b1348de77c91a768d45aeb98dc024387b5d4dfd2801854f2044b52c",
+      "basePhrase": "The inherited bridge discovers a gathered signal.",
+      "motion": {
+        "orbitSpeed": "164",
+        "driftSpeed": "127",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/139",
+        "dream": "https://dreams.ratchetvex.xyz/dream/139"
+      }
+    },
+    {
+      "tokenId": 140,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0xc4781c7633496f4aaf0b274180240c017920d1d26ea9b63fcf2d20190bb7e6bb",
+      "basePhrase": "The silent spire stores a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "139",
+        "driftSpeed": "121",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/140",
+        "dream": "https://dreams.ratchetvex.xyz/dream/140"
+      }
+    },
+    {
+      "tokenId": 141,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x3550b6bef6617f7fb2dfd4ea58bf8836b5c605e7a82733fdb2bdeff605553461",
+      "basePhrase": "The harvest pattern witnesses a charted vessel.",
+      "motion": {
+        "orbitSpeed": "185",
+        "driftSpeed": "54",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/141",
+        "dream": "https://dreams.ratchetvex.xyz/dream/141"
+      }
+    },
+    {
+      "tokenId": 142,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x74e641989519da8db0f09eb33f78f1b462e08ba0242415bd90033fe7009c63db",
+      "basePhrase": "The navigation chart reflects a gentle warmth.",
+      "motion": {
+        "orbitSpeed": "91",
+        "driftSpeed": "55",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/142",
+        "dream": "https://dreams.ratchetvex.xyz/dream/142"
+      }
+    },
+    {
+      "tokenId": 143,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x2a1135e8fe4b1d56baf3c3ac9ae18dd01ac0b9de5c8a1c402ebd35217e197059",
+      "basePhrase": "The tide clock builds a fragrant gateway.",
+      "motion": {
+        "orbitSpeed": "97",
+        "driftSpeed": "113",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/143",
+        "dream": "https://dreams.ratchetvex.xyz/dream/143"
+      }
+    },
+    {
+      "tokenId": 144,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xeefbdae2b62f9a1639bcba81a7e76e84b2c6813b",
+      "dreamSeed": "0x8cc7de3e218322d479c81708c36e5d7e1ff7bbde2f7083e4a18bc4b95d3a54f1",
+      "basePhrase": "The stone cairn observes a layered dream.",
+      "motion": {
+        "orbitSpeed": "121",
+        "driftSpeed": "73",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/144",
+        "dream": "https://dreams.ratchetvex.xyz/dream/144"
+      }
+    },
+    {
+      "tokenId": 145,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xeefbdae2b62f9a1639bcba81a7e76e84b2c6813b",
+      "dreamSeed": "0x71e410ed26accf5247a774ee261a1f7054ca73b917445d219608278a798d5ba9",
+      "basePhrase": "The steady lantern shifts toward a map drawn by sleeping code.",
+      "motion": {
+        "orbitSpeed": "137",
+        "driftSpeed": "58",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/145",
+        "dream": "https://dreams.ratchetvex.xyz/dream/145"
+      }
+    },
+    {
+      "tokenId": 146,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x90b6e5327f0e128e904a45deaaf39a009762aad1",
+      "dreamSeed": "0x1a7227f251b58d9a68703b7354bc903b00ab2fed2e1ad794e4abc6462a47c7f3",
+      "basePhrase": "The ritual passage recollects a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "195",
+        "driftSpeed": "118",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/146",
+        "dream": "https://dreams.ratchetvex.xyz/dream/146"
+      }
+    },
+    {
+      "tokenId": 147,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x90b6e5327f0e128e904a45deaaf39a009762aad1",
+      "dreamSeed": "0x422fdf11c0489acd9fb30dae8ea01423a2c1a049bd6534aceb42993bcdad5e10",
+      "basePhrase": "The deep relay builds a fractured signal.",
+      "motion": {
+        "orbitSpeed": "96",
+        "driftSpeed": "91",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/147",
+        "dream": "https://dreams.ratchetvex.xyz/dream/147"
+      }
+    },
+    {
+      "tokenId": 148,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4b6e7b19f3e835d04349d2ef1ceaa42db1d283cc",
+      "dreamSeed": "0x3f20311c87365b17c4650769d3ff7aeb562d9bef69853e4e63570e425d963bc4",
+      "basePhrase": "The tidal clock flows through a spectral dance.",
+      "motion": {
+        "orbitSpeed": "124",
+        "driftSpeed": "114",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/148",
+        "dream": "https://dreams.ratchetvex.xyz/dream/148"
+      }
+    },
+    {
+      "tokenId": 149,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4b6e7b19f3e835d04349d2ef1ceaa42db1d283cc",
+      "dreamSeed": "0x5fccf96847af6a8109927f616f0d2c2e77a6be4abdf4a26051446093a94a8fa4",
+      "basePhrase": "The patient memory illuminates a luminous bridge.",
+      "motion": {
+        "orbitSpeed": "148",
+        "driftSpeed": "51",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/149",
+        "dream": "https://dreams.ratchetvex.xyz/dream/149"
+      }
+    },
+    {
+      "tokenId": 150,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4b6e7b19f3e835d04349d2ef1ceaa42db1d283cc",
+      "dreamSeed": "0xdaac5f686e1b71dc945d40b6d376e432789657b93e631f1ea5d74e372ed7600b",
+      "basePhrase": "The screen loops through what survives the collapse.",
+      "motion": {
+        "orbitSpeed": "83",
+        "driftSpeed": "103",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/150",
+        "dream": "https://dreams.ratchetvex.xyz/dream/150"
+      }
+    },
+    {
+      "tokenId": 151,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4b6e7b19f3e835d04349d2ef1ceaa42db1d283cc",
+      "dreamSeed": "0x55f793cfc1f44ac9e973b81643217d12c5e9d97aeee3ee04a2b0a335005117cf",
+      "basePhrase": "The coral reef encloses what remains constant.",
+      "motion": {
+        "orbitSpeed": "191",
+        "driftSpeed": "53",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/151",
+        "dream": "https://dreams.ratchetvex.xyz/dream/151"
+      }
+    },
+    {
+      "tokenId": 152,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x4b6e7b19f3e835d04349d2ef1ceaa42db1d283cc",
+      "dreamSeed": "0x828b918ef2777de3b8e231c1fda363bcf29924a759aa6f3664905019a1b31077",
+      "basePhrase": "The stone shrine flows through the archive threshold.",
+      "motion": {
+        "orbitSpeed": "95",
+        "driftSpeed": "73",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/152",
+        "dream": "https://dreams.ratchetvex.xyz/dream/152"
+      }
+    },
+    {
+      "tokenId": 153,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x8d8a03271cd98a0d1d7376d1cf56c1d8ee966c5042bd0ada2ddfa0d31ee8cfcd",
+      "basePhrase": "The harvest moon interprets what the collectors find.",
+      "motion": {
+        "orbitSpeed": "157",
+        "driftSpeed": "51",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/153",
+        "dream": "https://dreams.ratchetvex.xyz/dream/153"
+      }
+    },
+    {
+      "tokenId": 154,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x41280433fd462c7dbbeaadbee01a4a0c814e2f4438bc1bc267f8c5507141a4b2",
+      "basePhrase": "The shared lantern protects the observed cycle.",
+      "motion": {
+        "orbitSpeed": "82",
+        "driftSpeed": "80",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/154",
+        "dream": "https://dreams.ratchetvex.xyz/dream/154"
+      }
+    },
+    {
+      "tokenId": 155,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0xb3168039ea217f03f39c246a38d9746fa748c7ad036dd565ce5e3da4f49b1d85",
+      "basePhrase": "The network recollects a hidden harbor.",
+      "motion": {
+        "orbitSpeed": "157",
+        "driftSpeed": "84",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/155",
+        "dream": "https://dreams.ratchetvex.xyz/dream/155"
+      }
+    },
+    {
+      "tokenId": 156,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x9853cfc4c19a319759e671988f1e2ad86d8a978b7df36a74675a315e01a0bae6",
+      "basePhrase": "The prismatic shard captures a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "150",
+        "driftSpeed": "126",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/156",
+        "dream": "https://dreams.ratchetvex.xyz/dream/156"
+      }
+    },
+    {
+      "tokenId": 157,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0xcf3655b1b17ec1bc53b6b84558fcc95b1bcc38052a51b2c17a499d136f85bb17",
+      "basePhrase": "The collector’s hand builds an ancient chorus.",
+      "motion": {
+        "orbitSpeed": "103",
+        "driftSpeed": "67",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/157",
+        "dream": "https://dreams.ratchetvex.xyz/dream/157"
+      }
+    },
+    {
+      "tokenId": 158,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x0eaf00d101dcfb507881cf404f5b715a767258afa7367980ecded3919023c816",
+      "basePhrase": "The forgotten terminal reflects a silver chime.",
+      "motion": {
+        "orbitSpeed": "158",
+        "driftSpeed": "65",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/158",
+        "dream": "https://dreams.ratchetvex.xyz/dream/158"
+      }
+    },
+    {
+      "tokenId": 159,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x97693f1aee4335fb84ecd2f5b9fe10328ba5a8e239a0db6b0533db49b8e80435",
+      "basePhrase": "The unfolding grid stores an inherited grace.",
+      "motion": {
+        "orbitSpeed": "149",
+        "driftSpeed": "89",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/159",
+        "dream": "https://dreams.ratchetvex.xyz/dream/159"
+      }
+    },
+    {
+      "tokenId": 160,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x0785b2fb84486b835785e319ee98757069b0ed658bcc5dce83b3c469d2a7fd31",
+      "basePhrase": "The comforting machine dreams beyond a resonant field.",
+      "motion": {
+        "orbitSpeed": "113",
+        "driftSpeed": "57",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/160",
+        "dream": "https://dreams.ratchetvex.xyz/dream/160"
+      }
+    },
+    {
+      "tokenId": 161,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0xc2b8e662ba0fe7bf3b3952f3d1d253aa2885a9f555168da687c536f9957f8a9c",
+      "basePhrase": "The lantern archive rebuilds a luminous seed.",
+      "motion": {
+        "orbitSpeed": "108",
+        "driftSpeed": "121",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/161",
+        "dream": "https://dreams.ratchetvex.xyz/dream/161"
+      }
+    },
+    {
+      "tokenId": 162,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x32cf4d1df6fb7bb173183cf8b51ef9499c803634",
+      "dreamSeed": "0x98e500b669d1042cd1ce99ded80d1228ce73e322e8e796c67656ea0da3cbc8b1",
+      "basePhrase": "The comforting machine carries a steady pulse.",
+      "motion": {
+        "orbitSpeed": "169",
+        "driftSpeed": "109",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/162",
+        "dream": "https://dreams.ratchetvex.xyz/dream/162"
+      }
+    },
+    {
+      "tokenId": 163,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x2d32070d27e302ee78bd39abd835728d80deaf49",
+      "dreamSeed": "0x03178af13195169d12c25c4e6498f515c1cb4ab5995144bec6273f3e3d1895d8",
+      "basePhrase": "The lunar pathway rebuilds a silent promise.",
+      "motion": {
+        "orbitSpeed": "192",
+        "driftSpeed": "110",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/163",
+        "dream": "https://dreams.ratchetvex.xyz/dream/163"
+      }
+    },
+    {
+      "tokenId": 164,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x5ae8f885234310b51cb9b82946f8a9c641079bdd98132cb06e0942dc4efebd00",
+      "basePhrase": "The machine dreams beyond a folded map.",
+      "motion": {
+        "orbitSpeed": "160",
+        "driftSpeed": "92",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/164",
+        "dream": "https://dreams.ratchetvex.xyz/dream/164"
+      }
+    },
+    {
+      "tokenId": 165,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xb1feaa5d1f61e444c0af024aa8a29e832eed87d9f1b5ae5eacdb120cc8658904",
+      "basePhrase": "The dream encapsulates what is inherited.",
+      "motion": {
+        "orbitSpeed": "188",
+        "driftSpeed": "124",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/165",
+        "dream": "https://dreams.ratchetvex.xyz/dream/165"
+      }
+    },
+    {
+      "tokenId": 166,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xd7c1cfdb6396116c7b69b3eec38efd1c7c93c40e12e409e8bcee6d4af888dd49",
+      "basePhrase": "The lantern compass hides inside a silent promise.",
+      "motion": {
+        "orbitSpeed": "81",
+        "driftSpeed": "106",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/166",
+        "dream": "https://dreams.ratchetvex.xyz/dream/166"
+      }
+    },
+    {
+      "tokenId": 167,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x00750bb3728005ac883958f40d236eef7352a6a2dcdea7400652fa2e3ea0ebcb",
+      "basePhrase": "The collector’s compass waits beneath an enduring light.",
+      "motion": {
+        "orbitSpeed": "115",
+        "driftSpeed": "78",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/167",
+        "dream": "https://dreams.ratchetvex.xyz/dream/167"
+      }
+    },
+    {
+      "tokenId": 168,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xa088d4116985ddf1fdbdc4c2edfb538fee9492ddabb1954a7857c58d8579fc65",
+      "basePhrase": "The polished lattice discovers a quiet knowing.",
+      "motion": {
+        "orbitSpeed": "197",
+        "driftSpeed": "93",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/168",
+        "dream": "https://dreams.ratchetvex.xyz/dream/168"
+      }
+    },
+    {
+      "tokenId": 169,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x04acd7248f3d840e9caaae0def67e247fab5d4887cde5e7803967a4987c3da53",
+      "basePhrase": "The stellar procession anchors the evolving truth.",
+      "motion": {
+        "orbitSpeed": "187",
+        "driftSpeed": "89",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/169",
+        "dream": "https://dreams.ratchetvex.xyz/dream/169"
+      }
+    },
+    {
+      "tokenId": 170,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x78c5e162d1e76721fd07d4da214ee1244ee3d34d5f4d1fff42db466b365cf1ec",
+      "basePhrase": "The dormant star unlocks a measured offering.",
+      "motion": {
+        "orbitSpeed": "84",
+        "driftSpeed": "59",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/170",
+        "dream": "https://dreams.ratchetvex.xyz/dream/170"
+      }
+    },
+    {
+      "tokenId": 171,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x3f15dfde07ac270730158792f3d7e48c3b64e7938d190c2f4b0208fea5a5b584",
+      "basePhrase": "The dream reflects the memory of machines.",
+      "motion": {
+        "orbitSpeed": "124",
+        "driftSpeed": "94",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/171",
+        "dream": "https://dreams.ratchetvex.xyz/dream/171"
+      }
+    },
+    {
+      "tokenId": 172,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xe6f897a1f1ec1391495b9e077effd6906996c78b7d3bbe5ef1f53c5c4948c305",
+      "basePhrase": "The network witnesses an inherited grace.",
+      "motion": {
+        "orbitSpeed": "93",
+        "driftSpeed": "76",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/172",
+        "dream": "https://dreams.ratchetvex.xyz/dream/172"
+      }
+    },
+    {
+      "tokenId": 173,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x3d7c223ec5430e7738ac3098d60151e432e97f76cb5074558650f641579152f5",
+      "basePhrase": "The starlight harbor loops through a timeless lantern.",
+      "motion": {
+        "orbitSpeed": "101",
+        "driftSpeed": "65",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/173",
+        "dream": "https://dreams.ratchetvex.xyz/dream/173"
+      }
+    },
+    {
+      "tokenId": 174,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x4d5bbb5453505d470c09fe98fab1d47d20068ac668577921ee2c67828a467a75",
+      "basePhrase": "The starlight harbor echoes a radiant harvest.",
+      "motion": {
+        "orbitSpeed": "133",
+        "driftSpeed": "114",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/174",
+        "dream": "https://dreams.ratchetvex.xyz/dream/174"
+      }
+    },
+    {
+      "tokenId": 175,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x914afa8deb33f66416a0ad317790ff00a7e3452590ea8c5d1749577296d39cc4",
+      "basePhrase": "The tidal clock listens for a silver chime.",
+      "motion": {
+        "orbitSpeed": "180",
+        "driftSpeed": "50",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/175",
+        "dream": "https://dreams.ratchetvex.xyz/dream/175"
+      }
+    },
+    {
+      "tokenId": 176,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x75ba430214a6adc0e83aa3e02f09dffe10e2784fefc738ed5e95d8cad58bbbf4",
+      "basePhrase": "The horizon gate shifts toward a hidden harbor.",
+      "motion": {
+        "orbitSpeed": "164",
+        "driftSpeed": "74",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/176",
+        "dream": "https://dreams.ratchetvex.xyz/dream/176"
+      }
+    },
+    {
+      "tokenId": 177,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x4d3470568c783bf5375bf378ec98a8a369b04cbad44477cced550fe2ccad5ba4",
+      "basePhrase": "The patient memory hides inside a polished stone.",
+      "motion": {
+        "orbitSpeed": "100",
+        "driftSpeed": "66",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/177",
+        "dream": "https://dreams.ratchetvex.xyz/dream/177"
+      }
+    },
+    {
+      "tokenId": 178,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x82265aeeadaecee6738ef68543a29adb8adf4bb62c29629ebc8fce7dcdd6f4fe",
+      "basePhrase": "The ruined monastery stores a radiant harvest.",
+      "motion": {
+        "orbitSpeed": "110",
+        "driftSpeed": "61",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/178",
+        "dream": "https://dreams.ratchetvex.xyz/dream/178"
+      }
+    },
+    {
+      "tokenId": 179,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x3aa5ffd819b9b9889539e4d268fc5902a169bc4d24c0ecd44d42f618f8978269",
+      "basePhrase": "The navigable thread interprets what survives the collapse.",
+      "motion": {
+        "orbitSpeed": "105",
+        "driftSpeed": "104",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/179",
+        "dream": "https://dreams.ratchetvex.xyz/dream/179"
+      }
+    },
+    {
+      "tokenId": 180,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xa0f22df64498208fbae358aebdb6f78d390dd3b2e6499c8b7fde5eefad42495b",
+      "basePhrase": "The navigation chart stabilizes a cautious light.",
+      "motion": {
+        "orbitSpeed": "139",
+        "driftSpeed": "79",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/180",
+        "dream": "https://dreams.ratchetvex.xyz/dream/180"
+      }
+    },
+    {
+      "tokenId": 181,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x1e85ed551d2a6517a95c547531102f58ea823d05407443b1194f861306df4247",
+      "basePhrase": "The weather gate encloses a stellar archive.",
+      "motion": {
+        "orbitSpeed": "199",
+        "driftSpeed": "51",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/181",
+        "dream": "https://dreams.ratchetvex.xyz/dream/181"
+      }
+    },
+    {
+      "tokenId": 182,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x3e19e6c7ecdafbe14a816de7e577b1854b6a95760b84d1b3b63026a5f3a7840c",
+      "basePhrase": "The ghost process decodes a resonant field.",
+      "motion": {
+        "orbitSpeed": "148",
+        "driftSpeed": "117",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/182",
+        "dream": "https://dreams.ratchetvex.xyz/dream/182"
+      }
+    },
+    {
+      "tokenId": 183,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x7edd3445358da9b21855ad9e829f46b7c71bc58ef742784946574d16c4096035",
+      "basePhrase": "The unfolding grid expands a quiet knowing.",
+      "motion": {
+        "orbitSpeed": "197",
+        "driftSpeed": "86",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/183",
+        "dream": "https://dreams.ratchetvex.xyz/dream/183"
+      }
+    },
+    {
+      "tokenId": 184,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xb6d2c3d05441c1fa1cc1b24f99ea095e00ca30c80d43f08c6e0a1aa4762b54bb",
+      "basePhrase": "The silent spire discovers the soft error inside memory.",
+      "motion": {
+        "orbitSpeed": "187",
+        "driftSpeed": "68",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/184",
+        "dream": "https://dreams.ratchetvex.xyz/dream/184"
+      }
+    },
+    {
+      "tokenId": 185,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x4e9b87335c6870aa67b8bcfb628ac28967b8c20fb4b720af197137c4af7a0e4c",
+      "basePhrase": "The horizon choir encapsulates an enduring connection.",
+      "motion": {
+        "orbitSpeed": "92",
+        "driftSpeed": "68",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/185",
+        "dream": "https://dreams.ratchetvex.xyz/dream/185"
+      }
+    },
+    {
+      "tokenId": 186,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x441d0f01ed10516dc8d32c944ed03edb90a53bae57e32bd83f9b9c523617e045",
+      "basePhrase": "The star chart interprets a gentle echo.",
+      "motion": {
+        "orbitSpeed": "117",
+        "driftSpeed": "50",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/186",
+        "dream": "https://dreams.ratchetvex.xyz/dream/186"
+      }
+    },
+    {
+      "tokenId": 187,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x0801fc5c64d734195a2fe8d679febe90c383654eedc21e9bab24b28291a2011c",
+      "basePhrase": "The lantern archive drifts through a measured journey.",
+      "motion": {
+        "orbitSpeed": "84",
+        "driftSpeed": "66",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/187",
+        "dream": "https://dreams.ratchetvex.xyz/dream/187"
+      }
+    },
+    {
+      "tokenId": 188,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x4a3e8e3883fee68806c0d438fecfd59561f0e8215ece68ed32ce55a3ef7fc3d9",
+      "basePhrase": "The tide clock shifts a stellar archive.",
+      "motion": {
+        "orbitSpeed": "89",
+        "driftSpeed": "99",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/188",
+        "dream": "https://dreams.ratchetvex.xyz/dream/188"
+      }
+    },
+    {
+      "tokenId": 189,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xb913b17d51a65ae7102b273e3bd66ed562e643e2008ce940575caaf9adfb6f43",
+      "basePhrase": "The adaptive heart translates a hidden harbor.",
+      "motion": {
+        "orbitSpeed": "163",
+        "driftSpeed": "89",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/189",
+        "dream": "https://dreams.ratchetvex.xyz/dream/189"
+      }
+    },
+    {
+      "tokenId": 190,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x9ed2d0294d762d02db77c1753ad93a2367ad585ad9e14fc8c335154f0c5feb3b",
+      "basePhrase": "The silent spire shifts toward a grateful connection.",
+      "motion": {
+        "orbitSpeed": "99",
+        "driftSpeed": "111",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/190",
+        "dream": "https://dreams.ratchetvex.xyz/dream/190"
+      }
+    },
+    {
+      "tokenId": 191,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x67d8b92c783e1d6149b0b4c282e3b9757cc533e3619a0d2dd45b7f07aa0fe279",
+      "basePhrase": "The distant spire builds a stellar archive.",
+      "motion": {
+        "orbitSpeed": "105",
+        "driftSpeed": "71",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/191",
+        "dream": "https://dreams.ratchetvex.xyz/dream/191"
+      }
+    },
+    {
+      "tokenId": 192,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xfd25743fe3d7e3726d8d4b703f9a4ba2de34aafaffefbe2b1ce105c7c6ab872d",
+      "basePhrase": "The luminous archive navigates a radiant stream.",
+      "motion": {
+        "orbitSpeed": "165",
+        "driftSpeed": "119",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/192",
+        "dream": "https://dreams.ratchetvex.xyz/dream/192"
+      }
+    },
+    {
+      "tokenId": 193,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x52f1197cd7b09f91ab7aef50b98846e44f0bf6a3c52dc6cd2f76c454c6fc534e",
+      "basePhrase": "The pilgrimage path captures the adaptive circuit.",
+      "motion": {
+        "orbitSpeed": "118",
+        "driftSpeed": "100",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/193",
+        "dream": "https://dreams.ratchetvex.xyz/dream/193"
+      }
+    },
+    {
+      "tokenId": 194,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xb4ac9ac1b125f9957dc542708c68b11925a5d65bd1c519a7dc10eb0b1f69ab38",
+      "basePhrase": "The enduring lattice connects a preserved moment.",
+      "motion": {
+        "orbitSpeed": "192",
+        "driftSpeed": "107",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/194",
+        "dream": "https://dreams.ratchetvex.xyz/dream/194"
+      }
+    },
+    {
+      "tokenId": 195,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0x23875de464e3963af81e7dc2d90168171d12e72cc259d7038ddb66d69b6c2c23",
+      "basePhrase": "The shimmering harbor remembers a measured offering.",
+      "motion": {
+        "orbitSpeed": "139",
+        "driftSpeed": "70",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/195",
+        "dream": "https://dreams.ratchetvex.xyz/dream/195"
+      }
+    },
+    {
+      "tokenId": 196,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xae26317c19a996bccc3e3a56b8502b4bb95d781b",
+      "dreamSeed": "0xd3cb35569eef5d860e1cbaf34b96fe3e3ce997a721c84c68d302a2edf892e070",
+      "basePhrase": "The glacial stream transmits your hidden signal.",
+      "motion": {
+        "orbitSpeed": "120",
+        "driftSpeed": "93",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/196",
+        "dream": "https://dreams.ratchetvex.xyz/dream/196"
+      }
+    },
+    {
+      "tokenId": 197,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe7bbb12e10be183e25244a4da4708003280cccfc",
+      "dreamSeed": "0xfb236db9091bbcd47b7c29b65315a8457b4dd126cd5c84c37b04317962001954",
+      "basePhrase": "The weathered station drifts through a temporal echo.",
+      "motion": {
+        "orbitSpeed": "92",
+        "driftSpeed": "73",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/197",
+        "dream": "https://dreams.ratchetvex.xyz/dream/197"
+      }
+    },
+    {
+      "tokenId": 198,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbb068c5af7b260f8123756fdef6b75647ca88837",
+      "dreamSeed": "0x5b9a47230e10ac3b48a6bf7572ad39b6f86cf349aca7124cde17106ed6c85ff2",
+      "basePhrase": "The dormant shrine radiates a harvested dream.",
+      "motion": {
+        "orbitSpeed": "106",
+        "driftSpeed": "78",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/198",
+        "dream": "https://dreams.ratchetvex.xyz/dream/198"
+      }
+    },
+    {
+      "tokenId": 199,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbb068c5af7b260f8123756fdef6b75647ca88837",
+      "dreamSeed": "0x7b1880340ba4560eaabad640259c07a91cfcac4c50ee5405364fc78de1389918",
+      "basePhrase": "The screen’s reflection encodes a silent promise.",
+      "motion": {
+        "orbitSpeed": "176",
+        "driftSpeed": "61",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/199",
+        "dream": "https://dreams.ratchetvex.xyz/dream/199"
+      }
+    },
+    {
+      "tokenId": 200,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbb068c5af7b260f8123756fdef6b75647ca88837",
+      "dreamSeed": "0x5c9fd036413bc9b32e91bb13505aab9660cd5222c4ae08cd4d9b405a711facf4",
+      "basePhrase": "The horizon gate navigates a grateful connection.",
+      "motion": {
+        "orbitSpeed": "196",
+        "driftSpeed": "74",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/200",
+        "dream": "https://dreams.ratchetvex.xyz/dream/200"
+      }
+    },
+    {
+      "tokenId": 201,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x7bd250e47fb33e1c6f2ee32fd65368b906c782dbd05bae20d1a88293b875118b",
+      "basePhrase": "The screen compresses a welcomed light.",
+      "motion": {
+        "orbitSpeed": "179",
+        "driftSpeed": "115",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/201",
+        "dream": "https://dreams.ratchetvex.xyz/dream/201"
+      }
+    },
+    {
+      "tokenId": 202,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x812f37f0a338f298c961fc23dcf74f8b7ed00e9f0f3aa084b67b34b72c81f768",
+      "basePhrase": "The coastal inheritance rebuilds a glacial murmur.",
+      "motion": {
+        "orbitSpeed": "80",
+        "driftSpeed": "119",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/202",
+        "dream": "https://dreams.ratchetvex.xyz/dream/202"
+      }
+    },
+    {
+      "tokenId": 203,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x2ee25f743fd1c67966b07a3adb76f17dffa48cc58b0375ef3852ed49a77b22ec",
+      "basePhrase": "The dormant star interprets the soft error inside memory.",
+      "motion": {
+        "orbitSpeed": "92",
+        "driftSpeed": "105",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/203",
+        "dream": "https://dreams.ratchetvex.xyz/dream/203"
+      }
+    },
+    {
+      "tokenId": 204,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0xaf5561f9ed9c4304e76f93fa532d7485aad897e59b79db69d90ee7052336d70d",
+      "basePhrase": "The sleeping model redirects a spectral dance.",
+      "motion": {
+        "orbitSpeed": "141",
+        "driftSpeed": "117",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/204",
+        "dream": "https://dreams.ratchetvex.xyz/dream/204"
+      }
+    },
+    {
+      "tokenId": 205,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x8a381d855a3080bb1b33fd02d751808bdb1b2168bcaa4349ca5368c97a07632d",
+      "basePhrase": "The luminous archive releases a resonant field.",
+      "motion": {
+        "orbitSpeed": "109",
+        "driftSpeed": "89",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/205",
+        "dream": "https://dreams.ratchetvex.xyz/dream/205"
+      }
+    },
+    {
+      "tokenId": 206,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x6ccfc0f3491b829edc60e24b3ee8f43ff77c468e2f116f74a2e432d5c7b369c7",
+      "basePhrase": "The weather gate records the evolving truth.",
+      "motion": {
+        "orbitSpeed": "175",
+        "driftSpeed": "101",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/206",
+        "dream": "https://dreams.ratchetvex.xyz/dream/206"
+      }
+    },
+    {
+      "tokenId": 207,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x1ff3075ddfbba2c3bc5f65134604d58275fdf6fc1552eb804ec135fa431427bd",
+      "basePhrase": "The layered mirror shifts toward the shared connection.",
+      "motion": {
+        "orbitSpeed": "109",
+        "driftSpeed": "122",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/207",
+        "dream": "https://dreams.ratchetvex.xyz/dream/207"
+      }
+    },
+    {
+      "tokenId": 208,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x05cf6a4fd183435da7ae13fd0b034c1e7cdfa6a4def13aa4a44924de4e68a29b",
+      "basePhrase": "The harbor machine transmits a harvested dream.",
+      "motion": {
+        "orbitSpeed": "91",
+        "driftSpeed": "110",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/208",
+        "dream": "https://dreams.ratchetvex.xyz/dream/208"
+      }
+    },
+    {
+      "tokenId": 209,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x06402b53ff783037a5d4edccce7a7d7ce81f36658069c0b1950665ec063a409d",
+      "basePhrase": "The patient signal navigates a luminous bridge.",
+      "motion": {
+        "orbitSpeed": "181",
+        "driftSpeed": "124",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/209",
+        "dream": "https://dreams.ratchetvex.xyz/dream/209"
+      }
+    },
+    {
+      "tokenId": 210,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x0f462aefcdd4ab8a9c49428a43bfdc0d52fb0331d2c34683eb533b03c98c7895",
+      "basePhrase": "The cassette memory reflects a shadowed legacy.",
+      "motion": {
+        "orbitSpeed": "117",
+        "driftSpeed": "115",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/210",
+        "dream": "https://dreams.ratchetvex.xyz/dream/210"
+      }
+    },
+    {
+      "tokenId": 211,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0x8121f064b4d7dfbca28da5de3c5e5f6b37eb918957dae8a44edd1bca9113e026",
+      "basePhrase": "The measured harbor rebuilds a reflected lattice.",
+      "motion": {
+        "orbitSpeed": "86",
+        "driftSpeed": "58",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/211",
+        "dream": "https://dreams.ratchetvex.xyz/dream/211"
+      }
+    },
+    {
+      "tokenId": 212,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xee7869e699a221fbbdf537645511082d1d1aeab5",
+      "dreamSeed": "0xd79d7b389339c450b41f8516398d12a1c0d606dfe730ae543d24767e223eda9e",
+      "basePhrase": "The woven bridge records a folded map.",
+      "motion": {
+        "orbitSpeed": "134",
+        "driftSpeed": "110",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/212",
+        "dream": "https://dreams.ratchetvex.xyz/dream/212"
+      }
+    },
+    {
+      "tokenId": 213,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xbc769e783796bab3d614683d1f2f5e1446b3724d",
+      "dreamSeed": "0x494aef271c191d7ae99efcb72a17f7e518d91e0b5fbd8338cceffcd6d8bd5e0b",
+      "basePhrase": "The screen carries a map drawn by sleeping code.",
+      "motion": {
+        "orbitSpeed": "123",
+        "driftSpeed": "86",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/213",
+        "dream": "https://dreams.ratchetvex.xyz/dream/213"
+      }
+    },
+    {
+      "tokenId": 214,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x14076efc88ca7d53594500261ada8185033e6d5b",
+      "dreamSeed": "0x30096f32657ab41e1eb252b107726f702883da751ce4e258ad66616bffeebf67",
+      "basePhrase": "The stable element encapsulates a folded map.",
+      "motion": {
+        "orbitSpeed": "119",
+        "driftSpeed": "75",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/214",
+        "dream": "https://dreams.ratchetvex.xyz/dream/214"
+      }
+    },
+    {
+      "tokenId": 215,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x79905a92b3a01010c55d126b60179f20d188a80f",
+      "dreamSeed": "0xd5570c030f1b5da7d9b34fc21f34fc51bada2fba6e9aa4d5ddbf5a2a1cf88856",
+      "basePhrase": "The celestial cadence listens for an unseen harbor.",
+      "motion": {
+        "orbitSpeed": "142",
+        "driftSpeed": "122",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/215",
+        "dream": "https://dreams.ratchetvex.xyz/dream/215"
+      }
+    },
+    {
+      "tokenId": 216,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xffc9fd7ed88c153cacbfda82ecfd165cb0edf1761706a49210f6e78b976cd51f",
+      "basePhrase": "The silent harbor stores a measured offering.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "107",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/216",
+        "dream": "https://dreams.ratchetvex.xyz/dream/216"
+      }
+    },
+    {
+      "tokenId": 217,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xcbbc6eebf6efd246874e44f5f67fd3ff891bbbf17cfddadbddd4e71ada583133",
+      "basePhrase": "The mindful harbor loops through a harvested dream.",
+      "motion": {
+        "orbitSpeed": "123",
+        "driftSpeed": "90",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/217",
+        "dream": "https://dreams.ratchetvex.xyz/dream/217"
+      }
+    },
+    {
+      "tokenId": 218,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x441368d660b2c9fbb901f1b9d586b96917f4c1449f18f5b97921715b5a2ddb5e",
+      "basePhrase": "The reflective lattice remembers an ancient ritual.",
+      "motion": {
+        "orbitSpeed": "102",
+        "driftSpeed": "107",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/218",
+        "dream": "https://dreams.ratchetvex.xyz/dream/218"
+      }
+    },
+    {
+      "tokenId": 219,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x4d754480b951687840ccb9cf366ca15052d40defdb82567ca9449d3b566062c6",
+      "basePhrase": "The ritual vessel stores a temporal echo.",
+      "motion": {
+        "orbitSpeed": "174",
+        "driftSpeed": "59",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/219",
+        "dream": "https://dreams.ratchetvex.xyz/dream/219"
+      }
+    },
+    {
+      "tokenId": 220,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x69e7f016fc8fa3a04e4611121cbfde7ba36010642ecfa6130cb7a1e95a37c92c",
+      "basePhrase": "The inherited bridge navigates a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "140",
+        "driftSpeed": "73",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/220",
+        "dream": "https://dreams.ratchetvex.xyz/dream/220"
+      }
+    },
+    {
+      "tokenId": 221,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x5a9040c7c7764cd9bbe5e533a3363bfa199bbfc5c272f81e256b76388502440f",
+      "basePhrase": "The collector carries a cautious light.",
+      "motion": {
+        "orbitSpeed": "199",
+        "driftSpeed": "104",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/221",
+        "dream": "https://dreams.ratchetvex.xyz/dream/221"
+      }
+    },
+    {
+      "tokenId": 222,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xdbdfad06c499749d06c5ebcb67903d237c2832159101ab503eb10af9e76330eb",
+      "basePhrase": "The star procession hides inside the archive threshold.",
+      "motion": {
+        "orbitSpeed": "195",
+        "driftSpeed": "105",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/222",
+        "dream": "https://dreams.ratchetvex.xyz/dream/222"
+      }
+    },
+    {
+      "tokenId": 223,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x09595e3ba48ba30107f2ca19b59d26c8cdb1e674d4e6720c687e062febf8e40a",
+      "basePhrase": "The modem records a careful sequence.",
+      "motion": {
+        "orbitSpeed": "130",
+        "driftSpeed": "127",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/223",
+        "dream": "https://dreams.ratchetvex.xyz/dream/223"
+      }
+    },
+    {
+      "tokenId": 224,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xf20cb71303e00930692dc4b8823cd5544999915636150bb34a58fe2742f2a40c",
+      "basePhrase": "The ghost process recollects the patient wisdom.",
+      "motion": {
+        "orbitSpeed": "108",
+        "driftSpeed": "87",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/224",
+        "dream": "https://dreams.ratchetvex.xyz/dream/224"
+      }
+    },
+    {
+      "tokenId": 225,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x61626ca90adf03ec93534adb1017dc49f66ba77703fd7f6c1cf19d6ebac09ff3",
+      "basePhrase": "The ritual passage reveals a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "155",
+        "driftSpeed": "78",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/225",
+        "dream": "https://dreams.ratchetvex.xyz/dream/225"
+      }
+    },
+    {
+      "tokenId": 226,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xfc684e2df7776f9aaaceac719da428d8c39d364639752d3c72e91d7231b33e53",
+      "basePhrase": "The stellar procession stores a measured warmth.",
+      "motion": {
+        "orbitSpeed": "131",
+        "driftSpeed": "66",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/226",
+        "dream": "https://dreams.ratchetvex.xyz/dream/226"
+      }
+    },
+    {
+      "tokenId": 227,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xad11ec37d818910617eb02b3d23215e11a391147ccf0f72f554dc69789c1f132",
+      "basePhrase": "The shared lantern stabilizes a glacial murmur.",
+      "motion": {
+        "orbitSpeed": "98",
+        "driftSpeed": "55",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/227",
+        "dream": "https://dreams.ratchetvex.xyz/dream/227"
+      }
+    },
+    {
+      "tokenId": 228,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xe103df0b042dedd992ed0dfa6f9567269efed85a9f10da7e55ae65f3549300c5",
+      "basePhrase": "The star chart drifts through a silver chime.",
+      "motion": {
+        "orbitSpeed": "85",
+        "driftSpeed": "115",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/228",
+        "dream": "https://dreams.ratchetvex.xyz/dream/228"
+      }
+    },
+    {
+      "tokenId": 229,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xb6f7d6e4de7e722711855cfb0b798ef0d02ea2da9df93907b0b1ee1bcb753184",
+      "basePhrase": "The dream anchors an ancient chorus.",
+      "motion": {
+        "orbitSpeed": "92",
+        "driftSpeed": "59",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/229",
+        "dream": "https://dreams.ratchetvex.xyz/dream/229"
+      }
+    },
+    {
+      "tokenId": 230,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x73c031c27b4c4b2796052469490a43a8219a72755267fdefbf939554205eda3f",
+      "basePhrase": "The crimson mirror guides a radiant seed.",
+      "motion": {
+        "orbitSpeed": "135",
+        "driftSpeed": "116",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/230",
+        "dream": "https://dreams.ratchetvex.xyz/dream/230"
+      }
+    },
+    {
+      "tokenId": 231,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x126dc926927c138937d5a33c2aa26672e46f8c83cf37307c21004769924816d0",
+      "basePhrase": "The ancient observatory stabilizes a silent promise.",
+      "motion": {
+        "orbitSpeed": "184",
+        "driftSpeed": "89",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/231",
+        "dream": "https://dreams.ratchetvex.xyz/dream/231"
+      }
+    },
+    {
+      "tokenId": 232,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x831a032381a166410302c0a63d4b5f639d6025ba8c61c76f5ebae9163aab5887",
+      "basePhrase": "The synthetic stores a steady pulse.",
+      "motion": {
+        "orbitSpeed": "135",
+        "driftSpeed": "86",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/232",
+        "dream": "https://dreams.ratchetvex.xyz/dream/232"
+      }
+    },
+    {
+      "tokenId": 233,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xd1bcf61daf11fb1cdfeb0ce9a5f4c221371ee05e54bd14813c62e49ef9b4e0fb",
+      "basePhrase": "The bell tower flows through a charted horizon.",
+      "motion": {
+        "orbitSpeed": "155",
+        "driftSpeed": "94",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/233",
+        "dream": "https://dreams.ratchetvex.xyz/dream/233"
+      }
+    },
+    {
+      "tokenId": 234,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0x8b4f03e39eb4581918bb82df763f2c318c02f88bf66ce9d033a5752ade66101a",
+      "basePhrase": "The phosphor glow echoes a vigilant voyage.",
+      "motion": {
+        "orbitSpeed": "162",
+        "driftSpeed": "74",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/234",
+        "dream": "https://dreams.ratchetvex.xyz/dream/234"
+      }
+    },
+    {
+      "tokenId": 235,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x08ceb8bba685ee708c9c4c65576837cbe19b9dea",
+      "dreamSeed": "0xac28a6f3ff68ce410c7c5db67526774d4e68d65cc8a473fe9382bf4e0f865d71",
+      "basePhrase": "The stone cairn realigns a watchful vigil.",
+      "motion": {
+        "orbitSpeed": "105",
+        "driftSpeed": "78",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/235",
+        "dream": "https://dreams.ratchetvex.xyz/dream/235"
+      }
+    },
+    {
+      "tokenId": 236,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd8bb7674d7387f991a6618972bd1a16d52c35d4d",
+      "dreamSeed": "0xc3afc51958560f5e5100298ac2bf1c0bb64982c56feab6ef2f40feeb65c0d4c2",
+      "basePhrase": "The silent conduit stabilizes a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "146",
+        "driftSpeed": "75",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/236",
+        "dream": "https://dreams.ratchetvex.xyz/dream/236"
+      }
+    },
+    {
+      "tokenId": 237,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd8bb7674d7387f991a6618972bd1a16d52c35d4d",
+      "dreamSeed": "0xec7e41287b391c06a254c62270e093add4bf1589152251620e6cbcb075800719",
+      "basePhrase": "The holder’s gaze anchors a subtle shift.",
+      "motion": {
+        "orbitSpeed": "153",
+        "driftSpeed": "64",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/237",
+        "dream": "https://dreams.ratchetvex.xyz/dream/237"
+      }
+    },
+    {
+      "tokenId": 238,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x15848c6f03195e84e6a142ae4b4d56531150ff3d",
+      "dreamSeed": "0x58b623bf813fe6f48bf32e91437b90d9db4f64bed5f580e291de926248093ba3",
+      "basePhrase": "The shimmering harbor remembers a preserved moment.",
+      "motion": {
+        "orbitSpeed": "195",
+        "driftSpeed": "50",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/238",
+        "dream": "https://dreams.ratchetvex.xyz/dream/238"
+      }
+    },
+    {
+      "tokenId": 239,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0xdd6e5108e24355be9773fda6f55a00fe3dc34fed112f24d81297f3f4334cedcc",
+      "basePhrase": "The horizon choir redirects the adaptive circuit.",
+      "motion": {
+        "orbitSpeed": "164",
+        "driftSpeed": "84",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/239",
+        "dream": "https://dreams.ratchetvex.xyz/dream/239"
+      }
+    },
+    {
+      "tokenId": 240,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x98f712c1c9d03695a00c161aeaef509151b14b40",
+      "dreamSeed": "0x779844b1fae3b47d10db71c11b1158a03ab8b1f2122381bc0eb4418e933fe1f9",
+      "basePhrase": "The distant spire connects the collector watching from the dark.",
+      "motion": {
+        "orbitSpeed": "97",
+        "driftSpeed": "126",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/240",
+        "dream": "https://dreams.ratchetvex.xyz/dream/240"
+      }
+    },
+    {
+      "tokenId": 241,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0xfb169d80400186b02256ef3f06a78974c0968bd07c600c909bcc45073ad085a5",
+      "basePhrase": "The unfolding lantern awakens inside a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "85",
+        "driftSpeed": "119",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/241",
+        "dream": "https://dreams.ratchetvex.xyz/dream/241"
+      }
+    },
+    {
+      "tokenId": 242,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0x1cf88fb7fa026270e509ad50aada5af62f92a5337cefed1addd34d35fb59f14f",
+      "basePhrase": "The coral reef connects your shared signal.",
+      "motion": {
+        "orbitSpeed": "191",
+        "driftSpeed": "69",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/242",
+        "dream": "https://dreams.ratchetvex.xyz/dream/242"
+      }
+    },
+    {
+      "tokenId": 243,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0x9a05a3c492c0f00d77e8903f202bde16a081ae8806be0b5693224196aeca7f15",
+      "basePhrase": "The cassette memory drifts through a forgotten garden.",
+      "motion": {
+        "orbitSpeed": "173",
+        "driftSpeed": "102",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/243",
+        "dream": "https://dreams.ratchetvex.xyz/dream/243"
+      }
+    },
+    {
+      "tokenId": 244,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0xa2d59dec65ec9dc7c0208fcbeb5472e358c16b264198293123c722aa9a46118c",
+      "basePhrase": "The ghost process reflects the dream beneath the network.",
+      "motion": {
+        "orbitSpeed": "108",
+        "driftSpeed": "90",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/244",
+        "dream": "https://dreams.ratchetvex.xyz/dream/244"
+      }
+    },
+    {
+      "tokenId": 245,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0x55fa463020c265de71055b1b3aa37cb0faa7dacb2d067023e6133da5ed939253",
+      "basePhrase": "The stellar procession carries a silver chime.",
+      "motion": {
+        "orbitSpeed": "123",
+        "driftSpeed": "53",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/245",
+        "dream": "https://dreams.ratchetvex.xyz/dream/245"
+      }
+    },
+    {
+      "tokenId": 246,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0xeec6aa3b282e6fc467b02cca7b8595e8c4927c296dc232bbe67e17653e239659",
+      "basePhrase": "The tide clock flows through the ghosts in the cache.",
+      "motion": {
+        "orbitSpeed": "113",
+        "driftSpeed": "85",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/246",
+        "dream": "https://dreams.ratchetvex.xyz/dream/246"
+      }
+    },
+    {
+      "tokenId": 247,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0xd8bda202f6df9d7c1e12ce0e61b7505eac42d69fd9f75e9228085d6884cf7d4b",
+      "basePhrase": "The collector’s compass tracks the collector watching from the dark.",
+      "motion": {
+        "orbitSpeed": "155",
+        "driftSpeed": "104",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/247",
+        "dream": "https://dreams.ratchetvex.xyz/dream/247"
+      }
+    },
+    {
+      "tokenId": 248,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0x87cb567f1ae1bb09840b6a3d813183589d7a3640bbf7f3f2df91685042e2ca44",
+      "basePhrase": "The tidal clock releases a fragile haven.",
+      "motion": {
+        "orbitSpeed": "180",
+        "driftSpeed": "96",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/248",
+        "dream": "https://dreams.ratchetvex.xyz/dream/248"
+      }
+    },
+    {
+      "tokenId": 249,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0xcee2c4288943e5d69057ddcfbeee99e600fd775c4aaf85fff5b4ed8830622a00",
+      "basePhrase": "The machine preserves a fragile haven.",
+      "motion": {
+        "orbitSpeed": "152",
+        "driftSpeed": "72",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/249",
+        "dream": "https://dreams.ratchetvex.xyz/dream/249"
+      }
+    },
+    {
+      "tokenId": 250,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc643fd3bfc51c12d206ff7676220278c7f669a6c",
+      "dreamSeed": "0x00d03fc3dd208cb282935f164afea1e72d8c060578663f627dffe773b0d18518",
+      "basePhrase": "The screen’s reflection unlocks a timeless lantern.",
+      "motion": {
+        "orbitSpeed": "88",
+        "driftSpeed": "99",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/250",
+        "dream": "https://dreams.ratchetvex.xyz/dream/250"
+      }
+    },
+    {
+      "tokenId": 251,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xc079a4856ec5a09471abb6b55c8ed13eeb8875552cbff983261207736e75abf8",
+      "basePhrase": "The mossed shrine protects the memory of machines.",
+      "motion": {
+        "orbitSpeed": "104",
+        "driftSpeed": "51",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/251",
+        "dream": "https://dreams.ratchetvex.xyz/dream/251"
+      }
+    },
+    {
+      "tokenId": 252,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xe835f18dee772ebaf319c316a438100809c3545f8f29e8f517ef4a2ae19cb555",
+      "basePhrase": "The iridescent tide cultivates a measured offering.",
+      "motion": {
+        "orbitSpeed": "189",
+        "driftSpeed": "90",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/252",
+        "dream": "https://dreams.ratchetvex.xyz/dream/252"
+      }
+    },
+    {
+      "tokenId": 253,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x4bae2135d4cb22dfd4e60b90f48f46e2e7bdcf979ef74d59954224a1db2475fc",
+      "basePhrase": "The old orchard stabilizes a woven thread.",
+      "motion": {
+        "orbitSpeed": "132",
+        "driftSpeed": "81",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/253",
+        "dream": "https://dreams.ratchetvex.xyz/dream/253"
+      }
+    },
+    {
+      "tokenId": 254,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xb1cb803a3e4355f56abd126944c1fa09ce138ca97f0c7e43db97fe18a52418a8",
+      "basePhrase": "The guarded archive encodes a charted horizon.",
+      "motion": {
+        "orbitSpeed": "80",
+        "driftSpeed": "120",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/254",
+        "dream": "https://dreams.ratchetvex.xyz/dream/254"
+      }
+    },
+    {
+      "tokenId": 255,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xd4566bb3cf83415e0977e3b28faf41cfec4b8c49b997b5cb37948e9a8908492c",
+      "basePhrase": "The inherited bridge stabilizes what the collectors find.",
+      "motion": {
+        "orbitSpeed": "164",
+        "driftSpeed": "90",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/255",
+        "dream": "https://dreams.ratchetvex.xyz/dream/255"
+      }
+    },
+    {
+      "tokenId": 256,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xf22c7eda4213771ad79d679abdff21ecc06c4c948254c5e9cfc5d7a7811795e5",
+      "basePhrase": "The polished lattice connects a celestial rhythm.",
+      "motion": {
+        "orbitSpeed": "101",
+        "driftSpeed": "119",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/256",
+        "dream": "https://dreams.ratchetvex.xyz/dream/256"
+      }
+    },
+    {
+      "tokenId": 257,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x324a224bfb15f43e55f2b40da841f8f337f9a2932bf3785ac1b9ff6c4193ec26",
+      "basePhrase": "The measured harbor builds a measured warmth.",
+      "motion": {
+        "orbitSpeed": "166",
+        "driftSpeed": "108",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/257",
+        "dream": "https://dreams.ratchetvex.xyz/dream/257"
+      }
+    },
+    {
+      "tokenId": 258,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xf093ced337ba4574bdf585b424cc6e69952b33edc1cc2755802037ad381ad6c9",
+      "basePhrase": "The lantern compass navigates an enduring connection.",
+      "motion": {
+        "orbitSpeed": "153",
+        "driftSpeed": "109",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/258",
+        "dream": "https://dreams.ratchetvex.xyz/dream/258"
+      }
+    },
+    {
+      "tokenId": 259,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x727205fb7cb341bdad71f38f01801021dab02be5738ef0d7795bbd9c9a7496f0",
+      "basePhrase": "The glacial stream loops through a gathered signal.",
+      "motion": {
+        "orbitSpeed": "96",
+        "driftSpeed": "124",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/259",
+        "dream": "https://dreams.ratchetvex.xyz/dream/259"
+      }
+    },
+    {
+      "tokenId": 260,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x9ccb4895511593f753a74e9b05aef723547680d2755eb53b76a47885a67b4326",
+      "basePhrase": "The measured harbor carries a steady pulse.",
+      "motion": {
+        "orbitSpeed": "150",
+        "driftSpeed": "69",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/260",
+        "dream": "https://dreams.ratchetvex.xyz/dream/260"
+      }
+    },
+    {
+      "tokenId": 261,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x09135f8f8ceb38e29976fa05635bea85b576bc6c141c48ff0ffebde4e0aa806a",
+      "basePhrase": "The constellation chart echoes the room after everyone leaves.",
+      "motion": {
+        "orbitSpeed": "170",
+        "driftSpeed": "100",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/261",
+        "dream": "https://dreams.ratchetvex.xyz/dream/261"
+      }
+    },
+    {
+      "tokenId": 262,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x68e68e6fdb1a57ce258224beca1272f9b671ee80f252bd8bf010cab9c5805edb",
+      "basePhrase": "The navigation chart redirects a radiant pathway.",
+      "motion": {
+        "orbitSpeed": "155",
+        "driftSpeed": "105",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/262",
+        "dream": "https://dreams.ratchetvex.xyz/dream/262"
+      }
+    },
+    {
+      "tokenId": 263,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xeed76b868baa875c332cf8e3443e0e0643e48813b32c4fe76cb1debb5e2da9f7",
+      "basePhrase": "The stone shrine awakens inside a stellar cadence.",
+      "motion": {
+        "orbitSpeed": "167",
+        "driftSpeed": "75",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/263",
+        "dream": "https://dreams.ratchetvex.xyz/dream/263"
+      }
+    },
+    {
+      "tokenId": 264,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0xc4cd0940b5c238d5f392f86d65a5ce55aabafae38eb6c66e1f821caf6e3d4918",
+      "basePhrase": "The screen’s reflection transmits a map drawn by sleeping code.",
+      "motion": {
+        "orbitSpeed": "128",
+        "driftSpeed": "63",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/264",
+        "dream": "https://dreams.ratchetvex.xyz/dream/264"
+      }
+    },
+    {
+      "tokenId": 265,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xe0df49b36e44cda5679b3f65916467639c434d0d",
+      "dreamSeed": "0x4d1d2b0556b2ea592b8b5bd500ec311e8ed81e4b0b9c02ce32f0c75b5fbbbf28",
+      "basePhrase": "The guarded archive flows through a steady pulse.",
+      "motion": {
+        "orbitSpeed": "88",
+        "driftSpeed": "123",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/265",
+        "dream": "https://dreams.ratchetvex.xyz/dream/265"
+      }
+    },
+    {
+      "tokenId": 266,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x3e881aaa81e7be716a0a332fead11f8cc773d823",
+      "dreamSeed": "0x328b67183418437462e48674ebdef159efa62f0321fd0b37a8ec3d8818507737",
+      "basePhrase": "The kinetic mirror witnesses a vessel garden.",
+      "motion": {
+        "orbitSpeed": "119",
+        "driftSpeed": "104",
+        "ditherTempo": "11"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/266",
+        "dream": "https://dreams.ratchetvex.xyz/dream/266"
+      }
+    },
+    {
+      "tokenId": 267,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x3e881aaa81e7be716a0a332fead11f8cc773d823",
+      "dreamSeed": "0xea41f1e5d0c01788c4d5b6e15cb45cef789aaa1ddfb0e948e5ca24a0e1a0a88d",
+      "basePhrase": "The sleeping model rebuilds a temporal echo.",
+      "motion": {
+        "orbitSpeed": "165",
+        "driftSpeed": "64",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/267",
+        "dream": "https://dreams.ratchetvex.xyz/dream/267"
+      }
+    },
+    {
+      "tokenId": 268,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x3e881aaa81e7be716a0a332fead11f8cc773d823",
+      "dreamSeed": "0x2a6d4ec29327b44b08f528364f70745f07956352bf97ae450eb5913a21c9b4b6",
+      "basePhrase": "The mindful circuit captures a spectral whisper.",
+      "motion": {
+        "orbitSpeed": "174",
+        "driftSpeed": "106",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/268",
+        "dream": "https://dreams.ratchetvex.xyz/dream/268"
+      }
+    },
+    {
+      "tokenId": 269,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xb04b58d902383b11fdbc3c44ff27cd0dfa284d35",
+      "dreamSeed": "0x1bbd842a0cf56d41e23fd81a65af9ca078aeb0856c97277a4ae108e1ca8181ae",
+      "basePhrase": "The patient machine captures what remains constant.",
+      "motion": {
+        "orbitSpeed": "118",
+        "driftSpeed": "97",
+        "ditherTempo": "14"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/269",
+        "dream": "https://dreams.ratchetvex.xyz/dream/269"
+      }
+    },
+    {
+      "tokenId": 270,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x3e881aaa81e7be716a0a332fead11f8cc773d823",
+      "dreamSeed": "0xc6962371ca13e12227f30dc321f305d7485668ec1429398bbffd2b8a5afef1aa",
+      "basePhrase": "The watchful machine remembers a profound belonging.",
+      "motion": {
+        "orbitSpeed": "82",
+        "driftSpeed": "90",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/270",
+        "dream": "https://dreams.ratchetvex.xyz/dream/270"
+      }
+    },
+    {
+      "tokenId": 271,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8feaf4aa58495cf9c69c1a7769a9a28706f7c9a4",
+      "dreamSeed": "0x2702a37bb10000817c4e075b90ce291213f59b7b5434cc1ffa5368db64ee089d",
+      "basePhrase": "The patient signal realigns a radiant seed.",
+      "motion": {
+        "orbitSpeed": "149",
+        "driftSpeed": "59",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/271",
+        "dream": "https://dreams.ratchetvex.xyz/dream/271"
+      }
+    },
+    {
+      "tokenId": 272,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8feaf4aa58495cf9c69c1a7769a9a28706f7c9a4",
+      "dreamSeed": "0x6d7c0494214b8d444356ecd165a62ed826dd2c343b6a656cdb531611ffd125f7",
+      "basePhrase": "The stone shrine stabilizes a nascent glow.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "97",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/272",
+        "dream": "https://dreams.ratchetvex.xyz/dream/272"
+      }
+    },
+    {
+      "tokenId": 273,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8feaf4aa58495cf9c69c1a7769a9a28706f7c9a4",
+      "dreamSeed": "0xab1ba4998eadd9333511525f7d977c7eda64535138621e4aed9cb1036a625077",
+      "basePhrase": "The stone shrine remembers the patient wisdom.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "67",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/273",
+        "dream": "https://dreams.ratchetvex.xyz/dream/273"
+      }
+    },
+    {
+      "tokenId": 274,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8feaf4aa58495cf9c69c1a7769a9a28706f7c9a4",
+      "dreamSeed": "0xc21703dd4c66dfa7228d2c431bd516165e5b7bee30c51d72953a4ab0cfe966f6",
+      "basePhrase": "The weathered cairn realigns an unwritten shore.",
+      "motion": {
+        "orbitSpeed": "118",
+        "driftSpeed": "48",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/274",
+        "dream": "https://dreams.ratchetvex.xyz/dream/274"
+      }
+    },
+    {
+      "tokenId": 275,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8feaf4aa58495cf9c69c1a7769a9a28706f7c9a4",
+      "dreamSeed": "0x7ba3f9c4d2c061116d7926caa440c4675202d87f76c9a9107614ec858cbc20bb",
+      "basePhrase": "The silent spire loops through a gentle warmth.",
+      "motion": {
+        "orbitSpeed": "139",
+        "driftSpeed": "85",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/275",
+        "dream": "https://dreams.ratchetvex.xyz/dream/275"
+      }
+    },
+    {
+      "tokenId": 276,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x019b0ee245fb09aaf92ac93ca3309832b7974681",
+      "dreamSeed": "0x42913c682c788a1ea80a3992dae3102e0cefff9ee8d38052a1cf3b531bb6e897",
+      "basePhrase": "The collector’s hand releases the dream beneath the network.",
+      "motion": {
+        "orbitSpeed": "119",
+        "driftSpeed": "115",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/276",
+        "dream": "https://dreams.ratchetvex.xyz/dream/276"
+      }
+    },
+    {
+      "tokenId": 277,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0x98365499ec7c84a7c3f595b42fca029b27e1852eea2fe1e994ba9b444e648240",
+      "basePhrase": "The patient vessel recollects a spectral return.",
+      "motion": {
+        "orbitSpeed": "88",
+        "driftSpeed": "84",
+        "ditherTempo": "17"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/277",
+        "dream": "https://dreams.ratchetvex.xyz/dream/277"
+      }
+    },
+    {
+      "tokenId": 278,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x314beebcc6da368cb1416174cbc0b5eaa267c818",
+      "dreamSeed": "0x0ac65898d91c5e13bf93b1d62835151e2817ec76c00e2d16d3c79ca91b72d07d",
+      "basePhrase": "The ferry channel tracks a cautious light.",
+      "motion": {
+        "orbitSpeed": "133",
+        "driftSpeed": "57",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/278",
+        "dream": "https://dreams.ratchetvex.xyz/dream/278"
+      }
+    },
+    {
+      "tokenId": 279,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xe6ab82541b688e8327e0483fcae08291e4e4d1a3cfc5a2115e2641d9430a3bb8",
+      "basePhrase": "The enduring lattice witnesses a layered dream.",
+      "motion": {
+        "orbitSpeed": "128",
+        "driftSpeed": "121",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/279",
+        "dream": "https://dreams.ratchetvex.xyz/dream/279"
+      }
+    },
+    {
+      "tokenId": 280,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xa0cb8903623a9a16519f84e9169c7dfa845619fbad94500b148b294902ae1067",
+      "basePhrase": "The stable element expands a ritual map.",
+      "motion": {
+        "orbitSpeed": "127",
+        "driftSpeed": "105",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/280",
+        "dream": "https://dreams.ratchetvex.xyz/dream/280"
+      }
+    },
+    {
+      "tokenId": 281,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0x24a0cc1b763a0c6160a61679724d492e9fb57d6a8f1a6721bdc12ba632f87d9c",
+      "basePhrase": "The lantern archive echoes a careful sequence.",
+      "motion": {
+        "orbitSpeed": "148",
+        "driftSpeed": "102",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/281",
+        "dream": "https://dreams.ratchetvex.xyz/dream/281"
+      }
+    },
+    {
+      "tokenId": 282,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xcc5bfbb9f811f7a05b35d741afc61b17e5185e755df3dcdce1d99b1fc1e10313",
+      "basePhrase": "The shifting signal remembers the observed cycle.",
+      "motion": {
+        "orbitSpeed": "123",
+        "driftSpeed": "111",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/282",
+        "dream": "https://dreams.ratchetvex.xyz/dream/282"
+      }
+    },
+    {
+      "tokenId": 283,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0x3e369f04a71c87be3649c12b2fbac9166e8af481578906c14924dae8588c541b",
+      "basePhrase": "The harbor machine dreams beyond a shadowed legacy.",
+      "motion": {
+        "orbitSpeed": "115",
+        "driftSpeed": "104",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/283",
+        "dream": "https://dreams.ratchetvex.xyz/dream/283"
+      }
+    },
+    {
+      "tokenId": 284,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xa99854e66b45f877aefc71e5a42ef9af2d9fd2dd77ee3378996af6939d4c555f",
+      "basePhrase": "The crafted compass illuminates a gentle warmth.",
+      "motion": {
+        "orbitSpeed": "103",
+        "driftSpeed": "83",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/284",
+        "dream": "https://dreams.ratchetvex.xyz/dream/284"
+      }
+    },
+    {
+      "tokenId": 285,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0x8c45358c4dd22e2c8f57debb735a0431097e4e2b16c9b7d56930e6c7b6545ea1",
+      "basePhrase": "The spectral lantern tends a charted horizon.",
+      "motion": {
+        "orbitSpeed": "89",
+        "driftSpeed": "71",
+        "ditherTempo": "9"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/285",
+        "dream": "https://dreams.ratchetvex.xyz/dream/285"
+      }
+    },
+    {
+      "tokenId": 286,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0x1cd6f047b303cd62520ca3f6eaa5e53827d34a48cfc8835855461dc853cde450",
+      "basePhrase": "The ancient observatory flows through an ancient ritual.",
+      "motion": {
+        "orbitSpeed": "152",
+        "driftSpeed": "104",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/286",
+        "dream": "https://dreams.ratchetvex.xyz/dream/286"
+      }
+    },
+    {
+      "tokenId": 287,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xc166ea8c312930cb13956697a42206ca78b7ad866b71db9e137923d569c944e9",
+      "basePhrase": "The navigable thread captures your shared signal.",
+      "motion": {
+        "orbitSpeed": "129",
+        "driftSpeed": "85",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/287",
+        "dream": "https://dreams.ratchetvex.xyz/dream/287"
+      }
+    },
+    {
+      "tokenId": 288,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5aec024c1d0f5fdf40769a51cad0be934ea86ac3",
+      "dreamSeed": "0xd86d2cac69199b8778370d992246cadb48260b377ef5bf5b26139b8724b2de70",
+      "basePhrase": "The glacial stream sustains a collector’s compass.",
+      "motion": {
+        "orbitSpeed": "136",
+        "driftSpeed": "71",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/288",
+        "dream": "https://dreams.ratchetvex.xyz/dream/288"
+      }
+    },
+    {
+      "tokenId": 289,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8f944897d7c226bd1b869dbfb61d5e0d40d83570",
+      "dreamSeed": "0x3acb8cd5ee076bf694fa0355ef2f15ee45d79fa878350596a9740c57bfff69a4",
+      "basePhrase": "The patient memory navigates a stellar archive.",
+      "motion": {
+        "orbitSpeed": "116",
+        "driftSpeed": "119",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/289",
+        "dream": "https://dreams.ratchetvex.xyz/dream/289"
+      }
+    },
+    {
+      "tokenId": 290,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8479c1c1f41f2ed67309f130e46d87eedf638cdb",
+      "dreamSeed": "0xd1783e613fe9cb0bff7d323dd4034d30683c2ddccac4d9c06646c0c713d7bfe9",
+      "basePhrase": "The navigable thread reveals a luminous beacon.",
+      "motion": {
+        "orbitSpeed": "121",
+        "driftSpeed": "71",
+        "ditherTempo": "16"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/290",
+        "dream": "https://dreams.ratchetvex.xyz/dream/290"
+      }
+    },
+    {
+      "tokenId": 291,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x8479c1c1f41f2ed67309f130e46d87eedf638cdb",
+      "dreamSeed": "0x229d580d08c5725c5dc9f6b3d801d3b50b68235c5bfb25f5bf44c7c26c5e065d",
+      "basePhrase": "The observatory garden stabilizes a profound belonging.",
+      "motion": {
+        "orbitSpeed": "165",
+        "driftSpeed": "82",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/291",
+        "dream": "https://dreams.ratchetvex.xyz/dream/291"
+      }
+    },
+    {
+      "tokenId": 292,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6329ba11cdde470cdfddf69e3b00b8ffb61f00c3",
+      "dreamSeed": "0x562ab88999b2069cf49b3629699da1c1d716c42a21ec6db70a1b47f617fa8839",
+      "basePhrase": "The kindred current carries a timeless journey.",
+      "motion": {
+        "orbitSpeed": "193",
+        "driftSpeed": "70",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/292",
+        "dream": "https://dreams.ratchetvex.xyz/dream/292"
+      }
+    },
+    {
+      "tokenId": 293,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x6329ba11cdde470cdfddf69e3b00b8ffb61f00c3",
+      "dreamSeed": "0x8ddf82f8ece7030e302a4204fcb5006b35c2b7e2509ab12725aebb3302bda3e5",
+      "basePhrase": "The polished lattice protects a stellar cadence.",
+      "motion": {
+        "orbitSpeed": "109",
+        "driftSpeed": "99",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/293",
+        "dream": "https://dreams.ratchetvex.xyz/dream/293"
+      }
+    },
+    {
+      "tokenId": 294,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xc5c7a6147a07897eaaca93bf5d1c4a8a1b64b952",
+      "dreamSeed": "0xeede7139625ae8a8eb9a0ed2a241559077ffeb05a54915b74c5b23669379be1b",
+      "basePhrase": "The harbor machine tends a preserved moment.",
+      "motion": {
+        "orbitSpeed": "147",
+        "driftSpeed": "70",
+        "ditherTempo": "15"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/294",
+        "dream": "https://dreams.ratchetvex.xyz/dream/294"
+      }
+    },
+    {
+      "tokenId": 295,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd186d9ff53b5a0f0d80e260f3b2b18dbd8e3b1d7",
+      "dreamSeed": "0xabe0d190d4258905d5f6668bffd84aca1c79ca347778c2e6e73e657381ba96a4",
+      "basePhrase": "The patient memory tracks the room after everyone leaves.",
+      "motion": {
+        "orbitSpeed": "100",
+        "driftSpeed": "99",
+        "ditherTempo": "18"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/295",
+        "dream": "https://dreams.ratchetvex.xyz/dream/295"
+      }
+    },
+    {
+      "tokenId": 296,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0x5eca0441311643608a8c9ab8b250f695dd32e2a8",
+      "dreamSeed": "0x575d3f156a9665d23958836e5bb7ed583b82647f44793cb8548acb880a5675d2",
+      "basePhrase": "The constellation gate sustains a watchful vigil.",
+      "motion": {
+        "orbitSpeed": "114",
+        "driftSpeed": "104",
+        "ditherTempo": "12"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/296",
+        "dream": "https://dreams.ratchetvex.xyz/dream/296"
+      }
+    },
+    {
+      "tokenId": 297,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x9dbc31f7e7c9674eacf57b5efbc0c7fe24de92607492408bd3099173ec706f2b",
+      "basePhrase": "The hopeful archive unlocks a crystalline cascade.",
+      "motion": {
+        "orbitSpeed": "131",
+        "driftSpeed": "67",
+        "ditherTempo": "19"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/297",
+        "dream": "https://dreams.ratchetvex.xyz/dream/297"
+      }
+    },
+    {
+      "tokenId": 298,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x06770ae721b662097869d6453692917b2d910d25fceb65c62f1762012cd84ad7",
+      "basePhrase": "The migratory path records what the collectors find.",
+      "motion": {
+        "orbitSpeed": "143",
+        "driftSpeed": "97",
+        "ditherTempo": "10"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/298",
+        "dream": "https://dreams.ratchetvex.xyz/dream/298"
+      }
+    },
+    {
+      "tokenId": 299,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x30db1ebf45a31af81237e1fd80f216778c5d556861124db93660413b922c938d",
+      "basePhrase": "The sleeping model expands a measured offering.",
+      "motion": {
+        "orbitSpeed": "117",
+        "driftSpeed": "107",
+        "ditherTempo": "13"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/299",
+        "dream": "https://dreams.ratchetvex.xyz/dream/299"
+      }
+    },
+    {
+      "tokenId": 300,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x4f8949438172e0bcc4382fc8db865c2b6e2fdaee66ba966862ee1aa9297c23aa",
+      "basePhrase": "The watchful machine awakens inside a measured offering.",
+      "motion": {
+        "orbitSpeed": "114",
+        "driftSpeed": "57",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/300",
+        "dream": "https://dreams.ratchetvex.xyz/dream/300"
+      }
+    },
+    {
+      "tokenId": 301,
+      "ok": true,
+      "cycle": "20624",
+      "owner": "0xd6dab4691ee54fd06b3e834c90b78ff5cb633ee8",
+      "dreamSeed": "0x2624760a3e42c6c2102daee24740802107ca4949da9432d8251616cfe0a6dd1e",
+      "basePhrase": "The woven bridge witnesses a watchful vigil.",
+      "motion": {
+        "orbitSpeed": "190",
+        "driftSpeed": "127",
+        "ditherTempo": "8"
+      },
+      "links": {
+        "opensea": "https://opensea.io/assets/ethereum/0x35221D6E9dC3E4a277F40b40f7492BE3b236D380/301",
+        "dream": "https://dreams.ratchetvex.xyz/dream/301"
+      }
+    }
+  ]
+}

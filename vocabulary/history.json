@@ -2567,5 +2567,61 @@
     "category": "motifs",
     "text": "marker path",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.206696Z",
+    "cycle": "20624",
+    "category": "subjects",
+    "text": "The fallen waystone",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.207154Z",
+    "cycle": "20624",
+    "category": "subjects",
+    "text": "The distant sundial",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.207155Z",
+    "cycle": "20624",
+    "category": "subjects",
+    "text": "The mossed alcove",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.207156Z",
+    "cycle": "20624",
+    "category": "subjects",
+    "text": "The holy well",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.207157Z",
+    "cycle": "20624",
+    "category": "subjects",
+    "text": "The silent sentinel",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.214993Z",
+    "cycle": "20624",
+    "category": "motifs",
+    "text": "bell sanctuary",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.214995Z",
+    "cycle": "20624",
+    "category": "motifs",
+    "text": "waystone gallery",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-21T16:45:24.214996Z",
+    "cycle": "20624",
+    "category": "motifs",
+    "text": "threshold passage",
+    "approvedBy": "filter8"
   }
 ]
