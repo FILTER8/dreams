@@ -2623,5 +2623,75 @@
     "category": "motifs",
     "text": "threshold passage",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.704217Z",
+    "cycle": "20625",
+    "category": "subjects",
+    "text": "The coastal bell",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.704640Z",
+    "cycle": "20625",
+    "category": "subjects",
+    "text": "The darkened well",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.704641Z",
+    "cycle": "20625",
+    "category": "subjects",
+    "text": "The quiet keystone",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.704642Z",
+    "cycle": "20625",
+    "category": "subjects",
+    "text": "The broken fountain",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.707311Z",
+    "cycle": "20625",
+    "category": "endings",
+    "text": "an old promise.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.707314Z",
+    "cycle": "20625",
+    "category": "endings",
+    "text": "a fragile gateway.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.709923Z",
+    "cycle": "20625",
+    "category": "motifs",
+    "text": "forgotten shrine",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.709925Z",
+    "cycle": "20625",
+    "category": "motifs",
+    "text": "buried key",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.709926Z",
+    "cycle": "20625",
+    "category": "motifs",
+    "text": "tide memory",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-22T08:28:14.709926Z",
+    "cycle": "20625",
+    "category": "motifs",
+    "text": "spectral fountain",
+    "approvedBy": "filter8"
   }
 ]
