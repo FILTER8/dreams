@@ -666,5 +666,17 @@
     "source": "ishe",
     "cycle": "20625",
     "weight": 1
+  },
+  {
+    "text": "a whispered plea.",
+    "source": "ishe",
+    "cycle": "20626",
+    "weight": 1
+  },
+  {
+    "text": "a muted whisper.",
+    "source": "ishe",
+    "cycle": "20626",
+    "weight": 1
   }
 ]

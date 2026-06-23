@@ -2693,5 +2693,68 @@
     "category": "motifs",
     "text": "spectral fountain",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.853296Z",
+    "cycle": "20626",
+    "category": "subjects",
+    "text": "The old waystone",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.853436Z",
+    "cycle": "20626",
+    "category": "subjects",
+    "text": "The buried seal",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.853437Z",
+    "cycle": "20626",
+    "category": "subjects",
+    "text": "The watchful keystone",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.853438Z",
+    "cycle": "20626",
+    "category": "subjects",
+    "text": "The sleeping temple",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.861844Z",
+    "cycle": "20626",
+    "category": "endings",
+    "text": "a whispered plea.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.861852Z",
+    "cycle": "20626",
+    "category": "endings",
+    "text": "a muted whisper.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.864944Z",
+    "cycle": "20626",
+    "category": "motifs",
+    "text": "ritual fragment",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.864953Z",
+    "cycle": "20626",
+    "category": "motifs",
+    "text": "tide mosaic",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-23T19:41:51.864953Z",
+    "cycle": "20626",
+    "category": "motifs",
+    "text": "deep basin",
+    "approvedBy": "filter8"
   }
 ]

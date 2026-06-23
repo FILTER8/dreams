@@ -732,5 +732,23 @@
     "source": "ishe",
     "cycle": "20625",
     "weight": 1
+  },
+  {
+    "text": "ritual fragment",
+    "source": "ishe",
+    "cycle": "20626",
+    "weight": 1
+  },
+  {
+    "text": "tide mosaic",
+    "source": "ishe",
+    "cycle": "20626",
+    "weight": 1
+  },
+  {
+    "text": "deep basin",
+    "source": "ishe",
+    "cycle": "20626",
+    "weight": 1
   }
 ]
