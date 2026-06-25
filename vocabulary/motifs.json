@@ -750,5 +750,23 @@
     "source": "ishe",
     "cycle": "20626",
     "weight": 1
+  },
+  {
+    "text": "brittle root",
+    "source": "ishe",
+    "cycle": "20628",
+    "weight": 1
+  },
+  {
+    "text": "fragile tower",
+    "source": "ishe",
+    "cycle": "20628",
+    "weight": 1
+  },
+  {
+    "text": "glowing branch",
+    "source": "ishe",
+    "cycle": "20628",
+    "weight": 1
   }
 ]

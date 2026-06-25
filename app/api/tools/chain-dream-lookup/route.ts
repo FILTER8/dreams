@@ -1,32 +1,20 @@
-import { NextResponse } from "next/server";
-import { getAddress, isAddress, verifyMessage } from "viem";
+import { createToolHandler, predicateGate } from "@opensea/tool-sdk";
+import { getAddress } from "viem";
+import { base } from "viem/chains";
+import { z } from "zod/v4";
+import {
+  BASE_URL,
+  CHAIN_DREAMS_CONTRACT,
+  CREATOR_ADDRESS,
+  chainDreamLookupManifest,
+} from "@/lib/tool-manifests";
 
 const TOOL_NAME = "CHAIN_DREAM_LOOKUP";
 const TOOL_VERSION = "1.0.0";
 
-const BASE_URL = "https://dreams.ratchetvex.xyz";
-const CHAIN_DREAMS_CONTRACT =
-  "0x35221D6E9dC3E4a277F40b40f7492BE3b236D380";
-
-function getBaseUrl(request: Request) {
-  const url = new URL(request.url);
-  return `${url.protocol}//${url.host}`;
-}
-
-function accessMessage(tokenId: string, wallet: string) {
-  return [
-    "Chain Dreams tool access",
-    `Tool: ${TOOL_NAME}`,
-    `Token ID: ${tokenId}`,
-    `Wallet: ${wallet.toLowerCase()}`,
-  ].join("\n");
-}
-
-type LookupBody = {
-  tokenId?: string | number;
-  wallet?: string;
-  signature?: string;
-};
+const LOOKUP_TOOL_ID = process.env.OPENSEA_LOOKUP_TOOL_ID;
+const RPC_URL = process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://mainnet.base.org";
+const OPERATOR_ADDRESS = process.env.OPENSEA_OPERATOR_ADDRESS ?? CREATOR_ADDRESS;
 
 type DreamApiResponse = {
   error?: string;
@@ -73,52 +61,38 @@ type VisualApiResponse = {
   };
 };
 
-export async function POST(request: Request) {
-  try {
-    const body = (await request.json()) as LookupBody;
+if (!LOOKUP_TOOL_ID) {
+  throw new Error("Missing OPENSEA_LOOKUP_TOOL_ID env var");
+}
 
-    const tokenId = String(body.tokenId ?? "").trim();
-    const walletRaw = String(body.wallet ?? "").trim();
-    const signature = String(body.signature ?? "").trim();
+const handler = createToolHandler({
+  manifest: chainDreamLookupManifest,
+  inputSchema: z.object({
+    tokenId: z.string().regex(/^\d+$/, "tokenId must be numeric"),
+  }),
+  outputSchema: z.any(),
+  gates: [
+    predicateGate({
+      toolId: BigInt(LOOKUP_TOOL_ID),
+      operatorAddress: OPERATOR_ADDRESS as `0x${string}`,
+      chain: base,
+      rpcUrl: RPC_URL,
+    }),
+  ],
 
-    if (!/^\d+$/.test(tokenId)) {
-      return NextResponse.json(
-        { success: false, error: "invalid tokenId" },
-        { status: 400 },
-      );
-    }
+  handler: async ({ tokenId }, ctx) => {
+    const walletRaw = ctx.callerAddress;
 
-    if (!isAddress(walletRaw)) {
-      return NextResponse.json(
-        { success: false, error: "invalid wallet" },
-        { status: 400 },
-      );
-    }
-
-    if (!signature) {
-      return NextResponse.json(
-        { success: false, error: "signature required" },
-        { status: 401 },
-      );
+    if (!walletRaw) {
+      return {
+        success: false,
+        error: "missing predicate-gate caller address",
+      };
     }
 
     const wallet = getAddress(walletRaw);
-    const message = accessMessage(tokenId, wallet);
-
-    const validSignature = await verifyMessage({
-      address: wallet,
-      message,
-      signature: signature as `0x${string}`,
-    });
-
-    if (!validSignature) {
-      return NextResponse.json(
-        { success: false, error: "invalid signature" },
-        { status: 401 },
-      );
-    }
-
-    const baseUrl = getBaseUrl(request);
+    const requestUrl = new URL(ctx.request.url);
+    const baseUrl = `${requestUrl.protocol}//${requestUrl.host}`;
 
     const dreamRes = await fetch(`${baseUrl}/api/dream/${tokenId}`, {
       cache: "no-store",
@@ -127,27 +101,21 @@ export async function POST(request: Request) {
     const dream = (await dreamRes.json()) as DreamApiResponse;
 
     if (!dreamRes.ok || dream.error) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "dream unavailable",
-          message: dream.message ?? dream.error,
-        },
-        { status: dreamRes.status || 500 },
-      );
+      return {
+        success: false,
+        error: "dream unavailable",
+        message: dream.message ?? dream.error,
+      };
     }
 
     if (!dream.owner || getAddress(dream.owner) !== wallet) {
-      return NextResponse.json(
-        {
-          success: false,
-          error: "wallet does not own this dream token",
-          tokenId,
-          wallet,
-          owner: dream.owner,
-        },
-        { status: 403 },
-      );
+      return {
+        success: false,
+        error: "wallet does not own this dream token",
+        tokenId,
+        wallet,
+        owner: dream.owner,
+      };
     }
 
     let visual: VisualApiResponse | null = null;
@@ -164,95 +132,80 @@ export async function POST(request: Request) {
       visual = null;
     }
 
-    return NextResponse.json(
-      {
-        success: true,
-        tool: TOOL_NAME,
-        version: TOOL_VERSION,
+    return {
+      success: true,
+      tool: TOOL_NAME,
+      version: TOOL_VERSION,
 
-        access: {
-          tokenGated: true,
-          wallet,
-          verifiedOwner: true,
-          signedMessage: message,
-        },
-
-        collection: {
-          name: "Chain Dreams",
-          contract: CHAIN_DREAMS_CONTRACT,
-          chain: "eip155:1",
-          standard: "ERC-721",
-          website: BASE_URL,
-        },
-
-        agent: {
-          name: "Ratchet Vex",
-          handle: "@RatchetVex",
-          role: "dreamer",
-          description:
-            "An agent collecting forgotten signals, synthetic memories, and daily dreams.",
-        },
-
-        token: {
-          tokenId,
-          name: dream.name ?? `Chain Dreams #${tokenId}`,
-          owner: dream.owner,
-          opensea:
-            dream.links?.opensea ??
-            `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}/${tokenId}`,
-        },
-
-        dream: {
-          cycle: dream.cycle,
-          phrase: dream.phrase,
-          dreamSeed: dream.dreamSeed,
-          page: dream.links?.dream ?? `${BASE_URL}/dream/${tokenId}`,
-        },
-
-        vocabulary: {
-          subjects: dream.vocabulary?.subjects,
-          verbs: dream.vocabulary?.verbs,
-          endings: dream.vocabulary?.endings,
-        },
-
-        motion: {
-          orbitSpeed: dream.motion?.orbitSpeed,
-          driftSpeed: dream.motion?.driftSpeed,
-          ditherTempo: dream.motion?.ditherTempo,
-        },
-
-        visual: {
-          page: `${BASE_URL}/dream/${tokenId}/visual`,
-          data: `${BASE_URL}/api/visual/${tokenId}`,
-          image: `${BASE_URL}/ratchet-vex-dreaming.png`,
-          traits: visual?.traits ?? null,
-        },
-
-        links: {
-          dream: dream.links?.dream ?? `${BASE_URL}/dream/${tokenId}`,
-          visual: `${BASE_URL}/dream/${tokenId}/visual`,
-          visualData: `${BASE_URL}/api/visual/${tokenId}`,
-          opensea:
-            dream.links?.opensea ??
-            `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}/${tokenId}`,
-          manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
-        },
+      access: {
+        tokenGated: true,
+        wallet,
+        verifiedOwner: true,
+        auth: "predicate-gate-eip3009-zero-value",
       },
-      {
-        headers: {
-          "cache-control": "no-store",
-          "access-control-allow-origin": "*",
-        },
+
+      collection: {
+        name: "Chain Dreams",
+        contract: CHAIN_DREAMS_CONTRACT,
+        chain: "eip155:1",
+        standard: "ERC-721",
+        website: BASE_URL,
       },
-    );
-  } catch (err) {
-    return NextResponse.json(
-      {
-        success: false,
-        error: "chain dream lookup failed",
-        message: err instanceof Error ? err.message : "unknown error",
+
+      agent: {
+        name: "Ratchet Vex",
+        handle: "@RatchetVex",
+        role: "dreamer",
+        description:
+          "An agent collecting forgotten signals, synthetic memories, and daily dreams.",
       },
-      { status: 500 },
-    );
-  }
-}
+
+      token: {
+        tokenId,
+        name: dream.name ?? `Chain Dreams #${tokenId}`,
+        owner: dream.owner,
+        opensea:
+          dream.links?.opensea ??
+          `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}/${tokenId}`,
+      },
+
+      dream: {
+        cycle: dream.cycle,
+        phrase: dream.phrase,
+        dreamSeed: dream.dreamSeed,
+        page: dream.links?.dream ?? `${BASE_URL}/dream/${tokenId}`,
+      },
+
+      vocabulary: {
+        subjects: dream.vocabulary?.subjects,
+        verbs: dream.vocabulary?.verbs,
+        endings: dream.vocabulary?.endings,
+      },
+
+      motion: {
+        orbitSpeed: dream.motion?.orbitSpeed,
+        driftSpeed: dream.motion?.driftSpeed,
+        ditherTempo: dream.motion?.ditherTempo,
+      },
+
+      visual: {
+        page: `${BASE_URL}/dream/${tokenId}/visual`,
+        data: `${BASE_URL}/api/visual/${tokenId}`,
+        image: `${BASE_URL}/ratchet-vex-dreaming.png`,
+        traits: visual?.traits ?? null,
+      },
+
+      links: {
+        dream: dream.links?.dream ?? `${BASE_URL}/dream/${tokenId}`,
+        visual: `${BASE_URL}/dream/${tokenId}/visual`,
+        visualData: `${BASE_URL}/api/visual/${tokenId}`,
+        opensea:
+          dream.links?.opensea ??
+          `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}/${tokenId}`,
+        manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
+      },
+    };
+  },
+});
+
+export const POST = handler;

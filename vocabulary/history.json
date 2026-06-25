@@ -2756,5 +2756,82 @@
     "category": "motifs",
     "text": "deep basin",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.422891Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The mossy basin",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423131Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The tarnished bell",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423132Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The fallen pillar",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423133Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The rusted anchor",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423150Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The chalk circle",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423153Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The brittle scroll",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423156Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The silent timepiece",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.423165Z",
+    "cycle": "20628",
+    "category": "subjects",
+    "text": "The buried beacon",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.430752Z",
+    "cycle": "20628",
+    "category": "motifs",
+    "text": "brittle root",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.430757Z",
+    "cycle": "20628",
+    "category": "motifs",
+    "text": "fragile tower",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-25T06:34:21.430758Z",
+    "cycle": "20628",
+    "category": "motifs",
+    "text": "glowing branch",
+    "approvedBy": "filter8"
   }
 ]
