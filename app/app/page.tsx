@@ -201,6 +201,116 @@ function randomColor() {
   return DREAM_COLORS[Math.floor(Math.random() * DREAM_COLORS.length)];
 }
 
+function VisualOverlay({
+  token,
+  dream,
+  visual,
+  background,
+  onClose,
+}: {
+  token: ChainDreamToken;
+  dream?: DreamResponse;
+  visual?: VisualResponse;
+  background: string;
+  onClose: () => void;
+}) {
+  const pinchStartDistance = useRef(0);
+  const pinchStartScale = useRef(1);
+  const rotateStartAngle = useRef(0);
+  const rotateStartRotation = useRef(0);
+  const visualLastTap = useRef(0);
+
+  const [visualScale, setVisualScale] = useState(1);
+  const [visualRotation, setVisualRotation] = useState(0);
+
+  const palette = useMemo(() => extractTokenColors(token.image), [token.image]);
+  const fg = readableColor(background);
+
+  function handleVisualTap() {
+    const now = Date.now();
+
+    if (now - visualLastTap.current < 300) {
+      onClose();
+      visualLastTap.current = 0;
+      return;
+    }
+
+    visualLastTap.current = now;
+  }
+
+  return (
+    <div
+      className="fixed inset-0 z-[9999] flex touch-none select-none items-center justify-center overflow-hidden"
+      style={{ background: background, color: fg }}
+      onClick={handleVisualTap}
+      onTouchStart={(event) => {
+        if (event.touches.length === 2) {
+          const first = event.touches[0];
+          const second = event.touches[1];
+
+          pinchStartDistance.current = distance(first, second);
+          pinchStartScale.current = visualScale;
+
+          rotateStartAngle.current = angle(first, second);
+          rotateStartRotation.current = visualRotation;
+        }
+      }}
+      onTouchMove={(event) => {
+        if (event.touches.length !== 2) return;
+
+        const first = event.touches[0];
+        const second = event.touches[1];
+
+        const nextDistance = distance(first, second);
+        const ratio = nextDistance / Math.max(pinchStartDistance.current, 1);
+
+        const nextAngle = angle(first, second);
+        const angleDelta = nextAngle - rotateStartAngle.current;
+
+        setVisualScale(clampScale(pinchStartScale.current * ratio));
+        setVisualRotation(rotateStartRotation.current + angleDelta);
+      }}
+    >
+      <div
+        className="fixed right-4 z-30"
+        style={{ top: "max(1rem, env(safe-area-inset-top))" }}
+        onClick={(event) => event.stopPropagation()}
+      >
+        <DreamAmbientPlayer
+          tokenId={token.tokenId}
+          dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
+          palette={palette.length > 0 ? palette : DREAM_COLORS}
+          motion={visual?.motion}
+          foregroundColor={fg}
+          visualScale={visualScale}
+          visualTraits={visual?.traits}
+        />
+      </div>
+
+      {token.image && (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={token.image}
+          alt={`Chain Dreams #${token.tokenId}`}
+          className="block h-screen w-screen object-contain"
+          style={{
+            transform: `scale(${visualScale}) rotate(${visualRotation}deg)`,
+            transformOrigin: "50% 50%",
+            WebkitUserSelect: "none",
+            userSelect: "none",
+            WebkitTouchCallout: "none",
+          }}
+          draggable={false}
+        />
+      )}
+
+      <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
+        PINCH SCALE · ROTATE · DOUBLE TAP CLOSE
+      </p>
+    </div>
+  );
+}
+
 function AppPageContent() {
   const searchParams = useSearchParams();
   const walletFromUrl = searchParams.get("wallet");
@@ -224,12 +334,6 @@ function AppPageContent() {
   const streamRef = useRef<MediaStream | null>(null);
   const scanFrameRef = useRef<number | null>(null);
 
-  const pinchStartDistance = useRef(0);
-  const pinchStartScale = useRef(1);
-  const rotateStartAngle = useRef(0);
-  const rotateStartRotation = useRef(0);
-  const visualLastTap = useRef(0);
-
   const [scannerOpen, setScannerOpen] = useState(false);
   const [scannerError, setScannerError] = useState<string | null>(null);
 
@@ -248,8 +352,6 @@ function AppPageContent() {
   const [error, setError] = useState<string | null>(null);
 
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
-  const [visualScale, setVisualScale] = useState(1);
-  const [visualRotation, setVisualRotation] = useState(0);
 
   const selectedToken =
     selectedIndex === null ? null : tokens[selectedIndex] ?? null;
@@ -536,26 +638,10 @@ function AppPageContent() {
 
   function openVisual(index: number) {
     setSelectedIndex(index);
-    setVisualScale(1);
-    setVisualRotation(0);
   }
 
   function closeVisual() {
     setSelectedIndex(null);
-    setVisualScale(1);
-    setVisualRotation(0);
-  }
-
-  function handleVisualTap() {
-    const now = Date.now();
-
-    if (now - visualLastTap.current < 300) {
-      closeVisual();
-      visualLastTap.current = 0;
-      return;
-    }
-
-    visualLastTap.current = now;
   }
 
   function renderDreamTile(token: ChainDreamToken) {
@@ -581,86 +667,6 @@ function AppPageContent() {
 
         <p className="mt-6 text-[10px] tracking-[0.18em] opacity-50">
           CIRCLE {dream?.cycle ?? "----"}
-        </p>
-      </div>
-    );
-  }
-
-  function renderVisualOverlay(token: ChainDreamToken) {
-    const dream = dreams[token.tokenId];
-    const visual = visuals[token.tokenId];
-    const palette = extractTokenColors(token.image);
-    const bg = backgrounds[token.tokenId] ?? palette[0] ?? "#000000";
-    const fg = readableColor(bg);
-
-    return (
-      <div
-        className="fixed inset-0 z-[9999] flex touch-none select-none items-center justify-center overflow-hidden"
-        style={{ background: bg, color: fg }}
-        onClick={handleVisualTap}
-        onTouchStart={(event) => {
-          if (event.touches.length === 2) {
-            const first = event.touches[0];
-            const second = event.touches[1];
-
-            pinchStartDistance.current = distance(first, second);
-            pinchStartScale.current = visualScale;
-
-            rotateStartAngle.current = angle(first, second);
-            rotateStartRotation.current = visualRotation;
-          }
-        }}
-        onTouchMove={(event) => {
-          if (event.touches.length !== 2) return;
-
-          const first = event.touches[0];
-          const second = event.touches[1];
-
-          const nextDistance = distance(first, second);
-          const ratio = nextDistance / Math.max(pinchStartDistance.current, 1);
-
-          const nextAngle = angle(first, second);
-          const angleDelta = nextAngle - rotateStartAngle.current;
-
-          setVisualScale(clampScale(pinchStartScale.current * ratio));
-          setVisualRotation(rotateStartRotation.current + angleDelta);
-        }}
-      >
-        <div
-          className="fixed right-4 z-30"
-          style={{ top: "max(1rem, env(safe-area-inset-top))" }}
-          onClick={(event) => event.stopPropagation()}
-        >
-          <DreamAmbientPlayer
-            tokenId={token.tokenId}
-            dreamSeed={visual?.dreamSeed ?? dream?.dreamSeed}
-            palette={palette.length > 0 ? palette : DREAM_COLORS}
-            motion={visual?.motion}
-            foregroundColor={fg}
-            visualScale={visualScale}
-            visualTraits={visual?.traits}
-          />
-        </div>
-
-        {token.image && (
-          // eslint-disable-next-line @next/next/no-img-element
-          <img
-            src={token.image}
-            alt={`Chain Dreams #${token.tokenId}`}
-            className="block h-screen w-screen object-contain"
-            style={{
-              transform: `scale(${visualScale}) rotate(${visualRotation}deg)`,
-              transformOrigin: "50% 50%",
-              WebkitUserSelect: "none",
-              userSelect: "none",
-              WebkitTouchCallout: "none",
-            }}
-            draggable={false}
-          />
-        )}
-
-        <p className="pointer-events-none fixed bottom-6 left-0 right-0 text-center text-[10px] tracking-[0.18em] opacity-50">
-          PINCH SCALE · ROTATE · DOUBLE TAP CLOSE
         </p>
       </div>
     );
@@ -845,7 +851,15 @@ function AppPageContent() {
         </div>
       )}
 
-      {selectedToken && renderVisualOverlay(selectedToken)}
+      {selectedToken && (
+        <VisualOverlay
+          token={selectedToken}
+          dream={dreams[selectedToken.tokenId]}
+          visual={visuals[selectedToken.tokenId]}
+          background={backgrounds[selectedToken.tokenId] ?? "#000000"}
+          onClose={closeVisual}
+        />
+      )}
     </main>
   );
 }

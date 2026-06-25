@@ -219,7 +219,7 @@ export const chainDreamLookupManifest = defineManifest({
     auth: "predicate-gate-eip3009-zero-value",
     supportedTokenStandard: "ERC-721",
   },
-});
+} as any);
 
 export const chainDreamHistoryManifest = defineManifest({
   type: "https://ercs.ethereum.org/ERCS/erc-8257#tool-manifest-v1",
@@ -327,5 +327,4 @@ export const chainDreamHistoryManifest = defineManifest({
     auth: "predicate-gate-eip3009-zero-value",
     supportedTokenStandard: "ERC-721",
   },
-  
-});
+} as any);
