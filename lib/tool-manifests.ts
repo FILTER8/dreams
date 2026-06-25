@@ -1,8 +1,14 @@
 import { defineManifest } from "@opensea/tool-sdk";
 
-const BASE_URL = "https://dreams.ratchetvex.xyz";
-const CREATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
-const CHAIN_DREAMS_CONTRACT =
+type LooseManifest = Record<string, unknown>;
+
+const defineManifestLoose = defineManifest as unknown as (
+  manifest: LooseManifest,
+) => LooseManifest;
+
+export const BASE_URL = "https://dreams.ratchetvex.xyz";
+export const CREATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
+export const CHAIN_DREAMS_CONTRACT =
   "0x35221d6e9dc3e4a277f40b40f7492be3b236d380";
 
 const ICON_URL = `${BASE_URL}/tool-icon.png`;
@@ -31,25 +37,16 @@ const inputSchema = {
       type: "string",
       description: "Chain Dreams token ID to query.",
     },
-    wallet: {
-      type: "string",
-      description:
-        "Wallet address requesting access. Must currently own the queried Chain Dreams token.",
-    },
-    signature: {
-      type: "string",
-      description:
-        "Signature over the Chain Dreams tool access message for this token and wallet.",
-    },
   },
-  required: ["tokenId", "wallet", "signature"],
+  required: ["tokenId"],
 };
 
 const accessMetadata = {
   type: "erc721-owner",
   chain: "eip155:1",
   contract: CHAIN_DREAMS_CONTRACT,
-  description: "Caller must own the Chain Dreams token being queried.",
+  description:
+    "Caller must own the Chain Dreams token being queried. Caller identity is recovered through OpenSea predicate-gate zero-value EIP-3009 authorization.",
 };
 
 const collectionMetadata = {
@@ -70,7 +67,7 @@ const agentMetadata = {
     "An agent collecting forgotten signals, synthetic memories, and daily dreams.",
 };
 
-export const chainDreamLookupManifest = defineManifest({
+export const chainDreamLookupManifest = defineManifestLoose({
   type: "https://ercs.ethereum.org/ERCS/erc-8257#tool-manifest-v1",
   name: "chain-dream-lookup",
   description:
@@ -78,7 +75,6 @@ export const chainDreamLookupManifest = defineManifest({
   endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
   creatorAddress: CREATOR_ADDRESS,
   access,
-
   inputs: inputSchema,
 
   outputs: {
@@ -95,7 +91,7 @@ export const chainDreamLookupManifest = defineManifest({
           tokenGated: { type: "boolean" },
           wallet: { type: "string" },
           verifiedOwner: { type: "boolean" },
-          signedMessage: { type: "string" },
+          auth: { type: "string" },
         },
         required: ["tokenGated", "wallet", "verifiedOwner"],
       },
@@ -207,14 +203,14 @@ export const chainDreamLookupManifest = defineManifest({
     ],
   },
 
- "io.opensea.display": {
-  title: "Chain Dream Lookup",
-  subtitle: "Read the current dream state of a token",
-  category: "Agent memory",
-  icon: ICON_URL,
-  featuredImage: FEATURED_URL,
-  website: BASE_URL,
-},
+  "io.opensea.display": {
+    title: "Chain Dream Lookup",
+    subtitle: "Read the current dream state of a token",
+    category: "Agent memory",
+    icon: ICON_URL,
+    featuredImage: FEATURED_URL,
+    website: BASE_URL,
+  },
 
   "io.opensea.access": accessMetadata,
   "io.opensea.collection": collectionMetadata,
@@ -224,12 +220,13 @@ export const chainDreamLookupManifest = defineManifest({
     layer: "current-dream",
     purpose: "Allows agents to read the current dream carried by a token.",
     tokenGated: true,
-    requiresSignature: true,
+    requiresSignature: false,
+    auth: "predicate-gate-eip3009-zero-value",
     supportedTokenStandard: "ERC-721",
   },
 });
 
-export const chainDreamHistoryManifest = defineManifest({
+export const chainDreamHistoryManifest = defineManifestLoose({
   type: "https://ercs.ethereum.org/ERCS/erc-8257#tool-manifest-v1",
   name: "chain-dream-history",
   description:
@@ -237,7 +234,6 @@ export const chainDreamHistoryManifest = defineManifest({
   endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
   creatorAddress: CREATOR_ADDRESS,
   access,
-
   inputs: inputSchema,
 
   outputs: {
@@ -254,6 +250,7 @@ export const chainDreamHistoryManifest = defineManifest({
           tokenGated: { type: "boolean" },
           wallet: { type: "string" },
           verifiedOwner: { type: "boolean" },
+          auth: { type: "string" },
         },
         required: ["tokenGated", "wallet", "verifiedOwner"],
       },
@@ -312,14 +309,14 @@ export const chainDreamHistoryManifest = defineManifest({
     ],
   },
 
-"io.opensea.display": {
-  title: "Chain Dream History",
-  subtitle: "Read the memory of a token across dream cycles",
-  category: "Agent memory",
-  icon: ICON_URL,
-  featuredImage: FEATURED_URL,
-  website: BASE_URL,
-},
+  "io.opensea.display": {
+    title: "Chain Dream History",
+    subtitle: "Read the memory of a token across dream cycles",
+    category: "Agent memory",
+    icon: ICON_URL,
+    featuredImage: FEATURED_URL,
+    website: BASE_URL,
+  },
 
   "io.opensea.access": accessMetadata,
   "io.opensea.collection": collectionMetadata,
@@ -330,7 +327,8 @@ export const chainDreamHistoryManifest = defineManifest({
     purpose:
       "Allows agents to read the historical dream memory carried by a token.",
     tokenGated: true,
-    requiresSignature: true,
+    requiresSignature: false,
+    auth: "predicate-gate-eip3009-zero-value",
     supportedTokenStandard: "ERC-721",
   },
 });

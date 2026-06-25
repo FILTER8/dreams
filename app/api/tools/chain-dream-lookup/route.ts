@@ -1,31 +1,29 @@
-import { NextResponse } from "next/server";
-import { getAddress, isAddress, verifyMessage } from "viem";
+import { z } from "zod/v4";
+import { getAddress } from "viem";
+import {
+  BASE_URL,
+  CHAIN_DREAMS_CONTRACT,
+  CREATOR_ADDRESS,
+  chainDreamLookupManifest,
+} from "@/lib/tool-manifests";
 
 const TOOL_NAME = "CHAIN_DREAM_LOOKUP";
 const TOOL_VERSION = "1.0.0";
 
-const BASE_URL = "https://dreams.ratchetvex.xyz";
-const CHAIN_DREAMS_CONTRACT =
-  "0x35221D6E9dC3E4a277F40b40f7492BE3b236D380";
+type ToolSdkRuntime = {
+  createToolHandler: (config: Record<string, unknown>) => (
+    request: Request,
+  ) => Promise<Response>;
+  predicateGate: (config: Record<string, unknown>) => unknown;
+};
 
-function getBaseUrl(request: Request) {
-  const url = new URL(request.url);
-  return `${url.protocol}//${url.host}`;
-}
+type ToolContext = {
+  callerAddress?: string;
+  request?: Request;
+};
 
-function accessMessage(tokenId: string, wallet: string) {
-  return [
-    "Chain Dreams tool access",
-    `Tool: ${TOOL_NAME}`,
-    `Token ID: ${tokenId}`,
-    `Wallet: ${wallet.toLowerCase()}`,
-  ].join("\n");
-}
-
-type LookupBody = {
-  tokenId?: string | number;
-  wallet?: string;
-  signature?: string;
+type ToolInput = {
+  tokenId: string;
 };
 
 type DreamApiResponse = {
@@ -73,99 +71,106 @@ type VisualApiResponse = {
   };
 };
 
-export async function POST(request: Request) {
-  try {
-    const body = (await request.json()) as LookupBody;
+function getBaseUrl(request: Request) {
+  const url = new URL(request.url);
+  return `${url.protocol}//${url.host}`;
+}
 
-    const tokenId = String(body.tokenId ?? "").trim();
-    const walletRaw = String(body.wallet ?? "").trim();
-    const signature = String(body.signature ?? "").trim();
+function getRequiredEnv(name: string) {
+  const value = process.env[name]?.trim();
 
-    if (!/^\d+$/.test(tokenId)) {
-      return NextResponse.json(
-        { success: false, error: "invalid tokenId" },
-        { status: 400 },
-      );
-    }
+  if (!value) {
+    throw new Error(`${name} is required`);
+  }
 
-    if (!isAddress(walletRaw)) {
-      return NextResponse.json(
-        { success: false, error: "invalid wallet" },
-        { status: 400 },
-      );
-    }
+  return value;
+}
 
-    if (!signature) {
-      return NextResponse.json(
-        { success: false, error: "signature required" },
-        { status: 401 },
-      );
-    }
+function getCallerWallet(ctx: ToolContext) {
+  if (!ctx.callerAddress) {
+    throw new Error("caller address missing after predicate gate");
+  }
 
-    const wallet = getAddress(walletRaw);
-    const message = accessMessage(tokenId, wallet);
+  return getAddress(ctx.callerAddress);
+}
 
-    const validSignature = await verifyMessage({
-      address: wallet,
-      message,
-      signature: signature as `0x${string}`,
-    });
+async function createHandler() {
+  const sdk = (await import("@opensea/tool-sdk")) as unknown as ToolSdkRuntime;
 
-    if (!validSignature) {
-      return NextResponse.json(
-        { success: false, error: "invalid signature" },
-        { status: 401 },
-      );
-    }
+  const toolId = BigInt(getRequiredEnv("OPENSEA_CHAIN_DREAM_LOOKUP_TOOL_ID"));
+  const operatorAddress = getRequiredEnv(
+    "OPENSEA_OPERATOR_ADDRESS",
+  ) as `0x${string}`;
 
-    const baseUrl = getBaseUrl(request);
+  const gate = sdk.predicateGate({
+    toolId,
+    operatorAddress,
+    rpcUrl: process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://mainnet.base.org",
+  });
 
-    const dreamRes = await fetch(`${baseUrl}/api/dream/${tokenId}`, {
-      cache: "no-store",
-    });
+  return sdk.createToolHandler({
+    manifest: chainDreamLookupManifest,
 
-    const dream = (await dreamRes.json()) as DreamApiResponse;
+    inputSchema: z.object({
+      tokenId: z.coerce.string().trim().regex(/^\d+$/, "invalid tokenId"),
+    }),
 
-    if (!dreamRes.ok || dream.error) {
-      return NextResponse.json(
-        {
+    outputSchema: z.object({
+      success: z.boolean(),
+    }).passthrough(),
+
+    gates: [gate],
+
+    handler: async (input: ToolInput, ctx: ToolContext) => {
+      const tokenId = input.tokenId;
+      const wallet = getCallerWallet(ctx);
+      const request = ctx.request;
+
+      if (!request) {
+        throw new Error("request missing from tool context");
+      }
+
+      const baseUrl = getBaseUrl(request);
+
+      const dreamRes = await fetch(`${baseUrl}/api/dream/${tokenId}`, {
+        cache: "no-store",
+      });
+
+      const dream = (await dreamRes.json()) as DreamApiResponse;
+
+      if (!dreamRes.ok || dream.error) {
+        return {
           success: false,
           error: "dream unavailable",
           message: dream.message ?? dream.error,
-        },
-        { status: dreamRes.status || 500 },
-      );
-    }
+        };
+      }
 
-    if (!dream.owner || getAddress(dream.owner) !== wallet) {
-      return NextResponse.json(
-        {
+      if (!dream.owner || getAddress(dream.owner) !== wallet) {
+        return {
           success: false,
           error: "wallet does not own this dream token",
           tokenId,
           wallet,
           owner: dream.owner,
-        },
-        { status: 403 },
-      );
-    }
-
-    let visual: VisualApiResponse | null = null;
-
-    try {
-      const visualRes = await fetch(`${baseUrl}/api/visual/${tokenId}`, {
-        cache: "no-store",
-      });
-
-      if (visualRes.ok) {
-        visual = (await visualRes.json()) as VisualApiResponse;
+        };
       }
-    } catch {
-      visual = null;
-    }
 
-    return NextResponse.json(
-      {
+      let visual: VisualApiResponse | null = null;
+
+      try {
+        const visualRes = await fetch(`${baseUrl}/api/visual/${tokenId}`, {
+          cache: "no-store",
+        });
+
+        if (visualRes.ok) {
+          visual = (await visualRes.json()) as VisualApiResponse;
+        }
+      } catch {
+        visual = null;
+      }
+
+      return {
         success: true,
         tool: TOOL_NAME,
         version: TOOL_VERSION,
@@ -174,7 +179,7 @@ export async function POST(request: Request) {
           tokenGated: true,
           wallet,
           verifiedOwner: true,
-          signedMessage: message,
+          auth: "predicate-gate-eip3009-zero-value",
         },
 
         collection: {
@@ -237,22 +242,12 @@ export async function POST(request: Request) {
             `https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}/${tokenId}`,
           manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
         },
-      },
-      {
-        headers: {
-          "cache-control": "no-store",
-          "access-control-allow-origin": "*",
-        },
-      },
-    );
-  } catch (err) {
-    return NextResponse.json(
-      {
-        success: false,
-        error: "chain dream lookup failed",
-        message: err instanceof Error ? err.message : "unknown error",
-      },
-      { status: 500 },
-    );
-  }
+      };
+    },
+  });
+}
+
+export async function POST(request: Request) {
+  const handler = await createHandler();
+  return handler(request);
 }

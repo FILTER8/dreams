@@ -1,29 +1,29 @@
 import fs from "fs";
 import path from "path";
-import { NextResponse } from "next/server";
-import { getAddress, isAddress, verifyMessage } from "viem";
+import { z } from "zod/v4";
+import { getAddress } from "viem";
+import {
+  BASE_URL,
+  chainDreamHistoryManifest,
+} from "@/lib/tool-manifests";
 
 const TOOL_NAME = "CHAIN_DREAM_HISTORY";
 const TOOL_VERSION = "1.0.0";
 
-function getBaseUrl(request: Request) {
-  const url = new URL(request.url);
-  return `${url.protocol}//${url.host}`;
-}
+type ToolSdkRuntime = {
+  createToolHandler: (config: Record<string, unknown>) => (
+    request: Request,
+  ) => Promise<Response>;
+  predicateGate: (config: Record<string, unknown>) => unknown;
+};
 
-function accessMessage(tokenId: string, wallet: string) {
-  return [
-    "Chain Dreams tool access",
-    `Tool: ${TOOL_NAME}`,
-    `Token ID: ${tokenId}`,
-    `Wallet: ${wallet.toLowerCase()}`,
-  ].join("\n");
-}
+type ToolContext = {
+  callerAddress?: string;
+  request?: Request;
+};
 
-type HistoryBody = {
-  tokenId?: string | number;
-  wallet?: string;
-  signature?: string;
+type ToolInput = {
+  tokenId: string;
 };
 
 type HistoryIndexEntry = {
@@ -86,6 +86,29 @@ type DreamApiResponse = {
   };
 };
 
+function getBaseUrl(request: Request) {
+  const url = new URL(request.url);
+  return `${url.protocol}//${url.host}`;
+}
+
+function getRequiredEnv(name: string) {
+  const value = process.env[name]?.trim();
+
+  if (!value) {
+    throw new Error(`${name} is required`);
+  }
+
+  return value;
+}
+
+function getCallerWallet(ctx: ToolContext) {
+  if (!ctx.callerAddress) {
+    throw new Error("caller address missing after predicate gate");
+  }
+
+  return getAddress(ctx.callerAddress);
+}
+
 function publicFilePath(publicUrl: string) {
   const clean = publicUrl.startsWith("/") ? publicUrl.slice(1) : publicUrl;
   return path.join(process.cwd(), "public", clean);
@@ -117,7 +140,7 @@ function readDreamHistory(tokenId: string) {
     process.cwd(),
     "public",
     "dream-history",
-    "index.json"
+    "index.json",
   );
 
   if (!fs.existsSync(indexPath)) {
@@ -168,104 +191,94 @@ function readDreamHistory(tokenId: string) {
   return history.sort((a, b) => Number(a.cycle) - Number(b.cycle));
 }
 
-export async function POST(request: Request) {
-  try {
-    const body = (await request.json()) as HistoryBody;
+async function createHandler() {
+  const sdk = (await import("@opensea/tool-sdk")) as unknown as ToolSdkRuntime;
 
-    const tokenId = String(body.tokenId ?? "").trim();
-    const walletRaw = String(body.wallet ?? "").trim();
-    const signature = String(body.signature ?? "").trim();
+  const toolId = BigInt(getRequiredEnv("OPENSEA_CHAIN_DREAM_HISTORY_TOOL_ID"));
+  const operatorAddress = getRequiredEnv(
+    "OPENSEA_OPERATOR_ADDRESS",
+  ) as `0x${string}`;
 
-    if (!/^\d+$/.test(tokenId)) {
-      return NextResponse.json(
-        { success: false, error: "invalid tokenId" },
-        { status: 400 }
-      );
-    }
+  const gate = sdk.predicateGate({
+    toolId,
+    operatorAddress,
+    rpcUrl: process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://mainnet.base.org",
+  });
 
-    if (!isAddress(walletRaw)) {
-      return NextResponse.json(
-        { success: false, error: "invalid wallet" },
-        { status: 400 }
-      );
-    }
+  return sdk.createToolHandler({
+    manifest: chainDreamHistoryManifest,
 
-    if (!signature) {
-      return NextResponse.json(
-        { success: false, error: "signature required" },
-        { status: 401 }
-      );
-    }
+    inputSchema: z.object({
+      tokenId: z.coerce.string().trim().regex(/^\d+$/, "invalid tokenId"),
+    }),
 
-    const wallet = getAddress(walletRaw);
-    const message = accessMessage(tokenId, wallet);
+    outputSchema: z.object({
+      success: z.boolean(),
+    }).passthrough(),
 
-    const validSignature = await verifyMessage({
-      address: wallet,
-      message,
-      signature: signature as `0x${string}`,
-    });
+    gates: [gate],
 
-    if (!validSignature) {
-      return NextResponse.json(
-        { success: false, error: "invalid signature" },
-        { status: 401 }
-      );
-    }
+    handler: async (input: ToolInput, ctx: ToolContext) => {
+      const tokenId = input.tokenId;
+      const wallet = getCallerWallet(ctx);
+      const request = ctx.request;
 
-    const baseUrl = getBaseUrl(request);
+      if (!request) {
+        throw new Error("request missing from tool context");
+      }
 
-    const dreamRes = await fetch(`${baseUrl}/api/dream/${tokenId}`, {
-      cache: "no-store",
-    });
+      const baseUrl = getBaseUrl(request);
 
-    const dream = (await dreamRes.json()) as DreamApiResponse;
+      const dreamRes = await fetch(`${baseUrl}/api/dream/${tokenId}`, {
+        cache: "no-store",
+      });
 
-    if (!dreamRes.ok || dream.error) {
-      return NextResponse.json(
-        {
+      const dream = (await dreamRes.json()) as DreamApiResponse;
+
+      if (!dreamRes.ok || dream.error) {
+        return {
           success: false,
           error: "dream unavailable",
           message: dream.message ?? dream.error,
-        },
-        { status: dreamRes.status || 500 }
-      );
-    }
+        };
+      }
 
-    if (!dream.owner || getAddress(dream.owner) !== wallet) {
-      return NextResponse.json(
-        {
+      if (!dream.owner || getAddress(dream.owner) !== wallet) {
+        return {
           success: false,
           error: "wallet does not own this dream token",
           tokenId,
           wallet,
           owner: dream.owner,
-        },
-        { status: 403 }
-      );
-    }
+        };
+      }
 
-    const history = readDreamHistory(tokenId);
+      const history = readDreamHistory(tokenId);
 
-    return NextResponse.json(
-      {
+      return {
         success: true,
         tool: TOOL_NAME,
         version: TOOL_VERSION,
+
         access: {
           tokenGated: true,
           wallet,
           verifiedOwner: true,
+          auth: "predicate-gate-eip3009-zero-value",
         },
+
         tokenId,
+
         current: {
           cycle: dream.cycle,
           phrase: dream.phrase,
           dreamSeed: dream.dreamSeed,
           motion: dream.motion,
         },
+
         historyCount: history.length,
         history,
+
         links: {
           dream:
             dream.links?.dream ??
@@ -274,22 +287,12 @@ export async function POST(request: Request) {
           visualData: `https://dreams.ratchetvex.xyz/api/visual/${tokenId}`,
           opensea: dream.links?.opensea,
         },
-      },
-      {
-        headers: {
-          "cache-control": "no-store",
-          "access-control-allow-origin": "*",
-        },
-      }
-    );
-  } catch (err) {
-    return NextResponse.json(
-      {
-        success: false,
-        error: "chain dream history failed",
-        message: err instanceof Error ? err.message : "unknown error",
-      },
-      { status: 500 }
-    );
-  }
+      };
+    },
+  });
+}
+
+export async function POST(request: Request) {
+  const handler = await createHandler();
+  return handler(request);
 }
