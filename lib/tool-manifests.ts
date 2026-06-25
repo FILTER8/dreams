@@ -327,4 +327,5 @@ export const chainDreamHistoryManifest = defineManifest({
     auth: "predicate-gate-eip3009-zero-value",
     supportedTokenStandard: "ERC-721",
   },
+  
 });
