@@ -768,5 +768,17 @@
     "source": "ishe",
     "cycle": "20628",
     "weight": 1
+  },
+  {
+    "text": "folded sanctuary",
+    "source": "ishe",
+    "cycle": "20629",
+    "weight": 1
+  },
+  {
+    "text": "stone enclosure",
+    "source": "ishe",
+    "cycle": "20629",
+    "weight": 1
   }
 ]
