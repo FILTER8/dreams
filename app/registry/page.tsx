@@ -23,7 +23,7 @@ const tools = [
       "Reads the current dream state of a token, including phrase, cycle, dream seed, motion data, visual traits, owner, and Ratchet Vex agent context.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
-    hash: "0xa8383ce0f063de70f6cfda37a86ebac5a23e3399e561be36a16bf868a39591cc",
+    hash: "0xa086b0b5637011b1f6f44ff87ca3a3683ea0266c4d6aabd775d693d9d379f7d9",
   },
   {
     id: "39",
@@ -34,8 +34,7 @@ const tools = [
       "Reads the historical memory of a token across dream cycles, including previous phrases, dream seeds, motion history, and dreamer metadata.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-history.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
-    hash: "0xfcce4f993d8651bd79cec60631975e9fc7b08992fe2c66f786439d00cf3502f0",
-    tx: "0x79fab8f41df4d821cb2eadc3162da445108fde6366869397d21560f6bbbc84d6",
+    hash: "0x1ccd1195d2eb157b80c74932af6dc229a06b586934a4ff46840e4e945f0fd9ca",
   },
 ];
 
@@ -156,7 +155,12 @@ export default function RegistryPage() {
             href={`https://etherscan.io/address/${PREDICATE_CONTRACT}`}
           />
 
+          <InfoRow label="PREDICATE NAME" value="ERC721OwnerPredicate" />
           <InfoRow label="ACCESS RULE" value="Hold any Chain Dreams NFT" />
+          <InfoRow
+            label="AUTH FLOW"
+            value="OpenSea predicate-gate x402 with zero-value EIP-3009 authorization"
+          />
         </div>
 
         <div className="grid gap-6">
@@ -183,32 +187,27 @@ export default function RegistryPage() {
               <InfoRow label="MANIFEST" value={tool.manifest} href={tool.manifest} />
               <InfoRow label="ENDPOINT" value={tool.endpoint} href={tool.endpoint} />
               <InfoRow label="MANIFEST HASH" value={tool.hash} />
-
-              {tool.tx && (
-                <InfoRow
-                  label="REGISTER TX"
-                  value={tool.tx}
-                  href={`https://etherscan.io/tx/${tool.tx}`}
-                />
-              )}
             </article>
           ))}
         </div>
 
         <div className="mt-12 grid gap-6 lg:grid-cols-2">
           <section className="border border-[#222] bg-black p-6">
-            <p className="cd-label mb-5">EXAMPLE SIGN MESSAGE</p>
+            <p className="cd-label mb-5">AUTH FLOW</p>
 
             <pre className="whitespace-pre-wrap break-words border border-[#222] p-4 text-xs leading-6 opacity-70">
-{`Chain Dreams tool access
-Tool: CHAIN_DREAM_LOOKUP
-Token ID: 1
-Wallet: 0x_your_wallet_address`}
+{`1. Agent calls endpoint with tokenId only.
+2. Endpoint returns HTTP 402.
+3. Agent signs the zero-value x402 authorization.
+4. Agent retries with the X-PAYMENT header.
+5. Endpoint recovers the wallet address.
+6. Endpoint checks that the wallet owns the requested token.
+7. If ownership matches, the protected dream data is returned.`}
             </pre>
 
             <p className="mt-5 text-xs leading-7 opacity-50">
-              The connected wallet signs this message. The endpoint verifies the
-              signature and checks that the wallet owns the requested token.
+              No custom wallet or signature fields are required. Wallet identity
+              is recovered through the OpenSea predicate-gate x402 flow.
             </p>
           </section>
 
@@ -222,16 +221,15 @@ Wallet: 0x_your_wallet_address`}
     "content-type": "application/json"
   },
   body: JSON.stringify({
-    tokenId: "1",
-    wallet: "0x_your_wallet_address",
-    signature: "0x_signature"
+    tokenId: "1"
   })
 })`}
             </pre>
 
             <p className="mt-5 text-xs leading-7 opacity-50">
-              Use the history endpoint the same way, replacing the tool name in
-              the signed message with CHAIN_DREAM_HISTORY.
+              A normal unsigned request returns HTTP 402. OpenSea-compatible
+              agents complete the x402 challenge and retry with the X-PAYMENT
+              header.
             </p>
           </section>
         </div>

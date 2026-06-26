@@ -1,17 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { useAccount, useSignMessage } from "wagmi";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
 
 type ToolMode = "lookup" | "history";
 
-function toolName(mode: ToolMode) {
-  return mode === "lookup"
-    ? "CHAIN_DREAM_LOOKUP"
-    : "CHAIN_DREAM_HISTORY";
-}
+type ToolResult = {
+  status: number;
+  statusText: string;
+  headers: Record<string, string>;
+  body: unknown;
+};
 
 function endpoint(mode: ToolMode) {
   return mode === "lookup"
@@ -19,51 +19,20 @@ function endpoint(mode: ToolMode) {
     : "/api/tools/chain-dream-history";
 }
 
-function buildMessage(mode: ToolMode, tokenId: string, wallet: string) {
-  return [
-    "Chain Dreams tool access",
-    `Tool: ${toolName(mode)}`,
-    `Token ID: ${tokenId}`,
-    `Wallet: ${wallet.toLowerCase()}`,
-  ].join("\n");
+function absoluteEndpoint(mode: ToolMode) {
+  return mode === "lookup"
+    ? "https://dreams.ratchetvex.xyz/api/tools/chain-dream-lookup"
+    : "https://dreams.ratchetvex.xyz/api/tools/chain-dream-history";
 }
 
 export default function ToolTestPage() {
-  const { address, isConnected } = useAccount();
-  const { signMessageAsync } = useSignMessage();
-
   const [tokenId, setTokenId] = useState("1");
   const [mode, setMode] = useState<ToolMode>("lookup");
-  const [signature, setSignature] = useState("");
-  const [result, setResult] = useState<unknown>(null);
+  const [result, setResult] = useState<ToolResult | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
 
-  const message =
-    address && tokenId
-      ? buildMessage(mode, tokenId.trim(), address)
-      : "";
-
-  async function sign() {
-    if (!address) return;
-
-    setBusy(true);
-    setError(null);
-    setResult(null);
-
-    try {
-      const sig = await signMessageAsync({ message });
-      setSignature(sig);
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Signature failed");
-    } finally {
-      setBusy(false);
-    }
-  }
-
   async function callTool() {
-    if (!address || !signature) return;
-
     setBusy(true);
     setError(null);
     setResult(null);
@@ -76,16 +45,34 @@ export default function ToolTestPage() {
         },
         body: JSON.stringify({
           tokenId: tokenId.trim(),
-          wallet: address,
-          signature,
         }),
       });
 
-      const json = await res.json();
-      setResult(json);
+      const headers: Record<string, string> = {};
 
-      if (!res.ok) {
-        setError(json?.error ?? "Tool call failed");
+      res.headers.forEach((value, key) => {
+        headers[key] = value;
+      });
+
+      const text = await res.text();
+
+      let body: unknown = text;
+
+      try {
+        body = text ? JSON.parse(text) : null;
+      } catch {
+        body = text;
+      }
+
+      setResult({
+        status: res.status,
+        statusText: res.statusText,
+        headers,
+        body,
+      });
+
+      if (res.status !== 402 && !res.ok) {
+        setError(`Tool returned HTTP ${res.status}`);
       }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Tool call failed");
@@ -96,7 +83,6 @@ export default function ToolTestPage() {
 
   function resetForMode(nextMode: ToolMode) {
     setMode(nextMode);
-    setSignature("");
     setResult(null);
     setError(null);
   }
@@ -112,27 +98,20 @@ export default function ToolTestPage() {
             CHAIN DREAM TOOLS
           </h1>
           <p className="mt-5 max-w-2xl text-sm leading-7 opacity-60">
-            Sign a token-gated message with the wallet that owns the dream,
-            then call the lookup or history tool.
+            Test the OpenSea predicate-gated endpoint flow. A normal request
+            sends only a token ID and should return HTTP 402 with a zero-value
+            x402 challenge.
           </p>
         </div>
 
         <div className="grid gap-6 lg:grid-cols-[420px_1fr]">
           <div className="border border-[#222] bg-black p-5">
             <div className="mb-5">
-              <p className="cd-label mb-2">CONNECTED WALLET</p>
-              <p className="break-all text-xs leading-6 opacity-70">
-                {isConnected && address ? address : "Connect wallet first"}
-              </p>
-            </div>
-
-            <div className="mb-5">
               <p className="cd-label mb-2">TOKEN ID</p>
               <input
                 value={tokenId}
                 onChange={(event) => {
                   setTokenId(event.target.value);
-                  setSignature("");
                   setResult(null);
                   setError(null);
                 }}
@@ -162,38 +141,35 @@ export default function ToolTestPage() {
             </div>
 
             <div className="mb-5">
-              <p className="cd-label mb-2">MESSAGE TO SIGN</p>
+              <p className="cd-label mb-2">REQUEST</p>
               <pre className="min-h-32 whitespace-pre-wrap break-words border border-[#222] p-4 text-xs leading-6 opacity-70">
-                {message || "Connect wallet to generate message"}
+{`POST ${absoluteEndpoint(mode)}
+
+{
+  "tokenId": "${tokenId.trim() || "1"}"
+}`}
               </pre>
             </div>
 
             <div className="grid gap-3">
               <button
-                onClick={sign}
-                disabled={!address || !tokenId || busy}
-                className="cd-button disabled:opacity-30"
-              >
-                {busy ? "WORKING" : "SIGN MESSAGE"}
-              </button>
-
-              <button
                 onClick={callTool}
-                disabled={!address || !signature || busy}
+                disabled={!tokenId.trim() || busy}
                 className="cd-button disabled:opacity-30"
               >
-                CALL TOOL
+                {busy ? "CALLING" : "CALL ENDPOINT"}
               </button>
             </div>
 
-            {signature && (
-              <div className="mt-5">
-                <p className="cd-label mb-2">SIGNATURE</p>
-                <p className="break-all border border-[#222] p-4 text-[10px] leading-5 opacity-60">
-                  {signature}
-                </p>
-              </div>
-            )}
+            <div className="mt-5 border border-[#222] p-4">
+              <p className="cd-label mb-3">EXPECTED RESULT</p>
+              <p className="text-xs leading-7 opacity-60">
+                Without an X-PAYMENT header, the endpoint should return HTTP
+                402. That means the predicate gate is active and waiting for an
+                OpenSea-compatible agent to sign the zero-value x402
+                authorization.
+              </p>
+            </div>
 
             {error && (
               <p className="mt-5 border border-[#553] p-4 text-xs leading-6 tracking-[0.12em] text-[#bfce72]">
@@ -203,15 +179,39 @@ export default function ToolTestPage() {
           </div>
 
           <div className="border border-[#222] bg-black p-5">
-            <p className="cd-label mb-4">TOOL RESULT</p>
+            <p className="cd-label mb-4">ENDPOINT RESULT</p>
 
             <pre className="min-h-[520px] overflow-auto whitespace-pre-wrap break-words text-xs leading-6 opacity-70">
               {result
                 ? JSON.stringify(result, null, 2)
-                : "No result yet. Sign first, then call the tool."}
+                : "No result yet. Call the endpoint to inspect the predicate-gate challenge."}
             </pre>
           </div>
         </div>
+
+        <section className="mt-12 border border-[#222] bg-black p-6">
+          <p className="cd-label mb-5">HOW THE FULL AGENT FLOW WORKS</p>
+
+          <div className="grid gap-5 md:grid-cols-2">
+            <div className="border border-[#222] p-5">
+              <p className="cd-label mb-3">1. IDENTITY</p>
+              <p className="text-xs leading-7 opacity-60">
+                The endpoint returns a 402 challenge. The agent signs the
+                zero-value x402 authorization and retries with the X-PAYMENT
+                header. The SDK recovers the caller wallet.
+              </p>
+            </div>
+
+            <div className="border border-[#222] p-5">
+              <p className="cd-label mb-3">2. OWNERSHIP</p>
+              <p className="text-xs leading-7 opacity-60">
+                After the wallet is recovered, the route checks whether that
+                wallet owns the requested Chain Dreams token. Only matching
+                token owners receive the protected dream data.
+              </p>
+            </div>
+          </div>
+        </section>
       </section>
 
       <SiteFooter />
