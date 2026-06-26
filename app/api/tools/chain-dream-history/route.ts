@@ -202,7 +202,7 @@ async function createHandler() {
   const gate = sdk.predicateGate({
     toolId,
     operatorAddress,
-    rpcUrl: process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://mainnet.base.org",
+    rpcUrl: process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://ethereum.publicnode.com",
   });
 
   return sdk.createToolHandler({
