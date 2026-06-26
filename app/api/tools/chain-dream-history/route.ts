@@ -6,6 +6,7 @@ import {
   BASE_URL,
   chainDreamHistoryManifest,
 } from "@/lib/tool-manifests";
+import { mainnet } from "viem/chains";
 
 const TOOL_NAME = "CHAIN_DREAM_HISTORY";
 const TOOL_VERSION = "1.0.0";
@@ -199,11 +200,14 @@ async function createHandler() {
     "OPENSEA_OPERATOR_ADDRESS",
   ) as `0x${string}`;
 
-  const gate = sdk.predicateGate({
-    toolId,
-    operatorAddress,
-    rpcUrl: process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ?? "https://ethereum.publicnode.com",
-  });
+const gate = sdk.predicateGate({
+  toolId,
+  operatorAddress,
+  chain: mainnet,
+  rpcUrl:
+    process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ??
+    "https://ethereum.publicnode.com",
+});
 
   return sdk.createToolHandler({
     manifest: chainDreamHistoryManifest,
