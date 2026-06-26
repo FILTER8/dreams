@@ -250,6 +250,7 @@ const gate = sdk.predicateGate({
   });
 }
 
+
 export async function POST(request: Request) {
   const handler = await createHandler();
   return handler(request);
