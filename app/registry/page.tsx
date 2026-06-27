@@ -20,9 +20,10 @@ const tools = [
     slug: "chain-dream-lookup",
     label: "CURRENT DREAM",
     description:
-      "Reads the current dream state of a token, including phrase, cycle, dream seed, motion data, visual traits, owner, and Ratchet Vex agent context.",
+      "Reads and interprets the current dream state of a token, including phrase, cycle, dream seed, motion data, visual traits, owner, and Ratchet Vex agent context.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
+    openseaTool: "https://opensea.io/tools/erc8257/ethereum/38",
     hash: "0xf00dddcb0499d1b993d060dc664432d73f009554b8fbe64962f87c994a4a4c6b",
   },
   {
@@ -31,9 +32,10 @@ const tools = [
     slug: "chain-dream-history",
     label: "DREAM MEMORY",
     description:
-      "Reads the historical memory of a token across dream cycles, including previous phrases, dream seeds, motion history, and dreamer metadata.",
+      "Reads and interprets the historical memory of a token across dream cycles, including previous phrases, dream seeds, motion history, and dreamer metadata.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-history.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
+    openseaTool: "https://opensea.io/tools/erc8257/ethereum/39",
     hash: "0x13c6c9a9665c1c5b3cd07706ea956083abf8f43f2e5f1d29c0662d490c8f2be3",
   },
 ];
@@ -96,9 +98,18 @@ export default function RegistryPage() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/tools/test" className="cd-button">
-              OPEN TOOL TESTER
+            <Link href="/tools" className="cd-button">
+              OPEN DREAM TOOLS
             </Link>
+
+            <a
+              href="https://opensea.io/tools/erc8257/ethereum/38"
+              target="_blank"
+              rel="noreferrer"
+              className="cd-button"
+            >
+              OPENSEA TOOL
+            </a>
 
             <a
               href={`https://opensea.io/assets/ethereum/${CHAIN_DREAMS_CONTRACT}`}
@@ -106,7 +117,7 @@ export default function RegistryPage() {
               rel="noreferrer"
               className="cd-button"
             >
-              OPENSEA
+              COLLECTION
             </a>
           </div>
         </div>
@@ -184,6 +195,7 @@ export default function RegistryPage() {
               </p>
 
               <InfoRow label="SLUG" value={tool.slug} />
+              <InfoRow label="OPENSEA TOOL" value={tool.openseaTool} href={tool.openseaTool} />
               <InfoRow label="MANIFEST" value={tool.manifest} href={tool.manifest} />
               <InfoRow label="ENDPOINT" value={tool.endpoint} href={tool.endpoint} />
               <InfoRow label="MANIFEST HASH" value={tool.hash} />
@@ -212,25 +224,17 @@ export default function RegistryPage() {
           </section>
 
           <section className="border border-[#222] bg-black p-6">
-            <p className="cd-label mb-5">EXAMPLE REQUEST</p>
+            <p className="cd-label mb-5">COLLECTOR INTERFACE</p>
 
-            <pre className="whitespace-pre-wrap break-words border border-[#222] p-4 text-xs leading-6 opacity-70">
-{`fetch("${BASE_URL}/api/tools/chain-dream-lookup", {
-  method: "POST",
-  headers: {
-    "content-type": "application/json"
-  },
-  body: JSON.stringify({
-    tokenId: "1"
-  })
-})`}
-            </pre>
-
-            <p className="mt-5 text-xs leading-7 opacity-50">
-              A normal unsigned request returns HTTP 402. OpenSea-compatible
-              agents complete the x402 challenge and retry with the X-PAYMENT
-              header.
+            <p className="text-sm leading-8 opacity-60">
+              The registered OpenSea tools can also be used through the Chain
+              Dreams collector interface. Connect a wallet, select an owned
+              token, sign the zero-value authorization, and talk to the dream.
             </p>
+
+            <Link href="/tools" className="cd-button mt-6 inline-flex">
+              OPEN DREAM TOOLS
+            </Link>
           </section>
         </div>
 

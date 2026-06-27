@@ -491,7 +491,7 @@ const fetchOptions = {
 
             <div className="mb-5 min-h-[360px] overflow-auto border border-[#222] p-4">
               {messages.length === 0 ? (
-                <p className="text-xs leading-7 opacity-50">
+                <p className="text-sm leading-8 opacity-60">
                   Connect wallet, select one of your Chain Dreams, and load the
                   dream. Then ask Ratchet Vex to interpret the phrase, explain
                   the mood, or describe what the token is dreaming.
@@ -503,7 +503,7 @@ const fetchOptions = {
                       <p className="cd-label mb-2">
                         {message.role === "user" ? "COLLECTOR" : "RATCHET VEX"}
                       </p>
-                      <p className="whitespace-pre-wrap text-xs leading-7 opacity-70">
+                      <p className="whitespace-pre-wrap text-sm leading-8 opacity-80 md:text-base">
                         {message.content}
                       </p>
                     </div>
@@ -516,7 +516,7 @@ const fetchOptions = {
               <textarea
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
-                className="min-h-28 w-full resize-none border border-[#222] bg-black px-4 py-3 text-sm leading-7 outline-none"
+                className="min-h-32 w-full resize-none border border-[#222] bg-black px-4 py-4 text-base leading-8 outline-none"
                 placeholder="Ask the dream something..."
               />
 

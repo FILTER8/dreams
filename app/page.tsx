@@ -72,42 +72,44 @@ export default function Page() {
           ))}
         </div>
       </section>
-
-      <section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
+<section className="min-h-screen flex flex-col items-center justify-center px-6 text-center">
   <p className="mb-8 text-xl tracking-[0.5em] opacity-80">
-    ERC-8257 REGISTRY
+    AGENTIC
   </p>
 
   <h2 className="cd-headline text-4xl leading-tight tracking-[0.12em] md:text-6xl">
-    AGENT<br />ACCESS
+    TALK TO<br />YOUR DREAM
   </h2>
 
-  <p className="mt-8 max-w-3xl text-sm leading-8 opacity-60">
-    Chain Dreams tokens expose token-gated agent tools registered on
-    Ethereum Mainnet. Owners can authorize agents to read the current
-    dream state and historical memory of a token through ERC-8257
-    registered endpoints.
+  <p className="mt-8 max-w-2xl text-sm leading-8 opacity-60">
+    Connect your wallet. Select a dream. Authenticate ownership.
+    Let Ratchet Vex interpret your token through registered OpenSea tools.
   </p>
 
-  <div className="mt-12 grid grid-cols-1 gap-4 text-left md:grid-cols-2">
+  <div className="mt-12 grid grid-cols-1 gap-4 text-left md:grid-cols-3">
     <div className="cd-card">
       <p className="cd-label">TOOL #38</p>
-      <p>CHAIN DREAM LOOKUP</p>
+      <p>CURRENT DREAM</p>
     </div>
 
     <div className="cd-card">
       <p className="cd-label">TOOL #39</p>
-      <p>CHAIN DREAM HISTORY</p>
+      <p>DREAM MEMORY</p>
+    </div>
+
+    <div className="cd-card">
+      <p className="cd-label">RATCHET VEX</p>
+      <p>CHAT</p>
     </div>
   </div>
 
   <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-    <Link href="/registry" className="cd-button inline-block">
-      OPEN REGISTRY
+    <Link href="/tools" className="cd-button inline-block">
+      TALK TO YOUR DREAM
     </Link>
 
-    <Link href="/tools/test" className="cd-button inline-block">
-      OPEN TOOL TESTER
+    <Link href="/registry" className="cd-button inline-block">
+      REGISTRY
     </Link>
   </div>
 </section>
