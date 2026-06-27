@@ -23,7 +23,7 @@ const tools = [
       "Reads the current dream state of a token, including phrase, cycle, dream seed, motion data, visual traits, owner, and Ratchet Vex agent context.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-lookup.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-lookup`,
-    hash: "0xa086b0b5637011b1f6f44ff87ca3a3683ea0266c4d6aabd775d693d9d379f7d9",
+    hash: "0xf00dddcb0499d1b993d060dc664432d73f009554b8fbe64962f87c994a4a4c6b",
   },
   {
     id: "39",
@@ -34,7 +34,7 @@ const tools = [
       "Reads the historical memory of a token across dream cycles, including previous phrases, dream seeds, motion history, and dreamer metadata.",
     manifest: `${BASE_URL}/.well-known/ai-tool/chain-dream-history.json`,
     endpoint: `${BASE_URL}/api/tools/chain-dream-history`,
-    hash: "0x1ccd1195d2eb157b80c74932af6dc229a06b586934a4ff46840e4e945f0fd9ca",
+    hash: "0x13c6c9a9665c1c5b3cd07706ea956083abf8f43f2e5f1d29c0662d490c8f2be3",
   },
 ];
 
