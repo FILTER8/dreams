@@ -18,9 +18,7 @@ type ToolMode = "lookup" | "history" | "both";
 
 type BrowserX402Account = {
   address: `0x${string}`;
-  signTypedData: (
-    args: SignTypedDataParameters,
-  ) => Promise<`0x${string}`>;
+  signTypedData: (args: SignTypedDataParameters) => Promise<`0x${string}`>;
 };
 
 type OwnerTokensResponse = {
@@ -35,6 +33,76 @@ type DreamChatResponse = {
 };
 
 const OPERATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
+
+const PROMPTS: Record<ToolMode, { label: string; prompt: string }[]> = {
+  lookup: [
+    {
+      label: "Current dream",
+      prompt: "What is this token dreaming right now?",
+    },
+    {
+      label: "Oracle reading",
+      prompt:
+        "Interpret this current dream like an oracle. Explain the phrase, dream seed, motion, mood, and visual traits.",
+    },
+    {
+      label: "Visual mood",
+      prompt:
+        "Describe the visual mood of this dream. What do the blobs, dithers, contours, satellites, and background color suggest?",
+    },
+    {
+      label: "Collector message",
+      prompt:
+        "Explain this current dream as a personal message to the collector who owns the token.",
+    },
+  ],
+
+  history: [
+    {
+      label: "Memory story",
+      prompt:
+        "Read my entire Chain Dream history. Imagine each dream is a memory left behind by the same machine over many years. Tell the story of that machine's life, using only the imagery and vocabulary found in my dreams.",
+    },
+    {
+      label: "Recurring symbols",
+      prompt:
+        "Analyze my complete dream history. What symbols, phrases, moods, and themes keep returning?",
+    },
+    {
+      label: "Evolution",
+      prompt:
+        "How has this token's dream language evolved over time? Describe the change from the earliest dream to the current one.",
+    },
+    {
+      label: "Machine psychology",
+      prompt:
+        "Read my complete Chain Dream history. Build a psychological profile of the machine. What does it fear, seek, and remember?",
+    },
+  ],
+
+  both: [
+    {
+      label: "Now + memory",
+      prompt:
+        "Compare the current dream with the historical dream memory. What has changed, what keeps returning, and what does the token seem to be becoming?",
+    },
+    {
+      label: "Dream poem",
+      prompt:
+        "Write a poem using the imagery and vocabulary from this token's current dream and historical memory.",
+    },
+    {
+      label: "Three truths",
+      prompt:
+        "Read the current dream and full history. What three truths has this token discovered through its dream cycles?",
+    },
+    {
+      label: "Future prediction",
+      prompt:
+        "Based on the current dream and historical memory, predict what this token might dream next. Explain your reasoning.",
+    },
+  ],
+};
 
 function endpoint(mode: Exclude<ToolMode, "both">) {
   return mode === "lookup"
@@ -75,9 +143,10 @@ export default function ToolTestPage() {
   const [apiKey, setApiKey] = useState(getSavedApiKey);
   const [model, setModel] = useState("gpt-4.1-mini");
 
+  const [promptIndex, setPromptIndex] = useState(0);
   const [toolData, setToolData] = useState<unknown>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
-  const [input, setInput] = useState("What is this token dreaming right now?");
+  const [input, setInput] = useState(PROMPTS.both[0].prompt);
 
   const [busyDream, setBusyDream] = useState(false);
   const [busyChat, setBusyChat] = useState(false);
@@ -86,6 +155,8 @@ export default function ToolTestPage() {
   const selectedToken = useMemo(() => {
     return tokens.find((token) => token.tokenId === tokenId) ?? null;
   }, [tokens, tokenId]);
+
+  const activePrompts = PROMPTS[mode];
 
   useEffect(() => {
     if (apiKey) {
@@ -156,17 +227,17 @@ export default function ToolTestPage() {
       address as `0x${string}`,
     );
 
-const fetchOptions = {
-  account: browserAccount as unknown as AuthFetchOptions["account"],
-  method: "POST",
-  headers: {
-    "content-type": "application/json",
-  },
-  body: JSON.stringify({
-    tokenId: tokenId.trim(),
-  }),
-  allowedRecipients: [OPERATOR_ADDRESS],
-} satisfies AuthFetchOptions;
+    const fetchOptions = {
+      account: browserAccount as unknown as AuthFetchOptions["account"],
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        tokenId: tokenId.trim(),
+      }),
+      allowedRecipients: [OPERATOR_ADDRESS],
+    } satisfies AuthFetchOptions;
 
     const res = await sdk.eip3009AuthenticatedFetch(
       endpoint(nextMode),
@@ -214,10 +285,7 @@ const fetchOptions = {
           callRegisteredTool("history"),
         ]);
 
-        data = {
-          lookup,
-          history,
-        };
+        data = { lookup, history };
       } else {
         data = await callRegisteredTool(mode);
       }
@@ -228,7 +296,7 @@ const fetchOptions = {
         {
           role: "assistant",
           content:
-            "Dream loaded through the registered OpenSea tool. Ask me what the token is dreaming, what its symbols mean, or how its memory has changed.",
+            "Dream loaded through the registered OpenSea tool. Choose a prompt or ask your own question.",
         },
       ]);
     } catch (err) {
@@ -243,26 +311,15 @@ const fetchOptions = {
     setError(null);
 
     try {
-      if (!apiKey.trim()) {
-        throw new Error("Enter your OpenAI API key first.");
-      }
-
-      if (!toolData) {
-        throw new Error("Load the dream first.");
-      }
+      if (!apiKey.trim()) throw new Error("Enter your OpenAI API key first.");
+      if (!toolData) throw new Error("Load the dream first.");
 
       const userMessage = input.trim();
-
-      if (!userMessage) {
-        throw new Error("Ask the dream something first.");
-      }
+      if (!userMessage) throw new Error("Ask the dream something first.");
 
       const nextMessages: ChatMessage[] = [
         ...messages,
-        {
-          role: "user",
-          content: userMessage,
-        },
+        { role: "user", content: userMessage },
       ];
 
       setMessages(nextMessages);
@@ -310,9 +367,16 @@ const fetchOptions = {
 
   function resetMode(nextMode: ToolMode) {
     setMode(nextMode);
+    setPromptIndex(0);
+    setInput(PROMPTS[nextMode][0].prompt);
     setToolData(null);
     setMessages([]);
     setError(null);
+  }
+
+  function applyPrompt(index: number) {
+    setPromptIndex(index);
+    setInput(activePrompts[index]?.prompt ?? "");
   }
 
   return (
@@ -402,9 +466,6 @@ const fetchOptions = {
                 className="w-full border border-[#222] bg-black px-4 py-3 text-sm tracking-[0.12em] outline-none"
                 placeholder="Connect wallet to load owned tokens"
               />
-              <p className="mt-2 text-[10px] leading-5 opacity-50">
-                Only tokens loaded from your connected wallet are shown above.
-              </p>
             </div>
 
             <div className="mb-5 grid grid-cols-3 gap-3">
@@ -433,6 +494,29 @@ const fetchOptions = {
                 }`}
               >
                 BOTH
+              </button>
+            </div>
+
+            <div className="mb-5">
+              <p className="cd-label mb-2">PROMPT GALLERY</p>
+
+              <select
+                value={promptIndex}
+                onChange={(event) => applyPrompt(Number(event.target.value))}
+                className="w-full border border-[#222] bg-black px-4 py-3 text-sm outline-none"
+              >
+                {activePrompts.map((prompt, index) => (
+                  <option key={prompt.label} value={index}>
+                    {prompt.label}
+                  </option>
+                ))}
+              </select>
+
+              <button
+                onClick={() => applyPrompt(promptIndex)}
+                className="cd-button mt-3 w-full"
+              >
+                USE PROMPT
               </button>
             </div>
 
@@ -469,16 +553,6 @@ const fetchOptions = {
               {busyDream ? "UNLOCKING TOOL" : "LOAD SELECTED DREAM"}
             </button>
 
-            <div className="mt-5 border border-[#222] p-4">
-              <p className="cd-label mb-3">HOW IT WORKS</p>
-              <p className="text-xs leading-7 opacity-60">
-                This page loads the Chain Dreams you own, then calls the
-                registered OpenSea tool with your connected wallet. Your wallet
-                signs the zero-value authorization, the tool verifies ownership,
-                and the dream data is returned.
-              </p>
-            </div>
-
             {error && (
               <p className="mt-5 border border-[#553] p-4 text-xs leading-6 tracking-[0.12em] text-[#bfce72]">
                 {error}
@@ -492,9 +566,8 @@ const fetchOptions = {
             <div className="mb-5 min-h-[360px] overflow-auto border border-[#222] p-4">
               {messages.length === 0 ? (
                 <p className="text-sm leading-8 opacity-60">
-                  Connect wallet, select one of your Chain Dreams, and load the
-                  dream. Then ask Ratchet Vex to interpret the phrase, explain
-                  the mood, or describe what the token is dreaming.
+                  Load a token dream, choose a prompt from the gallery, or ask
+                  Ratchet Vex your own question.
                 </p>
               ) : (
                 <div className="grid gap-4">
