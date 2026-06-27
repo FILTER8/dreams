@@ -111,8 +111,17 @@ const gate = sdk.predicateGate({
     process.env.OPENSEA_TOOL_REGISTRY_RPC_URL ??
     "https://ethereum.publicnode.com",
 });
+
   return sdk.createToolHandler({
-    manifest: chainDreamLookupManifest,
+  manifest: chainDreamLookupManifest,
+
+  usageReporting: {
+    chainId: 8453,
+    toolChainId: 1,
+    toolRegistryAddress: "0x265BB2DBFC0A8165C9A1941Eb1372F349baD2cf1",
+    toolOnchainId: 38,
+    apiKey: getRequiredEnv("OPENSEA_API_KEY"),
+  },
 
     inputSchema: z.object({
       tokenId: z.coerce.string().trim().regex(/^\d+$/, "invalid tokenId"),

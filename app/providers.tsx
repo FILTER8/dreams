@@ -2,9 +2,13 @@
 
 import "@rainbow-me/rainbowkit/styles.css";
 
-import { RainbowKitProvider, darkTheme, getDefaultConfig } from "@rainbow-me/rainbowkit";
+import {
+  RainbowKitProvider,
+  darkTheme,
+  getDefaultConfig,
+} from "@rainbow-me/rainbowkit";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { mainnet } from "wagmi/chains";
+import { mainnet, base } from "wagmi/chains";
 import { WagmiProvider } from "wagmi";
 import { useState } from "react";
 
@@ -14,7 +18,7 @@ const projectId =
 const config = getDefaultConfig({
   appName: "Chain Dreams",
   projectId,
-  chains: [mainnet],
+  chains: [mainnet, base],
   ssr: true,
 });
 

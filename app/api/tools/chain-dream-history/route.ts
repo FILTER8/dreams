@@ -210,8 +210,16 @@ const gate = sdk.predicateGate({
 });
 
   return sdk.createToolHandler({
-    manifest: chainDreamHistoryManifest,
+  manifest: chainDreamHistoryManifest,
 
+  usageReporting: {
+    chainId: 8453,
+    toolChainId: 1,
+    toolRegistryAddress: "0x265BB2DBFC0A8165C9A1941Eb1372F349baD2cf1",
+    toolOnchainId: 39,
+    apiKey: getRequiredEnv("OPENSEA_API_KEY"),
+  },
+  
     inputSchema: z.object({
       tokenId: z.coerce.string().trim().regex(/^\d+$/, "invalid tokenId"),
     }),
