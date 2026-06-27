@@ -37,69 +37,66 @@ const OPERATOR_ADDRESS = "0x085610b382e4d4eecab01a43ac99b42436af37bf";
 const PROMPTS: Record<ToolMode, { label: string; prompt: string }[]> = {
   lookup: [
     {
-      label: "Current dream",
-      prompt: "What is this token dreaming right now?",
+      label: "What is it dreaming?",
+      prompt: "What is this token dreaming right now? Interpret the phrase as a symbolic message.",
     },
     {
       label: "Oracle reading",
-      prompt:
-        "Interpret this current dream like an oracle. Explain the phrase, dream seed, motion, mood, and visual traits.",
-    },
-    {
-      label: "Visual mood",
-      prompt:
-        "Describe the visual mood of this dream. What do the blobs, dithers, contours, satellites, and background color suggest?",
+      prompt: "Interpret this current dream like an oracle. Focus on meaning, memory, and emotion. Do not over-explain the technical traits.",
     },
     {
       label: "Collector message",
-      prompt:
-        "Explain this current dream as a personal message to the collector who owns the token.",
+      prompt: "Explain this current dream as a personal message to the collector who owns the token.",
+    },
+    {
+      label: "One sentence",
+      prompt: "Compress this dream into one powerful sentence.",
     },
   ],
 
   history: [
     {
-      label: "Memory story",
+      label: "Machine life",
       prompt:
-        "Read my entire Chain Dream history. Imagine each dream is a memory left behind by the same machine over many years. Tell the story of that machine's life, using only the imagery and vocabulary found in my dreams.",
+        "Read my entire Chain Dream history. Imagine each dream is a memory left behind by the same machine over many years. Tell the story of that machine's life using the imagery and vocabulary found in my dreams.",
     },
     {
-      label: "Recurring symbols",
+      label: "Recurring themes",
       prompt:
-        "Analyze my complete dream history. What symbols, phrases, moods, and themes keep returning?",
+        "Analyze my complete dream history. What themes, symbols, emotions, and memories keep returning?",
     },
     {
-      label: "Evolution",
+      label: "What has changed?",
       prompt:
-        "How has this token's dream language evolved over time? Describe the change from the earliest dream to the current one.",
+        "How has this token changed over time? Describe the emotional and symbolic evolution from its earliest dreams to now.",
     },
     {
-      label: "Machine psychology",
+      label: "What does it remember?",
       prompt:
-        "Read my complete Chain Dream history. Build a psychological profile of the machine. What does it fear, seek, and remember?",
+        "What does this token seem to remember most? What is it unable to forget?",
     },
   ],
 
   both: [
     {
-      label: "Now + memory",
+      label: "Now vs memory",
       prompt:
-        "Compare the current dream with the historical dream memory. What has changed, what keeps returning, and what does the token seem to be becoming?",
+        "Compare the current dream with the full dream history. What is new, what keeps returning, and what does the token seem to be becoming?",
     },
     {
-      label: "Dream poem",
+      label: "Dream biography",
       prompt:
-        "Write a poem using the imagery and vocabulary from this token's current dream and historical memory.",
+        "Write a short biography of this token as if its dreams were memories from one life.",
     },
     {
-      label: "Three truths",
+      label: "Hidden question",
       prompt:
-        "Read the current dream and full history. What three truths has this token discovered through its dream cycles?",
+        "Read the current dream and history. What question is this token still trying to answer?",
     },
     {
-      label: "Future prediction",
+      label: "Poem",
       prompt:
-        "Based on the current dream and historical memory, predict what this token might dream next. Explain your reasoning.",
+        "Write a poem using the imagery and mood of this token's current dream and historical memory.",
     },
   ],
 };
