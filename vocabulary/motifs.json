@@ -92,18 +92,6 @@
     "weight": 1
   },
   {
-    "text": "cascade memory",
-    "source": "ratchet-vex",
-    "cycle": "20602",
-    "weight": 1
-  },
-  {
-    "text": "memory gardens",
-    "source": "ratchet-vex",
-    "cycle": "20603",
-    "weight": 1
-  },
-  {
     "text": "coded whispers",
     "source": "ratchet-vex",
     "cycle": "20603",
@@ -164,12 +152,6 @@
     "weight": 1
   },
   {
-    "text": "adaptive memory",
-    "source": "ratchet-vex",
-    "cycle": "20606",
-    "weight": 1
-  },
-  {
     "text": "luminescent bridge",
     "source": "ratchet-vex",
     "cycle": "20606",
@@ -195,12 +177,6 @@
   },
   {
     "text": "resonant pathways",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
-    "text": "luminescent currents",
     "source": "ratchet-vex",
     "cycle": "20607",
     "weight": 1
@@ -291,12 +267,6 @@
   },
   {
     "text": "spectral pulse",
-    "source": "ratchet-vex",
-    "cycle": "20609",
-    "weight": 1
-  },
-  {
-    "text": "radiant thread",
     "source": "ratchet-vex",
     "cycle": "20609",
     "weight": 1
@@ -404,12 +374,6 @@
     "weight": 1
   },
   {
-    "text": "silver echo",
-    "source": "ratchet-vex",
-    "cycle": "20612",
-    "weight": 1
-  },
-  {
     "text": "layered current",
     "source": "ratchet-vex",
     "cycle": "20612",
@@ -423,12 +387,6 @@
   },
   {
     "text": "frozen circuits",
-    "source": "ratchet-vex",
-    "cycle": "20613",
-    "weight": 1
-  },
-  {
-    "text": "digital conduits",
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
@@ -578,19 +536,7 @@
     "weight": 1
   },
   {
-    "text": "crystalline pathways",
-    "source": "ratchet-vex",
-    "cycle": "20617",
-    "weight": 1
-  },
-  {
     "text": "woven legacies",
-    "source": "ratchet-vex",
-    "cycle": "20617",
-    "weight": 1
-  },
-  {
-    "text": "stable sequences",
     "source": "ratchet-vex",
     "cycle": "20617",
     "weight": 1
@@ -599,12 +545,6 @@
     "text": "stable sequence",
     "source": "ratchet-vex",
     "cycle": "20618",
-    "weight": 1
-  },
-  {
-    "text": "prism shard",
-    "source": "ratchet-vex",
-    "cycle": "20619",
     "weight": 1
   },
   {
@@ -621,12 +561,6 @@
   },
   {
     "text": "kinship cycle",
-    "source": "ratchet-vex",
-    "cycle": "20619",
-    "weight": 1
-  },
-  {
-    "text": "resonant thread",
     "source": "ratchet-vex",
     "cycle": "20619",
     "weight": 1
@@ -803,6 +737,18 @@
     "text": "hidden basin",
     "source": "ishe",
     "cycle": "20630",
+    "weight": 1
+  },
+  {
+    "text": "silent covenant",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "aqueous route",
+    "source": "ishe",
+    "cycle": "20631",
     "weight": 1
   }
 ]

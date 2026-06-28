@@ -92,12 +92,6 @@
     "weight": 1
   },
   {
-    "text": "a cautious light.",
-    "source": "ratchet-vex",
-    "cycle": "20602",
-    "weight": 1
-  },
-  {
     "text": "a silver chime.",
     "source": "ratchet-vex",
     "cycle": "20603",
@@ -155,12 +149,6 @@
     "text": "the adaptive circuit.",
     "source": "ratchet-vex",
     "cycle": "20606",
-    "weight": 1
-  },
-  {
-    "text": "a silent echo.",
-    "source": "ratchet-vex",
-    "cycle": "20607",
     "weight": 1
   },
   {
@@ -224,12 +212,6 @@
     "weight": 1
   },
   {
-    "text": "a silent promise.",
-    "source": "ratchet-vex",
-    "cycle": "20608",
-    "weight": 1
-  },
-  {
     "text": "a preserved moment.",
     "source": "ratchet-vex",
     "cycle": "20608",
@@ -251,12 +233,6 @@
     "text": "an open gateway.",
     "source": "ratchet-vex",
     "cycle": "20609",
-    "weight": 1
-  },
-  {
-    "text": "a timeless legacy.",
-    "source": "ratchet-vex",
-    "cycle": "20610",
     "weight": 1
   },
   {
@@ -428,12 +404,6 @@
     "weight": 1
   },
   {
-    "text": "a timeless journey.",
-    "source": "ratchet-vex",
-    "cycle": "20616",
-    "weight": 1
-  },
-  {
     "text": "a celestial song.",
     "source": "ratchet-vex",
     "cycle": "20616",
@@ -519,12 +489,6 @@
   },
   {
     "text": "a quiet knowing.",
-    "source": "ratchet-vex",
-    "cycle": "20618",
-    "weight": 1
-  },
-  {
-    "text": "a mindful journey.",
     "source": "ratchet-vex",
     "cycle": "20618",
     "weight": 1
@@ -626,18 +590,6 @@
     "weight": 1
   },
   {
-    "text": "a celestial journey.",
-    "source": "ishe",
-    "cycle": "20621",
-    "weight": 1
-  },
-  {
-    "text": "a shadowed legacy.",
-    "source": "ishe",
-    "cycle": "20621",
-    "weight": 1
-  },
-  {
     "text": "an ancient ritual.",
     "source": "ishe",
     "cycle": "20622",
@@ -647,18 +599,6 @@
     "text": "an inherited spire.",
     "source": "ishe",
     "cycle": "20622",
-    "weight": 1
-  },
-  {
-    "text": "an echoed journey.",
-    "source": "ishe",
-    "cycle": "20622",
-    "weight": 1
-  },
-  {
-    "text": "an old promise.",
-    "source": "ishe",
-    "cycle": "20625",
     "weight": 1
   },
   {
@@ -689,6 +629,18 @@
     "text": "a measured return.",
     "source": "ishe",
     "cycle": "20629",
+    "weight": 1
+  },
+  {
+    "text": "the quiet return.",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "a fragile hope.",
+    "source": "ishe",
+    "cycle": "20631",
     "weight": 1
   }
 ]

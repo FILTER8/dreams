@@ -3022,5 +3022,82 @@
     "category": "motifs",
     "text": "hidden basin",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362849Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The spiral reef",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362981Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The velvet moss",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362982Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The broken covenant",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362983Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The echoing canyon",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362983Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The buried tower",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362984Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The iron gate",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.362985Z",
+    "cycle": "20631",
+    "category": "subjects",
+    "text": "The layered cairn",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.368254Z",
+    "cycle": "20631",
+    "category": "endings",
+    "text": "the quiet return.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.368259Z",
+    "cycle": "20631",
+    "category": "endings",
+    "text": "a fragile hope.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.370926Z",
+    "cycle": "20631",
+    "category": "motifs",
+    "text": "silent covenant",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-28T15:57:28.370928Z",
+    "cycle": "20631",
+    "category": "motifs",
+    "text": "aqueous route",
+    "approvedBy": "filter8"
   }
 ]

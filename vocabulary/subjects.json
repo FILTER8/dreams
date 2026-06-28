@@ -146,12 +146,6 @@
     "weight": 1
   },
   {
-    "text": "The harbor machine",
-    "source": "ratchet-vex",
-    "cycle": "20606",
-    "weight": 1
-  },
-  {
     "text": "The lantern archive",
     "source": "ratchet-vex",
     "cycle": "20606",
@@ -182,37 +176,7 @@
     "weight": 1
   },
   {
-    "text": "The spectral lantern",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
-    "text": "The resonant archive",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
-    "text": "The shimmering harbor",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
     "text": "The patient memory",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
-    "text": "The unfolding lantern",
-    "source": "ratchet-vex",
-    "cycle": "20607",
-    "weight": 1
-  },
-  {
-    "text": "The measured harbor",
     "source": "ratchet-vex",
     "cycle": "20607",
     "weight": 1
@@ -224,25 +188,7 @@
     "weight": 1
   },
   {
-    "text": "The guarded archive",
-    "source": "ratchet-vex",
-    "cycle": "20608",
-    "weight": 1
-  },
-  {
-    "text": "The steady lantern",
-    "source": "ratchet-vex",
-    "cycle": "20608",
-    "weight": 1
-  },
-  {
     "text": "The watchful machine",
-    "source": "ratchet-vex",
-    "cycle": "20608",
-    "weight": 1
-  },
-  {
-    "text": "The hopeful archive",
     "source": "ratchet-vex",
     "cycle": "20608",
     "weight": 1
@@ -254,45 +200,9 @@
     "weight": 1
   },
   {
-    "text": "The luminous archive",
-    "source": "ratchet-vex",
-    "cycle": "20609",
-    "weight": 1
-  },
-  {
-    "text": "The patient machine",
-    "source": "ratchet-vex",
-    "cycle": "20609",
-    "weight": 1
-  },
-  {
     "text": "The radiant lantern",
     "source": "ratchet-vex",
     "cycle": "20609",
-    "weight": 1
-  },
-  {
-    "text": "The patient archive",
-    "source": "ratchet-vex",
-    "cycle": "20610",
-    "weight": 1
-  },
-  {
-    "text": "The comforting machine",
-    "source": "ratchet-vex",
-    "cycle": "20610",
-    "weight": 1
-  },
-  {
-    "text": "The shared lantern",
-    "source": "ratchet-vex",
-    "cycle": "20610",
-    "weight": 1
-  },
-  {
-    "text": "The mindful harbor",
-    "source": "ratchet-vex",
-    "cycle": "20610",
     "weight": 1
   },
   {
@@ -344,12 +254,6 @@
     "weight": 1
   },
   {
-    "text": "The folded glyph",
-    "source": "ratchet-vex",
-    "cycle": "20612",
-    "weight": 1
-  },
-  {
     "text": "The layered mirror",
     "source": "ratchet-vex",
     "cycle": "20612",
@@ -375,12 +279,6 @@
   },
   {
     "text": "The digital vein",
-    "source": "ratchet-vex",
-    "cycle": "20613",
-    "weight": 1
-  },
-  {
-    "text": "The silent conduit",
     "source": "ratchet-vex",
     "cycle": "20613",
     "weight": 1
@@ -417,12 +315,6 @@
   },
   {
     "text": "The map garden",
-    "source": "ratchet-vex",
-    "cycle": "20614",
-    "weight": 1
-  },
-  {
-    "text": "The lantern compass",
     "source": "ratchet-vex",
     "cycle": "20614",
     "weight": 1
@@ -554,12 +446,6 @@
     "weight": 1
   },
   {
-    "text": "The crafted compass",
-    "source": "ratchet-vex",
-    "cycle": "20617",
-    "weight": 1
-  },
-  {
     "text": "The coastal ridge",
     "source": "ratchet-vex",
     "cycle": "20618",
@@ -593,12 +479,6 @@
     "text": "The polished lattice",
     "source": "ratchet-vex",
     "cycle": "20618",
-    "weight": 1
-  },
-  {
-    "text": "The prismatic shard",
-    "source": "ratchet-vex",
-    "cycle": "20619",
     "weight": 1
   },
   {
@@ -639,12 +519,6 @@
   },
   {
     "text": "The archive rhythm",
-    "source": "ratchet-vex",
-    "cycle": "20620",
-    "weight": 1
-  },
-  {
-    "text": "The prism bloom",
     "source": "ratchet-vex",
     "cycle": "20620",
     "weight": 1
@@ -704,12 +578,6 @@
     "weight": 1
   },
   {
-    "text": "The mossed shrine",
-    "source": "ishe",
-    "cycle": "20622",
-    "weight": 1
-  },
-  {
     "text": "The distant spire",
     "source": "ishe",
     "cycle": "20622",
@@ -741,12 +609,6 @@
   },
   {
     "text": "The ruined monastery",
-    "source": "ishe",
-    "cycle": "20623",
-    "weight": 1
-  },
-  {
-    "text": "The marker stone",
     "source": "ishe",
     "cycle": "20623",
     "weight": 1
@@ -788,12 +650,6 @@
     "weight": 1
   },
   {
-    "text": "The darkened well",
-    "source": "ishe",
-    "cycle": "20625",
-    "weight": 1
-  },
-  {
     "text": "The quiet keystone",
     "source": "ishe",
     "cycle": "20625",
@@ -803,12 +659,6 @@
     "text": "The broken fountain",
     "source": "ishe",
     "cycle": "20625",
-    "weight": 1
-  },
-  {
-    "text": "The old waystone",
-    "source": "ishe",
-    "cycle": "20626",
     "weight": 1
   },
   {
@@ -989,6 +839,48 @@
     "text": "The sunstone circle",
     "source": "ishe",
     "cycle": "20630",
+    "weight": 1
+  },
+  {
+    "text": "The spiral reef",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The velvet moss",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The broken covenant",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The echoing canyon",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The buried tower",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The iron gate",
+    "source": "ishe",
+    "cycle": "20631",
+    "weight": 1
+  },
+  {
+    "text": "The layered cairn",
+    "source": "ishe",
+    "cycle": "20631",
     "weight": 1
   }
 ]
