@@ -3099,5 +3099,166 @@
     "category": "motifs",
     "text": "aqueous route",
     "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697486Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The fractured sundial",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697579Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The crumbling lighthouse",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697580Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The winding canal",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697581Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The shadowed alcove",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697582Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The twilight grove",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697583Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The fallen obelisk",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.697583Z",
+    "cycle": "20632",
+    "category": "subjects",
+    "text": "The sculpted basin",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.700336Z",
+    "cycle": "20632",
+    "category": "verbs",
+    "text": "emits",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.700337Z",
+    "cycle": "20632",
+    "category": "verbs",
+    "text": "detects",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.702883Z",
+    "cycle": "20632",
+    "category": "endings",
+    "text": "a whispered secret.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.702884Z",
+    "cycle": "20632",
+    "category": "endings",
+    "text": "a latent pattern.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.702885Z",
+    "cycle": "20632",
+    "category": "endings",
+    "text": "a spectral trace.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.702886Z",
+    "cycle": "20632",
+    "category": "endings",
+    "text": "a fading memory.",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705607Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "empty chamber",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705608Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "rust stain",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705609Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "weather trace",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705609Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "weather track",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705610Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "tide channel",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705611Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "shadow root",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705611Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "stony root",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705612Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "shadowed arc",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705613Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "stone channel",
+    "approvedBy": "filter8"
+  },
+  {
+    "timestamp": "2026-06-29T15:10:11.705613Z",
+    "cycle": "20632",
+    "category": "motifs",
+    "text": "silence bloom",
+    "approvedBy": "filter8"
   }
 ]

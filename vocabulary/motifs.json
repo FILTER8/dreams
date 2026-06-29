@@ -750,5 +750,65 @@
     "source": "ishe",
     "cycle": "20631",
     "weight": 1
+  },
+  {
+    "text": "empty chamber",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "rust stain",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "weather trace",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "weather track",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "tide channel",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "shadow root",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "stony root",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "shadowed arc",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "stone channel",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "silence bloom",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
   }
 ]

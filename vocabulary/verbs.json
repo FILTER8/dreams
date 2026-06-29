@@ -288,5 +288,17 @@
     "source": "ishe",
     "cycle": "20622",
     "weight": 1
+  },
+  {
+    "text": "emits",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "detects",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
   }
 ]

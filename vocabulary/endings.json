@@ -642,5 +642,29 @@
     "source": "ishe",
     "cycle": "20631",
     "weight": 1
+  },
+  {
+    "text": "a whispered secret.",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "a latent pattern.",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "a spectral trace.",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
+  },
+  {
+    "text": "a fading memory.",
+    "source": "ishe",
+    "cycle": "20632",
+    "weight": 1
   }
 ]
